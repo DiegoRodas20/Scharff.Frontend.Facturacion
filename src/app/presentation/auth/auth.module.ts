@@ -1,22 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { InputTextModule } from 'primeng/inputtext';
-import {ButtonModule} from 'primeng/button';
-
-import { AuthRoutingModule } from './auth-routing.module';
+import { AuthRoutingModule } from './auth.routing';
 import { LoginComponent } from './login/login.component';
+import { SharedModule } from 'primeng/api';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
+
+const COMPONENTS = [
+    LoginComponent
+]
 
 @NgModule({
-  declarations: [
-    LoginComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
+    declarations: [
+        COMPONENTS
+    ],
+    imports: [
+        CommonModule,
+        RouterModule,
 
-    ButtonModule,
-    InputTextModule
-  ]
+        FormsModule,
+        ReactiveFormsModule,
+
+        AuthRoutingModule,
+        PrimeNGModule
+    ]
 })
+
 export class AuthModule { }

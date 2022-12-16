@@ -1,25 +1,33 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
+const DEFAULT_ROUTE: string = 'login'
+
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: '',
-    loadChildren: () => import('./presentation/auth/auth.module').then(m => m.AuthModule)
-  },
+    {
+        path: '',
+        redirectTo: DEFAULT_ROUTE,
+        pathMatch: 'full'
+    },
+
+    // Auth module
+    {
+        path: 'login',
+        loadChildren: () => import('./presentation/auth/auth.module').then(m => m.AuthModule)
+    },
+
+    // Admin module
+    // {
+    //     path: 'admin',
+    //     loadChildren: () => import('./presentation/auth/auth.module').then(m => m.AuthModule)
+    // },
 
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {
-      useHash: true
-    })
-  ],
-  exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule {}
+
+export class AppRoutingModule { }

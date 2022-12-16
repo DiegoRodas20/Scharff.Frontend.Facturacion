@@ -1,15 +1,29 @@
-<div class="contenedor-login">
-    <h3>Iniciar sesion</h3>
-    <span class="p-float-label">
-        <input id="float-input" type="text" pInputText>
-        <label for="float-input">Username</label>
-    </span>
+<div class="login">
+    <p-card class="card">
+        <h3 class="text-center text-xl">Iniciar Sesión</h3>
 
-    <span class="p-float-label">
-        <input id="float-input" type="text" pInputText>
-        <label for="float-input">password</label>
-    </span>
-    <button class="button"pButton type="button" label="Iniciar sesion" ></button>
+        <div class="p-fluid grid px-3">
+            
+            <!-- Correo -->
+            <div class="field col-12">
+                <span class="p-float-label">
+                    <input type="text" id="inputtext" pInputText>
+                    <label for="inputtext">Correo</label>
+                </span>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="field col-12">
+                <span class="p-float-label">
+                    <input type="text" id="inputtext-left" pInputText>
+                    <label for="inputtext-left">Contraseña</label>
+                </span>
+            </div>
+
+            <div class="col-12">
+                <button pButton class="bg-black-alpha-90" label="Ingresar"></button>
+            </div>
+            
+        </div>
+    </p-card>
 </div>
-
-<div class="imagen-fondo"></div>
