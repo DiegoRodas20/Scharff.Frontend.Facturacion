@@ -1,19 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'
-
-import { FormsModule } from '@angular/forms';
-
-import { InputTextModule } from 'primeng/inputtext';
-import { DialogModule } from 'primeng/dialog';
-import { ButtonModule } from 'primeng/button';
-
-import { LayoutModule } from './presentation/layout/layout.module';
-
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routing.module';
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './common/shared/shared.module';
+import { AuthModule } from './presentation/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -22,16 +13,12 @@ import { AppRoutingModule } from './app.routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule,
     AppRoutingModule,
-    HttpClientModule,
-    InputTextModule,
-    DialogModule,
-    ButtonModule,
-    LayoutModule,
-    FormsModule
+    SharedModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
