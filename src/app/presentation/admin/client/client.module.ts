@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminRoutingModule } from './admin.routing';
-import { LayoutComponent } from './layout/layout.component';
+import { ClientRoutingModule } from './client.routing';
+import { ManageClientComponent } from './manage-client/manage-client.component';
 import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
 
 const COMPONENTS = [
-    LayoutComponent
+    ManageClientComponent
 ]
 
 @NgModule({
@@ -21,8 +21,8 @@ const COMPONENTS = [
         ReactiveFormsModule,
         PrimeNGModule,
         
-        AdminRoutingModule
+        ClientRoutingModule
     ]
 })
 
-export class AdminModule { }
+export class ClientModule { }

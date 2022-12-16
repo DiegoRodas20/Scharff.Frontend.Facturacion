@@ -9,6 +9,7 @@ import { CardModule } from "primeng/card";
 import { CheckboxModule } from "primeng/checkbox";
 import { DialogModule } from "primeng/dialog";
 import { InputTextModule } from "primeng/inputtext";
+import { MegaMenuModule } from 'primeng/megamenu';
 
 const COMPONENTS = [
     AnimateModule,
@@ -20,7 +21,8 @@ const COMPONENTS = [
     CardModule,
     CheckboxModule,
     DialogModule,
-    InputTextModule
+    InputTextModule,
+    MegaMenuModule
 ]
 
 @NgModule({

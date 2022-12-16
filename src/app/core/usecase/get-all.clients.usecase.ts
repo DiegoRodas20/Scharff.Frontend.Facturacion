@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ClientRepository } from '../repositories/client.repository';
 import { UseCase } from '../base/use.case';
-import { ClientModel } from '../domain/client.model';
+import { ClientModel } from '../models/client.model';
 import { Observable } from 'rxjs';
 
 @Injectable({

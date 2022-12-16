@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ClientRepository } from '../../../core/repositories/client.repository';
-import { ClientModel } from '../../../core/domain/client.model';
+import { ClientModel } from '../../../core/models/client.model';
 import { from, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { ClientMockEntity } from './Client-mock-entity';

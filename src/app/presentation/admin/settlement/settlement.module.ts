@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminRoutingModule } from './admin.routing';
-import { LayoutComponent } from './layout/layout.component';
+import { ManageSettlementComponent } from './manage-settlement/manage-settlement.component';
+import { SettlementRoutingModule } from './settlement.routing';
 import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
 
 const COMPONENTS = [
-    LayoutComponent
+    ManageSettlementComponent
 ]
 
 @NgModule({
@@ -20,9 +20,8 @@ const COMPONENTS = [
         FormsModule,
         ReactiveFormsModule,
         PrimeNGModule,
-        
-        AdminRoutingModule
+        SettlementRoutingModule
     ]
 })
 
-export class AdminModule { }
+export class SettlementModule { }

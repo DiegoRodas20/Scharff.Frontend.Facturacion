@@ -1,8 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-:root {
-    --primary-color: black;
-    $primaryColor: black;
-}
 
 html,
 body {
@@ -11,4 +7,13 @@ body {
 
 body {
     margin: 0;
+}
+
+.p-megamenu-horizontal .p-megamenu-root-list {
+    display: inline-flex !important;
+}
+
+.p-megamenu {
+    background: #e2e2e2;
+    text-align: center;
 }

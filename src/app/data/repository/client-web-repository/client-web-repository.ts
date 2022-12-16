@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ClientRepository } from '../../../core/repositories/client.repository';
-import { ClientModel } from '../../../core/domain/client.model';
+import { ClientModel } from '../../../core/models/client.model';
 import { Observable } from 'rxjs';
 import { ClientWebRepositoryMapper } from './client-web-repository-mapper';
 import { HttpClient } from '@angular/common/http';

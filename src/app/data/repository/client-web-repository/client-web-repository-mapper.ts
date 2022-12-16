@@ -1,5 +1,5 @@
 import { ClientWebEntity } from './client-web-entity';
-import { ClientModel } from '../../../core/domain/client.model';
+import { ClientModel } from '../../../core/models/client.model';
 import { Mapper } from '../../../core/base/mapper';
 
 export class ClientWebRepositoryMapper extends Mapper <ClientWebEntity, ClientModel> {

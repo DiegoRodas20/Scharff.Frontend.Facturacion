@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ClientModel } from '../domain/client.model';
+import { ClientModel } from '../models/client.model';
 import { UseCase } from '../base/use.case';
 import { Observable } from 'rxjs';
 import { ClientRepository } from '../repositories/client.repository';

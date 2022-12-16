@@ -1,4 +1,4 @@
-import { ClientModel } from '../../../core/domain/client.model';
+import { ClientModel } from '../../../core/models/client.model';
 import { Mapper } from '../../../core/base/mapper';
 import { ClientMockEntity } from './client-mock-entity';
 
