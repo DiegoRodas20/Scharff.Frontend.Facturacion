@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
 /* You can add global styles to this file, and also import other style files */
 
 html,
@@ -11,9 +17,18 @@ body {
 
 .p-megamenu-horizontal .p-megamenu-root-list {
     display: inline-flex !important;
+    gap: 80px;
 }
 
 .p-megamenu {
     background: #e2e2e2;
     text-align: center;
+}
+
+.p-inputtext , .p-dropdown {
+    border: 1px solid rgba(179, 177, 177, 0.5) !important;
+}
+
+.p-dropdown > span {
+    border: transparent !important;
 }

@@ -5,6 +5,8 @@ export interface ClientModel {
   }
 
   export interface ClientModel {
+    economicSector: string;
+    coinIdentifier: string;
     bussinesName: string;
     identificationNumber: string;
     tradename: string;

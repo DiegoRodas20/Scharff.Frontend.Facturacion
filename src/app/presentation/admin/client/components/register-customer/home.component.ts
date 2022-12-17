@@ -9,7 +9,7 @@ interface Currency {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
   nroDocumentoIdentidad: string = '';
 
   migrarSap: boolean = false;
+
+  autorizarCuentaFedex: boolean = false;
 
   constructor() { 
     this.currency = [

@@ -5,9 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClientRoutingModule } from './client.routing';
 import { ManageClientComponent } from './manage-client/manage-client.component';
 import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
+import { HomeComponent } from './components/register-customer/home.component';
 
 const COMPONENTS = [
-    ManageClientComponent
+    ManageClientComponent,
+    HomeComponent
 ]
 
 @NgModule({
@@ -20,8 +22,10 @@ const COMPONENTS = [
         FormsModule,
         ReactiveFormsModule,
         PrimeNGModule,
-        
         ClientRoutingModule
+    ],
+    entryComponents: [
+        HomeComponent
     ]
 })
 

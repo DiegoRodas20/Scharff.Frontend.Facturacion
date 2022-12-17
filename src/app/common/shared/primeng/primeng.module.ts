@@ -10,6 +10,9 @@ import { CheckboxModule } from "primeng/checkbox";
 import { DialogModule } from "primeng/dialog";
 import { InputTextModule } from "primeng/inputtext";
 import { MegaMenuModule } from 'primeng/megamenu';
+import { ListboxModule } from 'primeng/listbox';
+import { DropdownModule } from 'primeng/dropdown';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 const COMPONENTS = [
     AnimateModule,
@@ -22,7 +25,10 @@ const COMPONENTS = [
     CheckboxModule,
     DialogModule,
     InputTextModule,
-    MegaMenuModule
+    MegaMenuModule,
+    ListboxModule,
+    DropdownModule,
+    DynamicDialogModule
 ]
 
 @NgModule({

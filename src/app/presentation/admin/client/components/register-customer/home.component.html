@@ -1,0 +1,82 @@
+<section class="container">
+    <div class="card_facturacion">
+
+        <div class="descripcion-factura">
+            <h2 class="card_titulo">Agregar <span>datos facturación</span></h2>
+        </div>
+        <hr>
+        <div class="card_factura--content">
+            <p-dropdown [(ngModel)]="selectedCurrency" placeholder="Moneda" optionLabel="name" [showClear]="true" [style]="{'width':'250px'}"></p-dropdown>
+            <p-dropdown [options]="currency" [(ngModel)]="selectedCurrency" placeholder="Grupo Empresarial" optionLabel="name" [showClear]="true" [style]="{'width':'250px'}"></p-dropdown>
+            <p-dropdown [options]="currency" [(ngModel)]="selectedCurrency" placeholder="Sector económico" optionLabel="name" [showClear]="true" [style]="{'width':'250px'}"></p-dropdown>    
+        </div>
+    </div>
+    <div class="card_operativo">
+        
+        <div class="descripcion-operativo">
+            <h2 class="card_titulo">Agregar <span>datos operativos</span></h2>
+        </div>
+        
+        <hr>
+
+        <div class="card_operativo--content">
+            <p-dropdown [options]="currency" [(ngModel)]="selectedCurrency" placeholder="Tipo Documento Identidad" optionLabel="name" [showClear]="true" [style]="{'width':'250px'}"></p-dropdown>
+       
+            <span class="p-float-label">
+                <input id="numeroDocumentoIdentidad" type="text" pInputText [(ngModel)]="nroDocumentoIdentidad" [style]="{'width':'250px'}"> 
+                <label for="numeroDocumentoIdentidad">Nro Documento Identidad</label>
+            </span>
+    
+            <span class="p-float-label">
+                <input id="razonSocial" type="text" pInputText [(ngModel)]="nroDocumentoIdentidad" [style]="{with: 'auto'}" [style]="{'width':'250px'}"> 
+                <label for="razonSocial">Razón Social | Nombre completo </label>
+            </span>
+
+            <span class="p-float-label">
+                <input id="nombreComercial" type="text" pInputText [(ngModel)]="nroDocumentoIdentidad" [style]="{with: 'auto'}" [style]="{'width':'250px'}"> 
+                <label for="nombreComercial">Nombre Comercial </label>
+            </span>
+
+            <span class="p-float-label">
+                <input id="telefono" type="text" pInputText [(ngModel)]="nroDocumentoIdentidad" [style]="{with: 'auto'}" [style]="{'width':'250px'}"> 
+                <label for="telefono">Teléfono</label>
+            </span>
+
+            <p-dropdown [options]="currency" [(ngModel)]="selectedCurrency" placeholder="Holding" optionLabel="name" [showClear]="true" [filter]="true" [style]="{'width':'250px'}"></p-dropdown>
+       
+            <p-dropdown [options]="currency" [(ngModel)]="selectedCurrency" placeholder="Segmentación" optionLabel="name" [showClear]="true" [style]="{'width':'250px'}"></p-dropdown>
+            <section >
+                <div class="migracion">
+
+                    <div class="check-migration">
+                        <p-checkbox [(ngModel)]="migrarSap" [binary]="true"></p-checkbox>
+                        <label class="check-sap" for="ny">Migrar Información Sap</label>
+                    </div>
+
+                    <div class="check-migration">
+                        <p-checkbox *ngIf="migrarSap" [(ngModel)]="autorizarCuentaFedex" [binary]="true"></p-checkbox>
+                        <label *ngIf="migrarSap" class="check-sap" for="ny">Autorizar Fedex</label>
+                    </div>
+
+                </div>
+            </section>
+
+            <section *ngIf="migrarSap">
+                <span class="p-float-label">
+                    <input id="cuentaFedex" type="text" pInputText [(ngModel)]="nroDocumentoIdentidad" [style]="{'width':'250px'}"> 
+                    <label for="cuentaFedex">Cuenta FEDEX</label>
+                </span>
+            </section>
+
+            <section *ngIf="migrarSap">
+                <p-dropdown [options]="currency" [(ngModel)]="selectedCurrency" placeholder="Estado" optionLabel="name" [showClear]="true" [style]="{'width':'250px'}"></p-dropdown>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="text-center create-client">
+        <button pButton class="bg-black-alpha-90" label="CREAR CLIENTE"></button>
+    </div>
+
+</section>
