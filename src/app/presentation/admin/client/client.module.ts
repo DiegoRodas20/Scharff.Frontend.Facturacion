@@ -6,10 +6,12 @@ import { ClientRoutingModule } from './client.routing';
 import { ManageClientComponent } from './manage-client/manage-client.component';
 import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
 import { RegisterClientComponent } from './manage-client/components/register-client/register-client.component';
+import { UpdateClientComponent } from './manage-client/components/update-client/update-client.component';
 
 const COMPONENTS = [
     ManageClientComponent,
-    RegisterClientComponent
+    RegisterClientComponent,
+    UpdateClientComponent
 ]
 
 @NgModule({

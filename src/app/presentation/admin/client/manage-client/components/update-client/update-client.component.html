@@ -1,0 +1,156 @@
+<div class="card px-5" [formGroup]="form">
+
+    <div class="pb-4">
+        <h3 class="text-base my-0 font-normal">
+            Agregar
+            <span class="text-base text-400">Datos Facturación</span>
+        </h3>
+        <hr>
+    </div>
+
+    <!-- Inputs Datos Facturacion -->
+    <div class="p-fluid grid">
+
+        <!-- Moneda -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name" formControlName="typeCurrency" [showClear]="true"></p-dropdown>
+                <label for="dropdown">Moneda</label>
+            </span>
+        </div>
+
+        <!-- Grupo Empresarial/Categoria Cliente -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name" formControlName="businessGroup" [showClear]="true"></p-dropdown>
+                <label for="dropdown">Grupo Empresarial o Categoria Cliente</label>
+            </span>
+        </div>
+
+        <!-- Sector Economico -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name" formControlName="economicSector" [showClear]="true"></p-dropdown>
+                <label for="dropdown">Sector Económico</label>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="pb-4">
+        <h3 class="text-base my-0 font-normal">
+            Agregar
+            <span class="text-base text-400">Datos Operativos</span>
+        </h3>
+        <hr>
+    </div>
+
+    <!-- Inputs Datos Operativos -->
+    <div class="p-fluid grid">
+
+        <!-- Código único -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="disabled-input" type="text" pInputText [disabled]="isUniqueCode" formControlName="uniqueCode"/>
+                <label for="disabled-input">Código único</label>
+            </span>
+        </div>
+
+        <!-- Tipo documento identidad -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name" formControlName="typeDocumentIdenty" [showClear]="true"></p-dropdown>
+                <label for="dropdown">Tipo Documento Identidad</label>
+            </span>
+        </div>
+
+        <!-- Nro. Documento Identidad -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText formControlName="identificationNumber">
+                <label for="float-input">Nro. Documento Identidad</label>
+            </span>
+        </div>
+
+        <!-- Razon Social / Nombre Completo -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText formControlName="businessName">
+                <label for="float-input">Razon Social | Nombre Completo</label>
+            </span>
+        </div>
+
+        <!-- Nombre comercial -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText formControlName="tradeName">
+                <label for="float-input">Nombre comercial</label>
+            </span>
+        </div>
+
+        <!-- Telefono -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText formControlName="phone">
+                <label for="float-input">Teléfono</label>
+            </span>
+        </div>
+
+        <!-- Holding -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-right">
+                <i class="pi pi-search"></i>
+                <input id="float-input" pInputText placeholder="holding"/>
+                <label for="float-input">Holding</label>
+            </span>
+        </div>
+
+        <!-- Segmentación -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name" formControlName="segmentation"></p-dropdown>
+                <label for="dropdown">Segmentación</label>
+            </span>
+        </div>
+
+        <!--Migración SAP-->
+        <div class="flex-column col-12 md:col-4">
+
+            <div class="flex-row pb-1">
+                <p-checkbox formControlName="migrateSap" [binary]="true"></p-checkbox>
+                <label class="pl-4" for="ny">Migrar Información Sap</label>
+            </div>
+
+            <div class="flex-row" *ngIf="showInputSap()">
+                <p-checkbox formControlName="authorizeFedexAccount" [binary]="true"></p-checkbox>
+                <label class="pl-4" for="ny">Autorizar Fedex</label>
+            </div>
+
+        </div>
+
+        <!--Cuenta Fedex-->
+        <div class="field col-12 md:col-4" *ngIf="showInputSap()">
+            <span class="p-float-label">
+                <input id="cuentaFedex" type="text" pInputText formControlName="fedexAccount"> 
+                <label for="cuentaFedex">Cuenta FEDEX</label>
+            </span>
+        </div>
+
+        <!--Estado-->
+        <div class="field col-12 md:col-4" *ngIf="showInputSap()">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name" formControlName="status"></p-dropdown>
+                <label for="dropdown">Estado</label>
+            </span>
+        </div>
+
+    </div>
+
+    <!--Actualizar datos de cliente-->
+    <div class="col-12 text-center">
+        <button (click)="updateClient()" pButton class="border-round-2xl bg-black-alpha-90 px-5 py-3" label="Actualizar Cliente" icon="pi pi-pencil" iconPos="left">
+        </button>
+    </div>
+
+    
+</div>
