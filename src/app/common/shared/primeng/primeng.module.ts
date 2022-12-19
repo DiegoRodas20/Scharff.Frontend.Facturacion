@@ -13,6 +13,7 @@ import { MegaMenuModule } from 'primeng/megamenu';
 import { ListboxModule } from 'primeng/listbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DividerModule } from 'primeng/divider';
 
 const COMPONENTS = [
     AnimateModule,
@@ -28,7 +29,8 @@ const COMPONENTS = [
     MegaMenuModule,
     ListboxModule,
     DropdownModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    DividerModule
 ]
 
 @NgModule({

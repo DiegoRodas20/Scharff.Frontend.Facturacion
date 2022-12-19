@@ -1,21 +1,39 @@
-<div class="container-client">
-    <p-card class="card">
-        <h3 class="text-center text-xl">Hola, Juan Gonzales</h3>
+<div>
+    <h3 class="text-center text-xl">
+        Hola,
+        <span class="text-center text-xl text-700">Pedro Saramias Huarcaya</span>
+    </h3>
 
-        <div class="p-fluid grid px-3">
+    <div class="col-12 text-center">
+        <span class="p-float-label p-input-icon-right">
+            <i class="pi pi-search"></i>
+            <input class="border-round-xl border-none surface-300 w-25rem" id="inputtext-right" pInputText>
+            <label for="inputtext-right">¿Buscas un cliente?</label>
+        </span>
+    </div>
 
-            <!-- input buscar -->
-            <div class="field col-12">
-                <span class="p-float-label p-input-icon-right">
-                    <i class="pi pi-search"></i>
-                    <input class="border-round-3xl surface-300 px-4" type="text" id="inputtext-left" pInputText>
-                    <label class="mx-3"for="inputtext-left">¿Buscas un cliente?</label>
-                </span>
-            </div>
-        </div>
+    <div class="field col-12 text-center">
+        <button pButton (click)="showModalClient()" class="border-round-2xl bg-black-alpha-90 px-5 py-3"
+            label="Crear nuevo cliente">
+        </button>
+    </div>
 
-        <div class="flex justify-content-center">
-          <button (click)="showModalClient()" pButton class="bg-black-alpha-90 p-button-raised p-button-rounded px-4" label="Crear nuevo cliente"></button>
-      </div>
-    </p-card>
+    <div class="flex flex-column align-items-center">
+        <p-card class="m-2 w-6">
+            Prueba
+        </p-card>
+
+        <p-card class="m-2 w-6">
+            Prueba
+        </p-card>
+
+        <p-card class="m-2 w-6">
+            Prueba
+        </p-card>
+
+        <p-card class="m-2 w-6">
+            Prueba
+        </p-card>
+    </div>
+
 </div>

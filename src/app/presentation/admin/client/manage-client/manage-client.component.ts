@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
-import { HomeComponent } from '../components/register-customer/home.component';
+import { RegisterClientComponent } from './components/register-client/register-client.component';
 
 @Component({
     selector: 'app-manage-client',
     templateUrl: './manage-client.component.html',
-    styleUrls: [ './manage-client.component.scss'],
-    providers: [ DialogService ]
-
+    styleUrls: ['./manage-client.component.scss'],
+    providers: [DialogService]
 })
+
 export class ManageClientComponent implements OnInit {
 
     constructor(public dialogService: DialogService) { }
 
-    ngOnInit(): void {
+    ngOnInit() {
     }
 
     showModalClient() {
-        const ref = this.dialogService.open(HomeComponent, {
+        const ref = this.dialogService.open(RegisterClientComponent, {
             header: 'Registrar Cliente',
-            width: '75%'
+            width: '75rem',
         });
     }
 }

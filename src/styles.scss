@@ -1,18 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
 
+:root {
+    --primary-color: red;
+    --secondary-color: black;
+    --third-color: #e2e2e2;
+    --text-name-color: #959595;
+}
+
 * {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
 }
-/* You can add global styles to this file, and also import other style files */
 
 html,
 body {
     height: 100%;
+    background-color: #f3f3f3;
 }
 
 body {
     margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    background-color: #ddd;
+    height: 1px;
+    border: none;
 }
 
 .p-megamenu-horizontal .p-megamenu-root-list {
@@ -21,14 +36,21 @@ body {
 }
 
 .p-megamenu {
+    padding: 1.5rem;
     background: #e2e2e2;
     text-align: center;
 }
 
-.p-inputtext , .p-dropdown {
-    border: 1px solid rgba(179, 177, 177, 0.5) !important;
+.p-dialog .p-dialog-header .p-dialog-title {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
 }
 
-.p-dropdown > span {
-    border: transparent !important;
-}
+// .p-inputtext,
+// .p-dropdown {
+//     border: 1px solid rgba(179, 177, 177, 0.5) !important;
+// }
+
+// .p-dropdown>span {
+//     border: transparent !important;
+// }

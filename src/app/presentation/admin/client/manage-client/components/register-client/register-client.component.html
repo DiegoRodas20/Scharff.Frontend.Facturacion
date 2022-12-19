@@ -1,0 +1,122 @@
+<div class="card px-5">
+
+    <div class="pb-4">
+        <h3 class="text-base my-0 font-normal">
+            Agregar
+            <span class="text-base text-400">Datos Facturación</span>
+        </h3>
+        <hr>
+    </div>
+
+    <!-- Inputs Datos Facturacion -->
+    <div class="p-fluid grid">
+
+        <!-- Moneda -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"></p-dropdown>
+                <label for="dropdown">Moneda</label>
+            </span>
+        </div>
+
+        <!-- Grupo Empresarial/Categoria Cliente -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"></p-dropdown>
+                <label for="dropdown">Grupo Empresarial o Categoria Cliente</label>
+            </span>
+        </div>
+
+        <!-- Sector Economico -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"></p-dropdown>
+                <label for="dropdown">Sector Económico</label>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="pb-4">
+        <h3 class="text-base my-0 font-normal">
+            Agregar
+            <span class="text-base text-400">Datos Operativos</span>
+        </h3>
+        <hr>
+    </div>
+
+    <!-- Inputs Datos Operativos -->
+    <div class="p-fluid grid">
+
+        <!-- Tipo documento identidad -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"></p-dropdown>
+                <label for="dropdown">Tipo Documento Identidad</label>
+            </span>
+        </div>
+
+        <!-- Nro. Documento Identidad -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText>
+                <label for="float-input">Nro. Documento Identidad</label>
+            </span>
+        </div>
+
+        <!-- Razon Social / Nombre Completo -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText>
+                <label for="float-input">Razon Social | Nombre Completo</label>
+            </span>
+        </div>
+
+        <!-- Nombre comercial -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText>
+                <label for="float-input">Nombre comercial</label>
+            </span>
+        </div>
+
+        <!-- Telefono -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText>
+                <label for="float-input">Teléfono</label>
+            </span>
+        </div>
+
+        <!-- Holding -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText>
+                <label for="float-input">Holding</label>
+            </span>
+        </div>
+
+        <!-- Segmentación -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"></p-dropdown>
+                <label for="dropdown">Segmentación</label>
+            </span>
+        </div>
+
+        <!-- Codigo Unico -->
+        <!-- <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText>
+                <label for="float-input">Codigo único</label>
+            </span>
+        </div> -->
+
+    </div>
+
+    <div class="col-12 text-center">
+        <button pButton class="border-round-2xl bg-black-alpha-90 px-5 py-3" label="Crear Cliente">
+        </button>
+    </div>
+    
+</div>
