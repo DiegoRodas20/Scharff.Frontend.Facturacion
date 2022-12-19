@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup , FormBuilder ,Validators } from "@angular/forms";
 
-
-interface Currency {
+interface ListBox {
   name: string,
   code: string
 }
@@ -13,30 +13,75 @@ interface Currency {
 })
 export class HomeComponent implements OnInit {
 
-  display: boolean = false;
 
-  currency: Currency[];
-
+  /**
+   * Lista de Moneda
+   */
+  currency: ListBox[];
   selectedCurrency: any;
 
-  nroDocumentoIdentidad: string = '';
+  /**
+   * Lista de Documento Identidad
+   */
+  documentType: ListBox[];
 
+  /**
+   * Migrar SAP
+   */
   migrarSap: boolean = false;
 
-  autorizarCuentaFedex: boolean = false;
+  public form: FormGroup;
 
-  constructor() { 
+  constructor(fb:FormBuilder) { 
+
+    this.form = fb.group({
+      typeDocumentIdenty  : [ null, Validators.required ],
+      identificationNumber   : [ null, Validators.required ],
+      razonSocial             : [ null, Validators.required ],
+      telefono                : [ null, Validators.required ],
+      nombreComercial         : [ null, Validators.required ],
+      typeCurrency                  : [ null, Validators.required ],
+      grupoEmpresarial        : [ null ],
+      sectorEconomico         : [ null ],
+      holding                 : [ null ],
+      segmentacion            : [ null ],
+      autorizarCuentaFedex    : [ null ],
+      migrateSap              : [ false ],
+      status                  : [ null ]
+    })
+
     this.currency = [
-      {name: 'Sol', code: 'SL'},
-      {name: 'Dólar', code: 'DL'}
-  ];
+      { name: 'Sol', code: 'SL' },
+      { name: 'Dólar', code: 'DL' }
+    ];
+
+    this.documentType = [
+      {
+        name: 'Documento Nacional de Identidad', code: '0'
+      },
+      {
+        name: 'DNI', code: '1'
+      },
+      {
+        name: 'Carnet de extranjería', code: '4'
+      },
+      {
+        name: 'Pasaporte', code: '5'
+      },
+    ]
   }
 
   ngOnInit(): void {
   }
 
-  showDialog() {
-      this.display = true;
+  saveClient() {
+    /**
+     * Recibir datos de formulário
+     */
+  }
+
+  showInputSap() {
+    return this.form.value.migrateSap
   }
 
 }

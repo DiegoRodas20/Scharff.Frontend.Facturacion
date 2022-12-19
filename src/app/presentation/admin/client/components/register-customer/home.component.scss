@@ -1,24 +1,9 @@
-.contaniner {
-    width: 100% !important;
-    height: 100%;
-}
-
 .card_operativo--content, .card_factura--content {
     width: 100%;
     padding-top: 20px;
     display: grid;
-    grid-template-columns: auto auto auto;
     grid-row-gap: 30px;
     grid-column-gap: 60px;
-}
-
-.card_factura--content {
-    padding-bottom: 20px;
-}
-
-.card_facturacion, .card_operativo {
-    padding-left: 30px;
-    padding-right: 30px;
 }
 
 .card_titulo {
@@ -27,7 +12,7 @@
 }
 
 .card_titulo > span {
-    color: rgb(184, 180, 180);
+    color: rgb(172, 170, 170);
     font-weight: 300px;
 }
 
@@ -35,25 +20,7 @@ hr {
     opacity: 30%;
 }
 
-.check-sap {
-    padding-left: 20px;
-}
-
-.migracion {
-    display: flex;
-    flex-direction: column;
-}
-
 .create-client > button {
-    margin-top: 30px;
-    padding: 15px;
-    width: 25% !important;
-    border-radius: 15px;
     font-weight: 300;
     letter-spacing: 2px;
-}
-
-.check-migration {
-    flex-direction: row;
-    margin-bottom: 10px;
 }
