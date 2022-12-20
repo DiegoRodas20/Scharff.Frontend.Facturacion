@@ -13,7 +13,6 @@ import { InformationClientComponent } from './manage-client/components/detail-cl
 
 const COMPONENTS = [
     ManageClientComponent,
-    HomeComponent,
     RegisterClientComponent,
     DetailClientComponent,
     InformationClientComponent
