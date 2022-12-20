@@ -17,7 +17,6 @@ import { DividerModule } from 'primeng/divider';
 import { PasswordModule } from 'primeng/password';
 import { TabViewModule } from 'primeng/tabview';
 
-
 const COMPONENTS = [
     AnimateModule,
     AccordionModule,

@@ -13,13 +13,19 @@ import { RegisterClientComponent } from './manage-client/components/register-cli
 //detail-client
 import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.components';
 import { InformationClientComponent } from './manage-client/components/detail-client/information-client/information-client.component';
+import { ContactsClientComponent } from './manage-client/components/detail-client/contacts-client/contacts-client.component';
+import { CreditLineComponent } from './manage-client/components/detail-client/credit-line/credit-line.component';
+import { DirectionsClientComponent } from './manage-client/components/detail-client/directions-client/directions-client.component';
 
 const COMPONENTS = [
     ManageClientComponent,
     RegisterClientComponent,
     DetailClientComponent,
     InformationClientComponent,
-    UpdateClientComponent
+    UpdateClientComponent,
+    ContactsClientComponent,
+    CreditLineComponent,
+    DirectionsClientComponent
 ]
 
 @NgModule({

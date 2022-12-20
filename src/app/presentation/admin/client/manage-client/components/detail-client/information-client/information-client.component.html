@@ -36,13 +36,55 @@
     <h3>Datos operativos</h3>
     <p-divider></p-divider>
     <div class="flex">
-      <div class="flex-1 flex">
+      <div class="flex-1 flex flex-column gap-4">
+        <div class="flex-1 flex">
           <span class="flex-initial w-4">
-            Codigo unico
+            Codigo Unico
           </span>
           <span class="flex-initial pl-5">
-            1993129124
+            12931123124
           </span>
+        </div>
+        <div class="flex-1 flex">
+          <span class="flex-initial w-4">
+            RUC
+          </span>
+          <span class="flex-initial pl-5">
+            20607202412
+          </span>
+        </div>
+        <div class="flex-1 flex">
+          <span class="flex-initial w-4">
+            Razon social
+          </span>
+          <span class="flex-initial pl-5">
+              La tienda de Pedro
+          </span>
+        </div>
+        <div class="flex-1 flex">
+          <span class="flex-initial w-4">
+            Nombre comercial
+          </span>
+          <span class="flex-initial pl-5">
+            La tienda de Pedrito
+          </span>
+        </div>
+        <div class="flex-1 flex">
+          <span class="flex-initial w-4">
+            Cuenta FEDEX
+          </span>
+          <span class="flex-initial pl-5">
+            191-233445-33121
+          </span>
+        </div>
+        <div class="flex-1 flex">
+          <span class="flex-initial w-4">
+            Segmentación
+          </span>
+          <span class="flex-initial pl-5">
+            CXC CLIENTES MEDIOS
+          </span>
+        </div>
       </div>
 
       <div class="flex-1 flex flex-column gap-4">
@@ -60,7 +102,7 @@
               Telefono
             </span>
             <span class="flex-initial pl-5">
-              920994999
+              920 994 999
             </span>
         </div>
 
@@ -94,8 +136,11 @@
 
     <div class="field col-12 text-center mt-5" (click)="showModalUpdateClient()">
       <button pButton class="border-round-2xl bg-black-alpha-90 px-5 py-3 col-3"
-          label="Actualizar">
+          label="Actualizar" icon="pi pi-pencil" iconPos="left">
       </button>
   </div>
+
+  <p-checkbox name="groupname"></p-checkbox>
+  <p-checkbox name="groupname"></p-checkbox>
 
 </p-card>
