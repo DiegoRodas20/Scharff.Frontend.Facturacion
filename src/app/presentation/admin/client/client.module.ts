@@ -7,11 +7,17 @@ import { ManageClientComponent } from './manage-client/manage-client.component';
 import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
 import { HomeComponent } from './components/register-customer/home.component';
 import { RegisterClientComponent } from './manage-client/components/register-client/register-client.component';
+//detail-client
+import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.components';
+import { InformationClientComponent } from './manage-client/components/detail-client/information-client/information-client.component';
+
 
 const COMPONENTS = [
     ManageClientComponent,
     HomeComponent,
-    RegisterClientComponent
+    RegisterClientComponent,
+    DetailClientComponent,
+    InformationClientComponent
 ]
 
 @NgModule({
@@ -24,7 +30,7 @@ const COMPONENTS = [
         FormsModule,
         ReactiveFormsModule,
         PrimeNGModule,
-        ClientRoutingModule
+        ClientRoutingModule,
     ],
     entryComponents: [
         HomeComponent

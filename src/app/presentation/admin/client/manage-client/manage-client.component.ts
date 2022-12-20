@@ -11,6 +11,8 @@ import { RegisterClientComponent } from './components/register-client/register-c
 
 export class ManageClientComponent implements OnInit {
 
+    isVisibleDetailClient = false;
+
     constructor(public dialogService: DialogService) { }
 
     ngOnInit() {
@@ -21,5 +23,9 @@ export class ManageClientComponent implements OnInit {
             header: 'Registrar Cliente',
             width: '75rem',
         });
+    }
+
+    showDetailClient() {
+        this.isVisibleDetailClient = true;
     }
 }

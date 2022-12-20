@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!isVisibleDetailClient">
     <h3 class="text-center text-xl">
         Hola,
         <span class="text-center text-xl text-700">Pedro Saramias Huarcaya</span>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="flex flex-column align-items-center">
-        <p-card class="m-2 w-6">
+        <p-card  (click)="showDetailClient()" class="m-2 w-6">
             Prueba
         </p-card>
 
@@ -37,3 +37,5 @@
     </div>
 
 </div>
+
+<app-detail-client *ngIf="isVisibleDetailClient"></app-detail-client>

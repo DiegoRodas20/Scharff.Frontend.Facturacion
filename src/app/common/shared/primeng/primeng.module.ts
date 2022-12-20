@@ -14,6 +14,9 @@ import { ListboxModule } from 'primeng/listbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DividerModule } from 'primeng/divider';
+import { PasswordModule } from 'primeng/password';
+import { TabViewModule } from 'primeng/tabview';
+
 
 const COMPONENTS = [
     AnimateModule,
@@ -30,7 +33,9 @@ const COMPONENTS = [
     ListboxModule,
     DropdownModule,
     DynamicDialogModule,
-    DividerModule
+    DividerModule,
+    PasswordModule,
+    TabViewModule,
 ]
 
 @NgModule({
