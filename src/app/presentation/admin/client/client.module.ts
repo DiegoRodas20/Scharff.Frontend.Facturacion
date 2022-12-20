@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClientRoutingModule } from './client.routing';
 import { ManageClientComponent } from './manage-client/manage-client.component';
 import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
-import { HomeComponent } from './components/register-customer/home.component';
 import { RegisterClientComponent } from './manage-client/components/register-client/register-client.component';
 //detail-client
 import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.components';
@@ -31,9 +30,6 @@ const COMPONENTS = [
         ReactiveFormsModule,
         PrimeNGModule,
         ClientRoutingModule,
-    ],
-    entryComponents: [
-        HomeComponent
     ]
 })
 

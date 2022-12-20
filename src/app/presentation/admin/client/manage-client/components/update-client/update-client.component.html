@@ -48,6 +48,14 @@
     <!-- Inputs Datos Operativos -->
     <div class="p-fluid grid">
 
+        <!-- Código único -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="disabled-input" type="text" pInputText [disabled]="isUniqueCode" formControlName="uniqueCode"/>
+                <label for="disabled-input">Código único</label>
+            </span>
+        </div>
+
         <!-- Tipo documento identidad -->
         <div class="field col-12 md:col-4">
             <span class="p-float-label">
@@ -138,9 +146,11 @@
 
     </div>
 
+    <!--Actualizar datos de cliente-->
     <div class="col-12 text-center">
-        <button (click)="saveClient()" pButton class="border-round-2xl bg-black-alpha-90 px-5 py-3" label="Crear Cliente">
+        <button (click)="updateClient()" pButton class="border-round-2xl bg-black-alpha-90 px-5 py-3" label="Actualizar Cliente" icon="pi pi-pencil" iconPos="left">
         </button>
     </div>
+
     
 </div>
