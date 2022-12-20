@@ -5,17 +5,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClientRoutingModule } from './client.routing';
 import { ManageClientComponent } from './manage-client/manage-client.component';
 import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
+
+//Create and update client
+import { UpdateClientComponent } from './manage-client/components/update-client/update-client.component';
 import { RegisterClientComponent } from './manage-client/components/register-client/register-client.component';
+
 //detail-client
 import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.components';
 import { InformationClientComponent } from './manage-client/components/detail-client/information-client/information-client.component';
-
 
 const COMPONENTS = [
     ManageClientComponent,
     RegisterClientComponent,
     DetailClientComponent,
-    InformationClientComponent
+    InformationClientComponent,
+    UpdateClientComponent
 ]
 
 @NgModule({
