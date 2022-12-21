@@ -28,4 +28,8 @@ export class ManageClientComponent implements OnInit {
     showDetailClient() {
         this.isVisibleDetailClient = true;
     }
+
+    showSearchClient() {
+      this.isVisibleDetailClient = false;
+    }
 }

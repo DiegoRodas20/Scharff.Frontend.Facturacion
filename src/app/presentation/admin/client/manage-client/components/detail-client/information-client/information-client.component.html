@@ -134,13 +134,18 @@
       </div>
     </div>
 
+    <div class="field-checkbox mt-4">
+      <p-checkbox name="group1" value="New York" inputId="ny"></p-checkbox>
+      <label for="ny">Sin verificacion SAP</label>
+    </div>
+    <div class="field-checkbox">
+      <p-checkbox name="group1" value="San Francisco" inputId="sf"></p-checkbox>
+      <label for="sf">Sin verificacion SUNAT</label>
+    </div>
+
     <div class="field col-12 text-center mt-5" (click)="showModalUpdateClient()">
       <button pButton class="border-round-2xl bg-black-alpha-90 px-5 py-3 col-3"
           label="Actualizar" icon="pi pi-pencil" iconPos="left">
       </button>
   </div>
-
-  <p-checkbox name="groupname"></p-checkbox>
-  <p-checkbox name="groupname"></p-checkbox>
-
 </p-card>
