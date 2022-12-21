@@ -27,4 +27,8 @@ export class ClientWebRepository extends ClientRepository {
         .post<ClientModel[]>('', body)
         .pipe(flatMap((item) => item))
     }
+
+    getClientById(): Observable<ClientModel> {
+      throw new Error('Method not implemented.');
+    }
 }
