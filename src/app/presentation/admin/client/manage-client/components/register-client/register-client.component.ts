@@ -7,6 +7,7 @@ import { GetAllBusinessGroupUsecase } from 'src/app/core/usecase/client/get-all-
 import { GetAllEconomicSectorUsecase } from 'src/app/core/usecase/client/get-all-economicSector.usecase';
 import { GetAllTypeDocumentIdentyUsecase } from 'src/app/core/usecase/client/get-all-typesDocumentIdenty.usecase';
 import { GetAllSegmentationUsecase } from 'src/app/core/usecase/client/get-all-segmentation.usecase';
+import { ClientModel } from 'src/app/core/models/client.model';
 
 @Component({
     selector: 'app-register-client',
@@ -107,6 +108,27 @@ export class RegisterClientComponent implements OnInit {
             return
         }
 
+        const form = this.formClient.value
+        
+        const Client:  ClientModel = {
+            businessName: form.businessName,
+            typeDocumentIdenty: form.typeDocumentIdenty.id,
+            identificationNumber: form.identificationNumber,
+            phone: form.phone,
+            tradeName: form.tradeName,
+            typeCurrency: form.typeCurrency.id,
+            businessGroup: form.businessGroup.id,
+            economicSector: form.economicSector.id,
+            holding: form.holding,
+            segmentation: form.segmentation.id,
+            authorizeFedexAccount: form.authorizeFedexAccount,
+            migrateSap: form.migrateSap,
+            status: form.migrateSap,
+            fedexAccount: form.fedexAccount,    
+        }
+
+        console.log('DATOS DE CLIENTE')
+        console.log(Client)
         this._createClient.execute(this.formClient.value).subscribe((value: any) => {
           this.formClient.reset()
         })

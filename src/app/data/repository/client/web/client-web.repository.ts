@@ -22,9 +22,9 @@ export class ClientWebRepository extends ClientRepository {
         return from([])
     }
 
-    createClient(body: ClientModel): Observable<ClientModel> {
+    createClient(body: any): Observable<ClientModel> {
         return this.http
-        .get<ClientModel[]>('')
+        .post<ClientModel[]>('', body)
         .pipe(flatMap((item) => item))
     }
 }
