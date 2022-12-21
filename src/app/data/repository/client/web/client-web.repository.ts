@@ -27,25 +27,7 @@ export class ClientWebRepository extends ClientRepository {
         .get<ClientModel[]>('')
         .pipe(flatMap((item) => item))
     }
-}
-            'codigoUnico': '00441',
-            'ruc': '20500624972',
-            'razonSocial': 'Las Torres del cruzero'
-        },
-        {
-            'codigoUnico': '00441',
-            'ruc': '20500624972',
-            'razonSocial': 'Las Torres del cruzero'
-        }
-    ];
 
-    constructor() {
-        super();
-    }
-
-    getAllClients(): Observable<ClientModel> {
-        return from(this.clients)
-    }
     getClientById(): Observable<ClientModel> {
       throw new Error('Method not implemented.');
     }
