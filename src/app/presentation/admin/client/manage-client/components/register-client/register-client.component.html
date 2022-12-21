@@ -35,7 +35,7 @@
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
                     <p-dropdown  [options]="economicSector" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
-                        formControlName="economicSector" [showClear]="true"></p-dropdown>
+                        formControlName="codeEconomicSector" [showClear]="true"></p-dropdown>
                     <label for="dropdown">Sector Económico</label>
                 </span>
             </div>
@@ -57,7 +57,7 @@
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
                     <p-dropdown [options]="typeDocumentIdenty" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
-                        formControlName="typeDocumentIdenty" [showClear]="true"></p-dropdown>
+                        formControlName="typeDocumentIdentity" [showClear]="true"></p-dropdown>
                     <label for="dropdown">Tipo Documento Identidad</label>
                 </span>
             </div>
@@ -65,7 +65,7 @@
             <!-- Nro. Documento Identidad -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <input id="float-input" pInputText formControlName="identificationNumber">
+                    <input id="float-input" pInputText formControlName="numberDocumentIdentity">
                     <label for="float-input">Nro. Documento Identidad</label>
                 </span>
             </div>
@@ -73,7 +73,7 @@
             <!-- Razon Social / Nombre Completo -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <input id="float-input" pInputText formControlName="businessName">
+                    <input id="float-input" pInputText formControlName="companyName">
                     <label for="float-input">Razon Social | Nombre Completo</label>
                 </span>
             </div>
@@ -98,9 +98,9 @@
             <!-- Holding -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label p-input-icon-right">
-                    <i class="pi pi-search"></i>
-                    <input id="float-input" pInputText placeholder="holding" />
-                    <label for="float-input">Holding</label>
+                    <p-dropdown [options]="holding" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
+                        formControlName="holding" [showClear]="true" [filter]="true"></p-dropdown>
+                    <label for="dropdown">Holding</label>
                 </span>
             </div>
 
@@ -108,7 +108,7 @@
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
                     <p-dropdown [options]="segmentation" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
-                        formControlName="segmentation" [showClear]="true"></p-dropdown>
+                        formControlName="codeSegmentation" [showClear]="true"></p-dropdown>
                     <label for="dropdown">Segmentación</label>
                 </span>
             </div>
@@ -126,7 +126,7 @@
             <div class="field col-12 md:col-4 text-center align-self-center">
 
                 <div class="flex-row" *ngIf="showInputSap()">
-                    <p-checkbox formControlName="authorizeFedexAccount" [binary]="true"></p-checkbox>
+                    <p-checkbox formControlName="accountAuthorizeFedex" [binary]="true"></p-checkbox>
                     <label class="pl-2">Autorizar Fedex</label>
                 </div>
 
@@ -135,7 +135,7 @@
             <!-- Cuenta Fedex -->
             <div class="field col-12 md:col-4" *ngIf="showInputSap()">
                 <span class="p-float-label">
-                    <input id="cuentaFedex" type="text" pInputText formControlName="fedexAccount">
+                    <input id="cuentaFedex" type="text" pInputText formControlName="accountFedex">
                     <label for="cuentaFedex">Cuenta FEDEX</label>
                 </span>
             </div>
@@ -144,7 +144,7 @@
             <div class="field col-12 md:col-4" *ngIf="showInputSap()">
                 <span class="p-float-label">
                     <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"
-                        formControlName="status"></p-dropdown>
+                        formControlName="statusClient"></p-dropdown>
                     <label for="dropdown">Estado</label>
                 </span>
             </div>
