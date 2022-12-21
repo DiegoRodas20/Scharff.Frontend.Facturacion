@@ -39,7 +39,13 @@ export class ManageClientComponent implements OnInit {
         })
     }
 
-    showDetailClient() {
+  //   getClientById() {
+  //     this._getClientById.execute().subscribe((value: ClientModel) => {
+  //         this.getClientById.push(value)
+  //     })
+  // }
+
+    showDetailClient(): void {
         this.isVisibleDetailClient = true;
     }
 

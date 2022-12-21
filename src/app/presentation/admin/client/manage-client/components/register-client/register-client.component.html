@@ -15,8 +15,8 @@
             <!-- Moneda -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown [autoDisplayFirst]="false" optionLabel="name" formControlName="typeCurrency"
-                        class="ng-invalid ng-dirty" [showClear]="true"></p-dropdown>
+                    <p-dropdown [options]="coins" [autoDisplayFirst]="true" optionLabel="description" 
+                        formControlName="typeCurrency" [showClear]="true"></p-dropdown>
                     <label>Moneda</label>
                 </span>
                 <error-message [formControlError]="formClient.controls['typeCurrency']"></error-message>
@@ -25,7 +25,7 @@
             <!-- Grupo Empresarial/Categoria Cliente -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"
+                    <p-dropdown [options]="businessGroups" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
                         formControlName="businessGroup" [showClear]="true"></p-dropdown>
                     <label for="dropdown">Grupo Empresarial o Categoria Cliente</label>
                 </span>
@@ -34,7 +34,7 @@
             <!-- Sector Economico -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"
+                    <p-dropdown  [options]="economicSector" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
                         formControlName="economicSector" [showClear]="true"></p-dropdown>
                     <label for="dropdown">Sector Económico</label>
                 </span>
@@ -56,7 +56,7 @@
             <!-- Tipo documento identidad -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"
+                    <p-dropdown [options]="typeDocumentIdenty" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
                         formControlName="typeDocumentIdenty" [showClear]="true"></p-dropdown>
                     <label for="dropdown">Tipo Documento Identidad</label>
                 </span>
@@ -107,8 +107,8 @@
             <!-- Segmentación -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"
-                        formControlName="segmentation"></p-dropdown>
+                    <p-dropdown [options]="segmentation" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
+                        formControlName="segmentation" [showClear]="true"></p-dropdown>
                     <label for="dropdown">Segmentación</label>
                 </span>
             </div>

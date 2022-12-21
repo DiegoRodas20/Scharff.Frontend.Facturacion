@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit , Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail-client',
@@ -7,9 +8,17 @@ import { Component, EventEmitter, OnInit , Output } from '@angular/core';
 })
 
 export class DetailClientComponent implements OnInit {
-  @Output() onClickBack = new EventEmitter();
+    @Output() onClickBack = new EventEmitter();
 
-  ngOnInit() {
+    constructor(
+      private _router: Router,
+    ) { }
+
+    ngOnInit() {
+    }
+
+    informationClient() {
+      this._router.navigate(['/admin/client/'])
   }
 
 }

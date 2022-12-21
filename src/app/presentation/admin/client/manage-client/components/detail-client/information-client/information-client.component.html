@@ -145,19 +145,83 @@
     </div>
 
     <div class="field-checkbox mt-4">
-        <p-checkbox name="group1" value="New York" inputId="ny"></p-checkbox>
+        <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
         <label for="ny">Sin verificacion SAP</label>
     </div>
 
     <div class="field-checkbox">
-        <p-checkbox name="group1" value="San Francisco" inputId="sf"></p-checkbox>
+        <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
         <label for="sf">Sin verificacion SUNAT</label>
     </div>
 
+    <!-- ----------colapsable---------- -->
+
+    <span class="p-menuitem-text cursor-pointer" (click)="toggleAdditionalData()">Datos Adicionales</span>
+
+    <!-- -------desplegable checkbox------------- -->
+
+    <div *ngIf="isVisibleAdditionalData">
+        <div class="flex gap-6">
+            <div class="field-checkbox mt-4">
+              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+              <label for="ny">Clientes</label>
+            </div>
+
+            <div class="field-checkbox mt-4">
+                <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                <label for="sf">Almacen</label>
+            </div>
+
+            <div class="field-checkbox mt-4">
+              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+              <label for="ny">Agencia Aduanas</label>
+            </div>
+
+            <div class="field-checkbox mt-4">
+                  <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                  <label for="sf">Transporte Aereo</label>
+            </div>
+
+            <div class="field-checkbox mt-4">
+                <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                <label for="ny">Consignatario</label>
+            </div>
+
+        </div>
+
+        <div class="flex gap-6">
+
+            <div class="field-checkbox mt-4">
+                <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                <label for="sf">Transporte Maritimo</label>
+           </div>
+
+            <div class="field-checkbox mt-4">
+              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+              <label for="ny">Shipper</label>
+            </div>
+
+            <div class="field-checkbox mt-4">
+              <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+              <label for="sf">Para visto bueno</label>
+            </div>
+
+            <div class="field-checkbox mt-4">
+              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+              <label for="ny">Notify</label>
+            </div>
+
+            <div class="field-checkbox mt-4">
+              <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+              <label for="sf">Embarcador</label>
+            </div>
+        </div>
+    </div>
+
     <div class="col-12 text-center py-3">
-        <button pButton class="b-primary px-5 py-2" icon="pi pi-pencil" (click)="showModalUpdateClient()"
-            label="Actualizar">
-        </button>
+      <button pButton class="b-primary px-5 py-2" icon="pi pi-pencil" (click)="showModalUpdateClient()"
+          label="Actualizar cliente">
+      </button>
     </div>
 
 </p-card>
