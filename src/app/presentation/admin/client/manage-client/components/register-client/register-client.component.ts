@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { RegisterClientsUsecase } from 'src/app/core/usecase/client/register-clients.usecase';
+import { GetAllCoinsUsecase } from 'src/app/core/usecase/client/get-all-coins.usecase';
+import { ParamsModel } from 'src/app/core/models/params.models';
+import { GetAllBusinessGroupUsecase } from 'src/app/core/usecase/client/get-all-businessGroup.usecase';
+import { GetAllEconomicSectorUsecase } from 'src/app/core/usecase/client/get-all-economicSector.usecase';
+import { GetAllTypeDocumentIdentyUsecase } from 'src/app/core/usecase/client/get-all-typesDocumentIdenty.usecase';
+import { GetAllSegmentationUsecase } from 'src/app/core/usecase/client/get-all-segmentation.usecase';
 
 @Component({
     selector: 'app-register-client',
@@ -10,12 +17,38 @@ export class RegisterClientComponent implements OnInit {
 
     formClient: FormGroup;
 
+    // Monedas
+    coins:  Array<ParamsModel> = []
+
+    // Grupo Empresarial
+    businessGroups:  Array<ParamsModel> = []
+
+    // Sector Económico
+    economicSector: Array<ParamsModel> = []
+
+    // Tipo Documento Identidad
+    typeDocumentIdenty: Array<ParamsModel> = []
+
+    // Segmentación
+    segmentation: Array<ParamsModel> = []
+
     constructor(
-        private _formBuilder: FormBuilder
+        private _formBuilder: FormBuilder,
+        private _createClient: RegisterClientsUsecase,
+        private _getAllCoins: GetAllCoinsUsecase,
+        private _getAllBusinessGroups: GetAllBusinessGroupUsecase,
+        private _getAllEconomicSector: GetAllEconomicSectorUsecase,
+        private _getAllTypeDocumentIdenty: GetAllTypeDocumentIdentyUsecase,
+        private _getAllSegmentation: GetAllSegmentationUsecase
     ) { }
 
     ngOnInit() {
         this.createFormClient()
+        this.getAllCoins()
+        this.getAllBusinessGroup()
+        this.getEconomicSector()
+        this.getAllTypeDocumentIdenty()
+        this.getAllSegmentation()
     }
 
     createFormClient() {
@@ -37,6 +70,35 @@ export class RegisterClientComponent implements OnInit {
         })
     }
 
+    getAllCoins() {
+        this._getAllCoins.execute().subscribe((value: ParamsModel) => {
+            this.coins.push(value)
+        })
+    }
+
+    getAllBusinessGroup(){
+        this._getAllBusinessGroups.execute().subscribe((value: ParamsModel) => {
+            this.businessGroups.push(value)
+        })
+    }
+
+    getEconomicSector(){
+        this._getAllEconomicSector.execute().subscribe((value: ParamsModel) => {
+            this.economicSector.push(value)
+        })
+    }
+
+    getAllTypeDocumentIdenty(){
+        this._getAllTypeDocumentIdenty.execute().subscribe((value: ParamsModel) => {
+            this.typeDocumentIdenty.push(value)
+        })
+    }
+
+    getAllSegmentation(){
+        this._getAllSegmentation.execute().subscribe((value: ParamsModel) => {
+            this.segmentation.push(value)
+        })
+    }
 
     registerClient() {
 
@@ -44,6 +106,10 @@ export class RegisterClientComponent implements OnInit {
             this.formClient.markAllAsTouched()
             return
         }
+
+        this._createClient.execute(this.formClient.value).subscribe((value: any) => {
+          this.formClient.reset()
+        })
         
     }
 

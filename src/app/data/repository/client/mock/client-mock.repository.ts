@@ -45,4 +45,9 @@ export class ClientMockRepository extends ClientRepository {
     getAllClients(): Observable<ClientModel> {
         return from(this.clients)
     }
+
+    createClient(body: ClientModel): any {
+        console.log('RESPONSE', body)
+        return from([{}])
+    }
 }
