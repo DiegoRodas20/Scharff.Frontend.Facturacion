@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ClientModel } from 'src/app/core/models/client.model';
-import { GetAllClientsUsecase } from 'src/app/core/usecase/get-all-clients.usecase';
+import { GetAllClientsUsecase } from 'src/app/core/usecase/client/get-all-clients.usecase';
 import { RegisterClientComponent } from './components/register-client/register-client.component';
 
 @Component({
