@@ -7,32 +7,52 @@
     <div class="col-12 text-center">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-search"></i>
-            <input class="border-round-xl border-none surface-300 w-25rem" id="inputtext-right" pInputText>
+            <input class="search" id="inputtext-right" pInputText>
             <label for="inputtext-right">¿Buscas un cliente?</label>
         </span>
     </div>
 
     <div class="field col-12 text-center">
-        <button pButton (click)="showModalClient()" class="border-round-2xl bg-black-alpha-90 px-5 py-3"
-            label="Crear nuevo cliente">
+        <button pButton (click)="showModalClient()" class="b-primary px-5 py-2" label="Crear Cliente">
         </button>
     </div>
 
     <div class="flex flex-column align-items-center">
-        <p-card  (click)="showDetailClient()" class="m-2 w-6">
-            Prueba
-        </p-card>
 
-        <p-card class="m-2 w-6">
-            Prueba
-        </p-card>
+        <p-card *ngFor="let client of clients" class="elevation-card m-2 w-6">
+            <div class="grid">
 
-        <p-card class="m-2 w-6">
-            Prueba
-        </p-card>
+                <!-- Point Active -->
+                <div class="col-12 md:col-1 align-self-center px-5">
+                    <div class="point-active"></div>
+                </div>
 
-        <p-card class="m-2 w-6">
-            Prueba
+                <!-- Codigo Unico -->
+                <div class="col-12 md:col-3">
+                    <span class="text-500">Código único</span>
+                    <div class="font-semibold">{{client.codigoUnico}}</div>
+                </div>
+
+                <!-- RUC -->
+                <div class="col-12 md:col-3">
+                    <span class="text-500">RUC</span>
+                    <div class="font-semibold">{{client.ruc}}</div>
+                </div>
+
+                <!-- Razon Social -->
+                <div class="col-12 md:col-3">
+                    <span class="text-500">Razon Social</span>
+                    <div class="font-semibold">{{client.razonSocial}}</div>
+                </div>
+
+                <!-- Options -->
+                <div class="col-12 md:col-2 text-center">
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"
+                        (click)="showDetailClient()"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
+                </div>
+
+            </div>
         </p-card>
     </div>
 

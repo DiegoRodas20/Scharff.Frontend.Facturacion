@@ -1,24 +1,78 @@
+<div class="px-8">
 
-<div class="card px-6 py-3">
-  <i class="pi pi-arrow-left cursor-pointer" (click)="onClickBack.emit()"></i>
+    <div class="flex flex-wrap justify-content-between">
 
-  <h5 class="text-center">Cliente : Pedro Saramias Huarcaya</h5>
+        <div class="flex align-items-center justify-content-center">
 
-  <p-tabView>
-      <p-tabPanel header="Informacion de clientes">
-          <app-information-client></app-information-client>
-      </p-tabPanel>
+            <div>
+                <button pButton pRipple icon="pi pi-arrow-left" class="p-button-rounded p-button-text text-color"
+                    (click)="onClickBack.emit()"></button>
+            </div>
 
-      <p-tabPanel header="Lineas de credito">
-          <app-credit-line></app-credit-line>
-      </p-tabPanel>
+            <div class="px-3">
+                <h3 class="text-xl text-700">
+                    Cliente > 00441 - Las Torres del cruzero
+                </h3>
+            </div>
 
-      <p-tabPanel header="Contactos">
-          <app-contacts-client></app-contacts-client>
-      </p-tabPanel>
+            <div class="point-active"></div>
 
-      <p-tabPanel header="Direcciones">
-          <app-directions-client></app-directions-client>
-      </p-tabPanel>
-  </p-tabView>
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+
+            <div class="pr-2">
+                <div class="surface-overlay text-center py-2 border-round-xl">
+                    <i class="pi pi-ban pr-2 text-red-500"></i>
+                    <img src="../../../../../../../assets/img/SAP.png" class="img-icon">
+                </div>
+            </div>
+
+            <div>
+                <div class="surface-overlay text-center px-3 py-2 border-round-xl">
+                    <i class="pi pi-ban pr-2 text-red-500"></i>
+                    <img src="../../../../../../../assets/img/SUNAT.png" class="img-icon">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="py-4">
+        <p-tabView>
+            <p-tabPanel header="Informacion de clientes">
+                <app-information-client></app-information-client>
+            </p-tabPanel>
+
+            <p-tabPanel header="Lineas de credito">
+            </p-tabPanel>
+
+            <p-tabPanel header="Contactos">
+            </p-tabPanel>
+
+            <p-tabPanel header="Direcciones">
+            </p-tabPanel>
+
+        </p-tabView>
+    </div>
+    
+    <!-- <p-tabView>
+        <p-tabPanel header="Informacion de clientes">
+            <app-information-client></app-information-client>
+        </p-tabPanel>
+
+        <p-tabPanel header="Lineas de credito">
+            <app-credit-line></app-credit-line>
+        </p-tabPanel>
+
+        <p-tabPanel header="Contactos">
+            <app-contacts-client></app-contacts-client>
+        </p-tabPanel>
+
+        <p-tabPanel header="Direcciones">
+            <app-directions-client></app-directions-client>
+        </p-tabPanel>
+    </p-tabView> -->
+
 </div>

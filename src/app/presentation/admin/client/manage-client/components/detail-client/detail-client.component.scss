@@ -1,39 +1,38 @@
 :host ::ng-deep {
+    
     .p-tabview .p-tabview-nav li .p-tabview-nav-link {
-        background-color: #f3f3f3;
+        background-color: transparent;
         border: none;
         justify-content: center;
         height: 50px;
+    }
 
-    }
     .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
-        border: 1px solid;
-        border-radius: 10px;
+        background-color: transparent !important;
+        color: #000000 !important;
+        border: 1px solid !important;
+        border-radius: 100px;
     }
+
     .p-tabview .p-tabview-panels {
-        background-color: #f3f3f3;
+        background-color: transparent;
     }
+
     .p-tabview {
         width: 100%;
     }
+
     .p-tabview .p-tabview-nav li {
         width: 25%;
     }
+
     .p-tabview .p-tabview-nav {
         border: none;
         background-color: transparent;
     }
+
     .p-tabview .p-tabview-nav .p-tabview-ink-bar {
         display: none;
     }
 
-}
-
-.pi-arrow-left {
-  position: absolute;
-  top: 30px;
-  font-size: 2rem
-}
-.card {
-  position:relative;
 }

@@ -5,8 +5,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './common/shared/shared.module';
 import { AuthModule } from './presentation/auth/auth.module';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataModule } from './data/data.module';
+import { CoreModule } from './core/core.module';
+import { ClientRepository } from './core/repositories/client.repository';
+import { ClientMockRepository } from './data/repository/client/mock/client-mock.repository';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+        
+    FormsModule,
+    ReactiveFormsModule,
+
     SharedModule,
     AuthModule,
-    FormsModule,
-    ReactiveFormsModule
+
+    DataModule,
+    CoreModule,
   ],
-  providers: [],
+  providers: [
+    {provide: ClientRepository, useClass: ClientMockRepository}
+  ],
   bootstrap: [AppComponent]
 })
 

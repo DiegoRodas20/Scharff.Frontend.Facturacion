@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
+import { ClientModel } from 'src/app/core/models/client.model';
+import { GetAllClientsUsecase } from 'src/app/core/usecase/get-all-clients.usecase';
 import { RegisterClientComponent } from './components/register-client/register-client.component';
 
 @Component({
@@ -13,9 +15,15 @@ export class ManageClientComponent implements OnInit {
 
     isVisibleDetailClient = false;
 
-    constructor(public dialogService: DialogService) { }
+    clients:  Array<ClientModel> = []
+
+    constructor(
+        public dialogService: DialogService,
+        private _getAllClients: GetAllClientsUsecase
+    ) { }
 
     ngOnInit() {
+        this.getAllClients()
     }
 
     showModalClient() {
@@ -25,11 +33,17 @@ export class ManageClientComponent implements OnInit {
         });
     }
 
+    getAllClients() {
+        this._getAllClients.execute().subscribe((value: ClientModel) => {
+            this.clients.push(value)
+        })
+    }
+
     showDetailClient() {
         this.isVisibleDetailClient = true;
     }
 
     showSearchClient() {
-      this.isVisibleDetailClient = false;
+        this.isVisibleDetailClient = false;
     }
 }

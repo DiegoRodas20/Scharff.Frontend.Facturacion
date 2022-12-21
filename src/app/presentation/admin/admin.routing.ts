@@ -2,12 +2,20 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from "./layout/layout.component";
 
+const DEFAULT_ROUTE: string = 'client'
 
 const routes: Routes = [
     {
         path: '',
         component: LayoutComponent,
         children: [
+
+            // Ruta Default
+            {
+                path: '',
+                redirectTo: DEFAULT_ROUTE,
+                pathMatch: 'full'
+            },
 
             // Client Module
             {

@@ -20,7 +20,6 @@ const COMPONENTS = [
         FormsModule,
         ReactiveFormsModule,
         PrimeNGModule,
-        
         AdminRoutingModule
     ]
 })

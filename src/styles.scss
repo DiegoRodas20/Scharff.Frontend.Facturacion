@@ -7,19 +7,23 @@
     --text-name-color: #959595;
 }
 
-* {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+@font-face {
+    font-family: 'CarnasW03';
+    src: url('assets/fonts/CarnasW03-Light.woff') format('woff');
 }
 
-html,
-body {
+
+* {
+    font-family: 'CarnasW03';
+}
+
+html {
     height: 100%;
-    background-color: #f3f3f3;
 }
 
 body {
     margin: 0;
+    background-color: #f3f3f3;
     width: 100%;
     height: 100%;
 }
@@ -46,11 +50,58 @@ hr {
     padding-right: 2rem !important;
 }
 
-// .p-inputtext,
-// .p-dropdown {
-//     border: 1px solid rgba(179, 177, 177, 0.5) !important;
-// }
+// Image Icon
+.img-icon{
+    width: 40%;
+    height: auto;
+}
 
-// .p-dropdown>span {
-//     border: transparent !important;
-// }
+// Buttons
+
+.b-primary {
+    background-color: #000000 !important;
+    border-radius: 100px;
+}
+
+.b-transparent {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: 1px solid !important;
+    border-radius: 100px;
+}
+
+.b-secondary {
+    background-color: #FF1D531F !important;
+    color: #FF1D53 !important;
+    border: 1px solid !important;
+    border-radius: 100px;
+}
+
+// Input Search
+
+.search {
+    width: 45rem;
+    border-radius: 100px;
+    border: none;
+    background-color: #1C1B1F1F;
+}
+
+// Card
+
+.elevation-card {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+}
+
+.point-active {
+    border-radius: 50%;
+    background-color: #35A700;
+    width: 1rem;
+    height: 1rem;
+}
+
+// Checkbox
+
+.p-checkbox .p-checkbox-box.p-highlight {
+    border-color: #FF1D53 !important;
+    background: #FF1D53 !important;
+}

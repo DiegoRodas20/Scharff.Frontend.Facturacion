@@ -16,6 +16,8 @@ import { InformationClientComponent } from './manage-client/components/detail-cl
 import { ContactsClientComponent } from './manage-client/components/detail-client/contacts-client/contacts-client.component';
 import { CreditLineComponent } from './manage-client/components/detail-client/credit-line/credit-line.component';
 import { DirectionsClientComponent } from './manage-client/components/detail-client/directions-client/directions-client.component';
+import { SharedModule } from 'src/app/common/shared/shared.module';
+
 
 const COMPONENTS = [
     ManageClientComponent,
@@ -38,8 +40,9 @@ const COMPONENTS = [
         FormsModule,
         ReactiveFormsModule,
         PrimeNGModule,
+        SharedModule,
         ClientRoutingModule,
-    ]
+    ],
 })
 
 export class ClientModule { }

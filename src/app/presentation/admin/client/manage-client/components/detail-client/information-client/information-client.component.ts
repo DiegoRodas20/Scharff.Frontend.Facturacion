@@ -11,7 +11,7 @@ import { UpdateClientComponent } from '../../update-client/update-client.compone
 
 export class InformationClientComponent implements OnInit {
 
-  constructor(public dialogService: DialogService){
+  constructor(public dialogService: DialogService) {
 
   }
   ngOnInit() {
@@ -21,7 +21,6 @@ export class InformationClientComponent implements OnInit {
     const ref = this.dialogService.open(UpdateClientComponent, {
       header: 'Actualizar Cliente',
       width: '75rem',
-  });
+    });
   }
-
 }
