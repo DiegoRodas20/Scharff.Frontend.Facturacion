@@ -10,6 +10,16 @@ import { DataModule } from './data/data.module';
 import { CoreModule } from './core/core.module';
 import { ClientRepository } from './core/repositories/client.repository';
 import { ClientMockRepository } from './data/repository/client/mock/client-mock.repository';
+import { CoinRepository } from './core/repositories/coin.repository';
+import { CoinMockRepository } from './data/repository/client/mock/coin-mock.repository';
+import { BusinessMockRepository } from './data/repository/client/mock/businessGroup.repository';
+import { BusinessGroupRepository } from './core/repositories/businessGroup.repository';
+import { EconomicSectorRepository } from './core/repositories/economicSector.repository';
+import { EconomicSectorMockRepository } from './data/repository/client/mock/economicSector.repository';
+import { TypeDocumentIdentyRepository } from './core/repositories/typeDocumentIdentity.repository';
+import { TypeDocumentIdentyMockRepository } from './data/repository/client/mock/typeDocumentIdenty.repository';
+import { SegmentationRepository } from './core/repositories/segmentation.repository';
+import { SegmentationMockRepository } from './data/repository/client/mock/segmentation.mock.repository';
 
 @NgModule({
   declarations: [
@@ -30,7 +40,12 @@ import { ClientMockRepository } from './data/repository/client/mock/client-mock.
     CoreModule,
   ],
   providers: [
-    {provide: ClientRepository, useClass: ClientMockRepository}
+    { provide: ClientRepository, useClass: ClientMockRepository },
+    { provide: CoinRepository, useClass: CoinMockRepository },
+    { provide: BusinessGroupRepository, useClass: BusinessMockRepository },
+    { provide: EconomicSectorRepository, useClass: EconomicSectorMockRepository },
+    { provide: TypeDocumentIdentyRepository, useClass: TypeDocumentIdentyMockRepository },
+    { provide: SegmentationRepository, useClass: SegmentationMockRepository }
   ],
   bootstrap: [AppComponent]
 })

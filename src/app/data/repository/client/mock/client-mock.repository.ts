@@ -48,4 +48,9 @@ export class ClientMockRepository extends ClientRepository {
     getClientById(): Observable<ClientModel> {
       throw new Error('Method not implemented.');
     }
+
+    createClient(body: ClientModel): any {
+        console.log('RESPONSE', body)
+        return from([{}])
+    }
 }
