@@ -11,6 +11,8 @@ import { UpdateClientComponent } from '../../update-client/update-client.compone
 
 export class InformationClientComponent implements OnInit {
 
+  isVisibleAdditionalData = false;
+
   constructor(public dialogService: DialogService) {
 
   }
@@ -22,5 +24,9 @@ export class InformationClientComponent implements OnInit {
       header: 'Actualizar Cliente',
       width: '75rem',
     });
+  }
+
+  toggleAdditionalData() {
+     this.isVisibleAdditionalData = !this.isVisibleAdditionalData;
   }
 }
