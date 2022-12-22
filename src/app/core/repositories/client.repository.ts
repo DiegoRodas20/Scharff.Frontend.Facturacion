@@ -6,4 +6,5 @@ export abstract class ClientRepository {
     abstract getAllClients(): Promise<ClientModel[]>;
     abstract getClientById(): Observable<ClientModel>;
     abstract createClient(params: ClientModel): Observable<ClientModel>;
+
 }
