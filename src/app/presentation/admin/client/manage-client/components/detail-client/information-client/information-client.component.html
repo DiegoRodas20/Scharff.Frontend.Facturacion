@@ -10,7 +10,7 @@
 
         <div class="col-12 md:col-6 flex">
             <span class="col-6 py-0 text-500">Grupo empresarial o categoria cliente</span>
-            <span class="col-6 py-0font-semibold">Grupo empresarial</span>
+            <span class="col-6 py-0 font-semibold">Grupo empresarial</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
@@ -76,17 +76,30 @@
                 MEDIOS</span>
         </div>
 
+
+        <div class="col-12 md:col-6 flex">
+          <span class="col-6 py-0 text-500">Comentarios</span>
+          <span class="col-6 py-0 font-semibold">Comentarios de cliente</span>
+        </div>
+
         <div class="col-12 md:col-6 flex">
             <button pButton pRipple label="Datos Adicionales" class="p-button-text text-700 font-bold"
                 icon="pi pi-angle-down" iconPos="right" (click)="toggleAdditionalData()"></button>
         </div>
 
+        <i class="pi"
+           [class.pi-angle-down]="!isVisibleAdditionalData"
+           [class.pi-angle-up]="isVisibleAdditionalData"
+        ></i>
+
         <ng-container *ngIf="isVisibleAdditionalData">
             <div class="col-12 flex">
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                    <p-checkbox [(ngModel)]="isClientChecked" [binary]="true" inputId="ny"></p-checkbox>
                     <label for="ny">Clientes</label>
                 </div>
+
+                <div class="p-checkbox p-component p-checkbox-checked"></div>
 
                 <div class="col-3 field-checkbox py-0">
                     <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
@@ -127,15 +140,25 @@
             </div>
 
             <div class="col-12 flex">
-                <div class="col-6 justify-content-center field-checkbox py-0">
+                <div class="col-3 field-checkbox py-0">
                     <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
                     <label for="ny">Consignatario</label>
                 </div>
 
-                <div class="col-6 justify-content-center field-checkbox py-0">
+                <div class="col-3 field-checkbox py-0">
                     <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
                     <label for="sf">Transporte Maritimo</label>
                 </div>
+
+                <div class="col-3 field-checkbox py-0">
+                  <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                  <label for="sf">Esporadico</label>
+                </div>
+                <div class="col-3 field-checkbox py-0">
+                  <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                  <label for="sf">Relacionado</label>
+                </div>
+
             </div>
         </ng-container>
 

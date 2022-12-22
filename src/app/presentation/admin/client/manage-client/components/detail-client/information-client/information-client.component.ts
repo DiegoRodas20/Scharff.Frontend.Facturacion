@@ -11,6 +11,7 @@ import { UpdateClientComponent } from '../../update-client/update-client.compone
 export class InformationClientComponent implements OnInit {
 
   isVisibleAdditionalData = false;
+  isClientChecked = true;
 
   constructor(public dialogService: DialogService) {
 

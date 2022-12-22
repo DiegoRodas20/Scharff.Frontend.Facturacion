@@ -113,6 +113,14 @@
             </span>
         </div>
 
+        <!-- Comentarios de cliente -->
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input id="float-input" pInputText formControlName="phone">
+                <label for="float-input">Comentarios de cliente</label>
+            </span>
+        </div>
+
         <!--Migración SAP-->
         <div class="flex-column col-12 md:col-4">
 
@@ -131,7 +139,7 @@
         <!--Cuenta Fedex-->
         <div class="field col-12 md:col-4" *ngIf="showInputSap()">
             <span class="p-float-label">
-                <input id="cuentaFedex" type="text" pInputText formControlName="fedexAccount"> 
+                <input id="cuentaFedex" type="text" pInputText formControlName="fedexAccount">
                 <label for="cuentaFedex">Cuenta FEDEX</label>
             </span>
         </div>
@@ -152,5 +160,5 @@
         </button>
     </div>
 
-    
+
 </div>
