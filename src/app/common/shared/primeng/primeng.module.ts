@@ -18,6 +18,7 @@ import { PasswordModule } from 'primeng/password';
 import { TabViewModule } from 'primeng/tabview';
 import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 
 const COMPONENTS = [
@@ -39,7 +40,8 @@ const COMPONENTS = [
     PasswordModule,
     TabViewModule,
     MenubarModule,
-    TabMenuModule
+    TabMenuModule,
+    InputTextareaModule
 ]
 
 @NgModule({
