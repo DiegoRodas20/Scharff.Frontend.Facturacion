@@ -1,0 +1,48 @@
+<div class="card px-5">
+    <form [formGroup]="formDirection">
+
+        <div class="pb-4">
+
+            <span class="text-base text-400">Contacto relacionado</span>
+  
+            <hr>
+        </div>
+
+        <!-- Inputs Datos Contacto -->
+        <div class="p-fluid grid">
+
+            <!-- Tipo de contacto -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="typeDirection" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="typeDirection" [showClear]="true"></p-dropdown>
+                    <label>Tipo de dirección</label>
+                </span>
+            </div>
+
+            <!-- Tipo de contacto -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="unit" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="unit" [showClear]="true"></p-dropdown>
+                    <label>Unidad</label>
+                </span>
+            </div>
+
+            <!-- Comentarios -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <input id="float-input" pInputText formControlName="direction">
+                    <label for="float-input">Dirección</label>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="col-12 text-center py-3" (click)="createDirection()">
+            <button pButton class="b-primary 4 w-3" label="AGREGAR">
+            </button>
+        </div>
+
+    </form>
+</div>

@@ -29,6 +29,8 @@ import { AreaContactMockRepository } from './data/repository/client/mock/areaCon
 import { ContactRepository } from './core/repositories/contact.repository';
 import { ContactMockRepository } from './data/repository/client/mock/contact-mock.repository';
 import { DialogService } from 'primeng/dynamicdialog';
+import { DirectionRepository } from './core/repositories/direction.repository';
+import { DirectionMockRepository } from './data/repository/client/mock/direction-mock.repository';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { DialogService } from 'primeng/dynamicdialog';
     { provide: HoldingRepository, useClass: HoldingMockRepository },
     { provide: TypeContactRepository, useClass: TypeContactMockRepository },
     { provide: AreaContactRepository, useClass: AreaContactMockRepository },
-    { provide: ContactRepository, useClass: ContactMockRepository }
+    { provide: ContactRepository, useClass: ContactMockRepository },
+    { provide: DirectionRepository, useClass: DirectionMockRepository }
   ],
   bootstrap: [AppComponent]
 })

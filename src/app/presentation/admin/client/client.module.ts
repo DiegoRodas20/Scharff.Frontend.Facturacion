@@ -17,6 +17,7 @@ import { SharedModule } from 'src/app/common/shared/shared.module';
 import { RegisterContactComponent } from './manage-client/components/detail-client/contacts-client/components/register-contact/register-contact.component'; 
 import { UpdateContactComponent } from './manage-client/components/detail-client/contacts-client/components/update-contact/update-contact.component'; 
 import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.component';
+import { RegisterDirectionComponent } from './manage-client/components/detail-client/directions-client/components/register-direction/register-direction.component';
 
 
 const COMPONENTS = [
@@ -29,7 +30,8 @@ const COMPONENTS = [
     CreditLineComponent,
     DirectionsClientComponent,
     RegisterContactComponent,
-    UpdateContactComponent
+    UpdateContactComponent,
+    RegisterDirectionComponent
 ]
 
 @NgModule({
