@@ -1,65 +1,69 @@
 <p-card>
     <div class="grid">
 
-        <div class="col-12">
-            <h3 class="text-base text-700 my-0 font-normal">
-                Dirección fiscal
-            </h3>
-            <hr>
-        </div>
-
-        <div class="col-12 flex">
-            <span class="col-6 font-semibold">Dirección 1</span>
-            <div class="col-6 text-base text-right">
-                <button (click)="showModalUpdateDirection()" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"></button>
-                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
+        <div class="grid p-3" *ngFor="let direction of directions">
+            <div class="col-12">
+                <h3 class="text-base text-700 my-0 font-normal">
+                    Dirección fiscal
+                </h3>
+                <hr>
             </div>
+    
+            <div class="col-12 flex">
+                <span class="col-6 font-semibold">Dirección 1</span>
+                <div class="col-6 text-base text-right">
+                    <button (click)="showModalUpdateDirection()" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
+                </div>
+            </div>
+    
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Dirección</span>
+                <span class="col-6 py-0 font-semibold">{{direction.direction}}</span>
+            </div>
+    
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Código Postal</span>
+                <span class="col-6 py-0 font-semibold">{{direction.postalCode}}</span>
+            </div>
+    
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Ubigeo</span>
+                <span class="col-6 py-0 font-semibold">{{direction.ubigeo}}</span>
+            </div>
+    
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Provincia</span>
+                <span class="col-6 py-0 font-semibold">{{direction.province}}</span>
+            </div>
+    
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Tipo Direccion</span>
+                <span class="col-6 py-0 font-semibold">{{direction.typeDirection}}</span>
+            </div>
+    
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">País</span>
+                <span class="col-6 py-0 font-semibold">{{direction.country}}</span>
+            </div>
+    
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Estado</span>
+                <span class="col-6 py-0 font-semibold">{{direction.status}}</span>
+            </div>
+    
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Distrito</span>
+                <span class="col-6 py-0 font-semibold">{{direction.district}}</span>
+            </div>
+    
         </div>
-
-        <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Dirección</span>
-            <span class="col-6 py-0 font-semibold">Av. Javier Prado 534</span>
-        </div>
-
-        <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Código Postal</span>
-            <span class="col-6 py-0 font-semibold">15021</span>
-        </div>
-
-        <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Ubigeo</span>
-            <span class="col-6 py-0 font-semibold">122-445</span>
-        </div>
-
-        <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Provincia</span>
-            <span class="col-6 py-0 font-semibold">Lima</span>
-        </div>
-
-        <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Tipo Direccion</span>
-            <span class="col-6 py-0 font-semibold">Tipo Direccion Fiscal</span>
-        </div>
-
-        <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">País</span>
-            <span class="col-6 py-0 font-semibold">Perú</span>
-        </div>
-
-        <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Estado</span>
-            <span class="col-6 py-0 font-semibold">Activo</span>
-        </div>
-
-        <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Distrito</span>
-            <span class="col-6 py-0 font-semibold">La Molina</span>
-        </div>
-
+    
         <div class="col-12 text-center py-5" (click)="showModalRegisterDirection()">
             <button pButton class="b-secondary px-5" icon="pi pi-map-marker" label="Agregar Dirección">
             </button>
         </div>
 
     </div>
+
 </p-card>

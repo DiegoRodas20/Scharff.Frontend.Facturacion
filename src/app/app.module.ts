@@ -74,7 +74,8 @@ import { CountryMockRepository } from './data/repository/client/mock/country-moc
     { provide: TypeDirectionRepository, useClass: TypeDirectionMockRepository },
     { provide: ProvinceRepository, useClass: ProvinceMockRepository },
     { provide: DistrictRepository, useClass: DistrictMockRepository },
-    { provide: CountryRepository, useClass: CountryMockRepository }
+    { provide: CountryRepository, useClass: CountryMockRepository },
+    { provide: DirectionRepository, useClass: DirectionMockRepository }
     
   ],
   bootstrap: [AppComponent]
