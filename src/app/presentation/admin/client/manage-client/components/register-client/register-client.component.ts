@@ -7,6 +7,8 @@ import { GetAllBusinessGroupUsecase } from 'src/app/core/usecase/client/get-all-
 import { GetAllEconomicSectorUsecase } from 'src/app/core/usecase/client/get-all-economicSector.usecase';
 import { GetAllTypeDocumentIdentyUsecase } from 'src/app/core/usecase/client/get-all-typesDocumentIdenty.usecase';
 import { GetAllSegmentationUsecase } from 'src/app/core/usecase/client/get-all-segmentation.usecase';
+import { ClientModel } from 'src/app/core/models/client.model';
+import { GetAllHoldingUsecase } from 'src/app/core/usecase/client/get-all-holding.usecase';
 
 @Component({
     selector: 'app-register-client',
@@ -32,6 +34,9 @@ export class RegisterClientComponent implements OnInit {
     // Segmentación
     segmentation: Array<ParamsModel> = []
 
+    // Holding
+    holding: Array<ParamsModel> = []
+
     constructor(
         private _formBuilder: FormBuilder,
         private _createClient: RegisterClientsUsecase,
@@ -39,7 +44,8 @@ export class RegisterClientComponent implements OnInit {
         private _getAllBusinessGroups: GetAllBusinessGroupUsecase,
         private _getAllEconomicSector: GetAllEconomicSectorUsecase,
         private _getAllTypeDocumentIdenty: GetAllTypeDocumentIdentyUsecase,
-        private _getAllSegmentation: GetAllSegmentationUsecase
+        private _getAllSegmentation: GetAllSegmentationUsecase,
+        private _getAllHolding: GetAllHoldingUsecase
     ) { }
 
     ngOnInit() {
@@ -49,24 +55,25 @@ export class RegisterClientComponent implements OnInit {
         this.getEconomicSector()
         this.getAllTypeDocumentIdenty()
         this.getAllSegmentation()
+        this.getAllHolding()
     }
 
     createFormClient() {
         this.formClient = this._formBuilder.group({
-            typeDocumentIdenty: [null, Validators.required],
-            identificationNumber: [null, Validators.required],
-            businessName: [null, Validators.required],
+            typeDocumentIdentity: [null, Validators.required],
+            numberDocumentIdentity: [null, Validators.required],
+            companyName: [null, Validators.required],
             phone: [null, Validators.required],
             tradeName: [null, Validators.required],
             typeCurrency: [null, Validators.required],
             businessGroup: [null],
-            economicSector: [null],
+            codeEconomicSector: [null],
             holding: [null],
-            segmentation: [null],
-            authorizeFedexAccount: [null],
+            codeSegmentation: [null],
+            accountAuthorizeFedex: [null],
             migrateSap: [false],
-            status: [null],
-            fedexAccount: [null],
+            statusClient: [null],
+            accountFedex: [null],
         })
     }
 
@@ -100,6 +107,12 @@ export class RegisterClientComponent implements OnInit {
         })
     }
 
+    getAllHolding(){
+        this._getAllHolding.execute().subscribe((value: ParamsModel) => {
+            this.holding.push(value)
+        })
+    }
+
     registerClient() {
 
         if (this.formClient.invalid) {
@@ -107,7 +120,28 @@ export class RegisterClientComponent implements OnInit {
             return
         }
 
-        this._createClient.execute(this.formClient.value).subscribe((value: any) => {
+        const form = this.formClient.value
+        
+        const Client:  ClientModel = {
+            companyName: form.companyName,
+            typeDocumentIdentity: form.typeDocumentIdentity.id,
+            numberDocumentIdentity: form.numberDocumentIdentity,
+            phone: form.phone,
+            tradeName: form.tradeName,
+            typeCurrency: form.typeCurrency.id,
+            businessGroup: form.businessGroup.id,
+            codeEconomicSector: form.codeEconomicSector.id,
+            holding: form.holding.id,
+            codeSegmentation: form.codeSegmentation.id,
+            accountAuthorizeFedex: form.accountAuthorizeFedex,
+            migrateSap: form.migrateSap,
+            statusClient: form.statusClient,
+            accountFedex: form.accountFedex,    
+        }
+
+        console.log('DATOS DE CLIENTE')
+        console.log(Client)
+        this._createClient.execute(Client).subscribe((value: any) => {
           this.formClient.reset()
         })
         

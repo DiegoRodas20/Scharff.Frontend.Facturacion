@@ -6,6 +6,8 @@ import { flatMap, map } from 'rxjs/operators';
 import { ClientModel } from 'src/app/core/models/client.model';
 import { ClientRepository } from 'src/app/core/repositories/client.repository';
 
+import { CLIENT_URL } from 'src/app/common/helpers/constants/url.constants';
+
 
 @Injectable({
     providedIn: 'root'
@@ -18,14 +20,41 @@ export class ClientWebRepository extends ClientRepository {
         super();
     }
 
+    clients = [
+        {
+            'codigoUnico': '00442',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        },
+        {
+            'codigoUnico': '00441',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        },
+        {
+            'codigoUnico': '00441',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        },
+        {
+            'codigoUnico': '00441',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        },
+        {
+            'codigoUnico': '00441',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        }
+    ];
+
     getAllClients(): Observable<ClientModel> {
-        return from([])
+        return from(this.clients)
     }
 
-    createClient(body: ClientModel): Observable<ClientModel> {
+    createClient(body: any): Observable<ClientModel> {
         return this.http
-        .get<ClientModel[]>('')
-        .pipe(flatMap((item) => item))
+        .post<any>(CLIENT_URL, body)
     }
 
     getClientById(): Observable<ClientModel> {
