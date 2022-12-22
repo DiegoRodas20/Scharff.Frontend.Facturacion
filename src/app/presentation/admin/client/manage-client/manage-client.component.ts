@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ClientModel } from 'src/app/core/models/client.model';
 import { GetAllClientsUsecase } from 'src/app/core/usecase/client/get-all-clients.usecase';
@@ -7,49 +8,48 @@ import { RegisterClientComponent } from './components/register-client/register-c
 @Component({
     selector: 'app-manage-client',
     templateUrl: './manage-client.component.html',
-    styleUrls: ['./manage-client.component.scss'],
-    providers: [DialogService]
+    styleUrls: ['./manage-client.component.scss']
 })
 
 export class ManageClientComponent implements OnInit {
 
-    isVisibleDetailClient = false;
-
-    clients:  Array<ClientModel> = []
+    lClients: ClientModel[] = []
 
     constructor(
         public dialogService: DialogService,
-        private _getAllClients: GetAllClientsUsecase
+        private _getAllClients: GetAllClientsUsecase,
+        private _router: Router,
     ) { }
 
     ngOnInit() {
         this.getAllClients()
     }
 
-    showModalClient() {
+    registerClient() {
         const ref = this.dialogService.open(RegisterClientComponent, {
             header: 'Registrar Cliente',
             width: '75rem',
         });
     }
 
-    getAllClients() {
-        this._getAllClients.execute().subscribe((value: ClientModel) => {
-            this.clients.push(value)
-        })
+    async getAllClients() {
+        try {
+
+            const data: any = await this._getAllClients.execute()
+            this.lClients = data
+        }
+        catch (error) {
+            console.log("Error: ", error)
+        }
     }
 
-  //   getClientById() {
-  //     this._getClientById.execute().subscribe((value: ClientModel) => {
-  //         this.getClientById.push(value)
-  //     })
-  // }
-
-    showDetailClient(): void {
-        this.isVisibleDetailClient = true;
+    getClientById() {
+        this._router.navigate(['/admin/client/id'])
     }
 
-    showSearchClient() {
-        this.isVisibleDetailClient = false;
-    }
+    //   getClientById() {
+    //     this._getClientById.execute().subscribe((value: ClientModel) => {
+    //         this.getClientById.push(value)
+    //     })
+    // }
 }

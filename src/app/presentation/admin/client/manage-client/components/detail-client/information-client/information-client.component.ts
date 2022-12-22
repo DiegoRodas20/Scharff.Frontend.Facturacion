@@ -6,7 +6,6 @@ import { UpdateClientComponent } from '../../update-client/update-client.compone
   selector: 'app-information-client',
   templateUrl: './information-client.component.html',
   styleUrls: ['./information-client.component.scss'],
-  providers: [DialogService]
 })
 
 export class InformationClientComponent implements OnInit {

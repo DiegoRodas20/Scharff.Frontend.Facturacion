@@ -16,6 +16,8 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DividerModule } from 'primeng/divider';
 import { PasswordModule } from 'primeng/password';
 import { TabViewModule } from 'primeng/tabview';
+import { MenubarModule } from 'primeng/menubar';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 
 const COMPONENTS = [
@@ -36,6 +38,8 @@ const COMPONENTS = [
     DividerModule,
     PasswordModule,
     TabViewModule,
+    MenubarModule,
+    TabMenuModule
 ]
 
 @NgModule({

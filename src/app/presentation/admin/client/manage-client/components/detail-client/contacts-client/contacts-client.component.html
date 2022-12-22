@@ -1,93 +1,66 @@
-<p-card class="m-2 w-12">
+<p-card>
+    <div class="grid">
 
-    <div class="flex-1 flex flex-row justify-content-between align-content-center">
-        <span class="text-base text-400 p-1">Contactos relacionados</span>
-    </div>
-    <p-divider></p-divider>
-
-    <div *ngFor="let contact of contacts">
-
-        <div class="flex-1 flex flex-row justify-content-between align-content-center">
-            <h5 class="pl-4 pb-0">Contacto N° {{contact.index}}</h5>
-            <div class="text-base">
-                <button (click)="showModalUpdateContact()" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"></button>
-                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
-            </div>
+        <div class="col-12">
+            <h3 class="text-base text-700 my-0 font-normal">
+                Contactos relacionados
+            </h3>
+            <hr>
         </div>
 
-        <div class="flex p-4">
-    
-            <div class="flex-1 flex flex-column gap-4">
-                <div class="flex-initial w-full flex">
-                    <span class="flex-initial w-4 text-400">
-                        Nombre
-                    </span>
-                    <span class="flex-initial pl-5">
-                        {{contact.name}}
-                    </span>
-                </div>
-    
-                <div class="flex-initial w-full flex">
-                    <span class="flex-initial w-4 text-400">
-                        Área Contacto
-                    </span>
-                    <span class="flex-initial pl-5">
-                        {{contact.contactArea}}
-                    </span>
-                </div>
-    
-                <div class="flex-initial w-full flex">
-                    <span class="flex-initial w-4 text-400">
-                        Tipo Contacto
-                    </span>
-                    <span class="flex-initial pl-5">
-                        {{contact.contactType}}
-                    </span>
-                </div>
+        <ng-container *ngFor="let contact of contacts">
 
-                <div class="flex-initial w-full flex">
-                    <span class="flex-initial w-4 text-400">
-                        Estado
-                    </span>
-                    <span class="flex-initial pl-5">
-                        {{contact.status}}
-                    </span>
+            <div class="col-12 flex">
+                <span class="col-6 font-semibold">Contacto N° {{contact.index}}</span>
+                <div class="col-6 text-base text-right">
+                    <button (click)="showModalUpdateContact()" pButton pRipple icon="pi pi-pencil"
+                        class="p-button-rounded p-button-text text-500"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
                 </div>
             </div>
-    
-    
-            <div class="flex-1 flex flex-column gap-4">
-                <div class="flex-initial w-full flex">
-                    <span class="flex-initial w-4 text-400">
-                        Teléfono
-                    </span>
-                    <span class="flex-initial pl-5">
-                        {{contact.phone}}
-                    </span>
-                </div>
-    
-                <div class="flex-initial w-full flex">
-                    <span class="flex-initial w-4 text-400">
-                        Correo
-                    </span>
-                    <span class="flex-initial pl-5">
-                        {{contact.email}}
-                    </span>
-                </div>
 
-                <div class="flex-initial w-full flex">
-                    <span class="flex-initial w-4 text-400">
-                        Comentarios
-                    </span>
-                    <span class="flex-initial pl-5">
-                        {{contact.comments}}
-                    </span>
-                </div>
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Área Contacto</span>
+                <span class="col-6 py-0 font-semibold">{{contact.contactArea}}</span>
             </div>
+
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Tipo Contacto</span>
+                <span class="col-6 py-0 font-semibold">{{contact.contactType}}</span>
+            </div>
+
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Estado</span>
+                <span class="col-6 py-0 font-semibold">{{contact.status}}</span>
+            </div>
+
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Teléfono</span>
+                <span class="col-6 py-0 font-semibold">{{contact.phone}}</span>
+            </div>
+
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Correo</span>
+                <span class="col-6 py-0 font-semibold">{{contact.email}}</span>
+            </div>
+
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Comentarios</span>
+                <span class="col-6 py-0 font-semibold">{{contact.comments}}</span>
+            </div>
+
+            <div class="col-12 md:col-6 flex">
+                <span class="col-6 py-0 text-500">Estado</span>
+                <span class="col-6 py-0 font-semibold">{{contact.status}}</span>
+            </div>
+
+        </ng-container>
+
+        <div class="col-12 text-center py-5">
+            <button pButton class="b-secondary px-5" icon="pi pi-user" (click)="showModalRegisterContact()"
+                label="Agregar Contacto">
+            </button>
         </div>
-    </div>
 
-    <div class="text-center" (click)="showModalRegisterContact()">
-        <button pButton pRipple type="button" icon="pi pi-user" iconPos="left" label="Agregar contacto" class="p-button-outlined p-button-danger w-3 p-3"></button>
     </div>
 </p-card>

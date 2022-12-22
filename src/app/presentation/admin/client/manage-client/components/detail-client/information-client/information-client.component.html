@@ -1,227 +1,149 @@
-<p-card class="m-2 w-12 px-6">
+<p-card>
+    <div class="grid">
 
-    <div class="pb-4">
-        <h3 class="text-base text-700 my-0 font-normal">
-            Datos Facturación
-        </h3>
-        <hr>
-    </div>
-
-    <div class="flex">
-        <div class="flex-1 flex">
-            <span class="flex-initial w-4">
-                Grupo empresarial o categoria cliente
-            </span>
-            <span class="flex-initial pl-5">
-                Grupo empresarial
-            </span>
+        <div class="col-12">
+            <h3 class="text-base text-700 my-0 font-normal">
+                Datos Facturación
+            </h3>
+            <hr>
         </div>
 
-        <div class="flex-1 flex flex-column gap-4">
-            <div class="flex-initial w-full flex">
-                <span class="flex-initial w-4">
-                    Sector economico
-                </span>
-                <span class="flex-initial pl-5">
-                    Sector A
-                </span>
-            </div>
-
-            <div class="flex-initial w-full flex">
-                <span class="flex-initial w-4">
-                    Moneda
-                </span>
-                <span class="flex-initial pl-5">
-                    Soles
-                </span>
-            </div>
-        </div>
-    </div>
-
-    <div class="pb-4">
-        <h3 class="text-base text-700 my-0 font-normal">
-            Datos operativos
-        </h3>
-        <hr>
-    </div>
-
-    <div class="flex">
-        <div class="flex-1 flex flex-column gap-4">
-            <div class="flex-1 flex">
-                <span class="flex-initial w-4">
-                    Codigo Unico
-                </span>
-                <span class="flex-initial pl-5">
-                    12931123124
-                </span>
-            </div>
-            <div class="flex-1 flex">
-                <span class="flex-initial w-4">
-                    RUC
-                </span>
-                <span class="flex-initial pl-5">
-                    20607202412
-                </span>
-            </div>
-            <div class="flex-1 flex">
-                <span class="flex-initial w-4">
-                    Razon social
-                </span>
-                <span class="flex-initial pl-5">
-                    La tienda de Pedro
-                </span>
-            </div>
-            <div class="flex-1 flex">
-                <span class="flex-initial w-4">
-                    Nombre comercial
-                </span>
-                <span class="flex-initial pl-5">
-                    La tienda de Pedrito
-                </span>
-            </div>
-            <div class="flex-1 flex">
-                <span class="flex-initial w-4">
-                    Cuenta FEDEX
-                </span>
-                <span class="flex-initial pl-5">
-                    191-233445-33121
-                </span>
-            </div>
-            <div class="flex-1 flex">
-                <span class="flex-initial w-4">
-                    Segmentación
-                </span>
-                <span class="flex-initial pl-5">
-                    CXC CLIENTES MEDIOS
-                </span>
-            </div>
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Grupo empresarial o categoria cliente</span>
+            <span class="col-6 py-0font-semibold">Grupo empresarial</span>
         </div>
 
-        <div class="flex-1 flex flex-column gap-4">
-            <div class="flex-initial w-full flex">
-                <span class="flex-initial w-4">
-                    Tipo doc.
-                </span>
-                <span class="flex-initial pl-5">
-                    RUC
-                </span>
-            </div>
-
-            <div class="flex-initial w-full flex">
-                <span class="flex-initial w-4">
-                    Telefono
-                </span>
-                <span class="flex-initial pl-5">
-                    920 994 999
-                </span>
-            </div>
-
-            <div class="flex-initial w-full flex">
-                <span class="flex-initial w-4">
-                    Holding
-                </span>
-                <span class="flex-initial pl-5">
-                    Holding B
-                </span>
-            </div>
-
-            <div class="flex-initial w-full flex">
-                <span class="flex-initial w-4">
-                    Autorizar FEDEX
-                </span>
-                <span class="flex-initial pl-5">
-                    Si
-                </span>
-            </div>
-            <div class="flex-initial w-full flex">
-                <span class="flex-initial w-4">
-                    Estado
-                </span>
-                <span class="flex-initial pl-5">
-                    Activo
-                </span>
-            </div>
-        </div>
-    </div>
-
-    <div class="field-checkbox mt-4">
-        <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-        <label for="ny">Sin verificacion SAP</label>
-    </div>
-
-    <div class="field-checkbox">
-        <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-        <label for="sf">Sin verificacion SUNAT</label>
-    </div>
-
-    <!-- ----------colapsable---------- -->
-
-    <span class="p-menuitem-text cursor-pointer" (click)="toggleAdditionalData()">Datos Adicionales</span>
-
-    <!-- -------desplegable checkbox------------- -->
-
-    <div *ngIf="isVisibleAdditionalData">
-        <div class="flex gap-6">
-            <div class="field-checkbox mt-4">
-              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-              <label for="ny">Clientes</label>
-            </div>
-
-            <div class="field-checkbox mt-4">
-                <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                <label for="sf">Almacen</label>
-            </div>
-
-            <div class="field-checkbox mt-4">
-              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-              <label for="ny">Agencia Aduanas</label>
-            </div>
-
-            <div class="field-checkbox mt-4">
-                  <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                  <label for="sf">Transporte Aereo</label>
-            </div>
-
-            <div class="field-checkbox mt-4">
-                <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-                <label for="ny">Consignatario</label>
-            </div>
-
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Grupo empresarial o categoria cliente</span>
+            <span class="col-6 py-0 font-semibold">Grupo empresarial</span>
         </div>
 
-        <div class="flex gap-6">
-
-            <div class="field-checkbox mt-4">
-                <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                <label for="sf">Transporte Maritimo</label>
-           </div>
-
-            <div class="field-checkbox mt-4">
-              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-              <label for="ny">Shipper</label>
-            </div>
-
-            <div class="field-checkbox mt-4">
-              <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-              <label for="sf">Para visto bueno</label>
-            </div>
-
-            <div class="field-checkbox mt-4">
-              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-              <label for="ny">Notify</label>
-            </div>
-
-            <div class="field-checkbox mt-4">
-              <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-              <label for="sf">Embarcador</label>
-            </div>
+        <div class="col-12 py-3">
+            <h3 class="text-base text-700 my-0 font-normal">
+                Datos operativos
+            </h3>
+            <hr>
         </div>
-    </div>
 
-    <div class="col-12 text-center py-3">
-      <button pButton class="b-primary px-5 py-2" icon="pi pi-pencil" (click)="showModalUpdateClient()"
-          label="Actualizar cliente">
-      </button>
-    </div>
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Código Unico</span>
+            <span class="col-6 py-0 font-semibold">1293123124</span>
+        </div>
 
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Tipo Doc</span>
+            <span class="col-6 py-0 font-semibold">RUC</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">RUC</span>
+            <span class="col-6 py-0 font-semibold">20607202412</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Teléfono</span>
+            <span class="col-6 py-0 font-semibold">320 994 999</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Razón social</span>
+            <span class="col-6 py-0 font-semibold">La tienda de pedro</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Holding</span>
+            <span class="col-6 py-0 font-semibold">Holding B</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Nombre Comercial</span>
+            <span class="col-6 py-0 font-semibold">La tienda de Pedrito</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Autoriza FEDEX</span>
+            <span class="col-6 py-0 font-semibold">SI</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Cuenta FEDEX</span>
+            <span class="col-6 py-0 font-semibold">191-233445-33121</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 py-0 text-500">Segmentación</span>
+            <span class="col-6 py-0 font-semibold">CXC CLIENTES
+                MEDIOS</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <button pButton pRipple label="Datos Adicionales" class="p-button-text text-700 font-bold"
+                icon="pi pi-angle-down" iconPos="right" (click)="toggleAdditionalData()"></button>
+        </div>
+
+        <ng-container *ngIf="isVisibleAdditionalData">
+            <div class="col-12 flex">
+                <div class="col-3 field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                    <label for="ny">Clientes</label>
+                </div>
+
+                <div class="col-3 field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                    <label for="sf">Almacen</label>
+                </div>
+
+                <div class="col-3 field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                    <label for="ny">Agencia Aduanas</label>
+                </div>
+
+                <div class="col-3 field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                    <label for="sf">Transporte Aereo</label>
+                </div>
+            </div>
+
+            <div class="col-12 flex">
+                <div class="col-3 field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                    <label for="ny">Consignatario</label>
+                </div>
+
+                <div class="col-3 field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                    <label for="sf">Transporte Maritimo</label>
+                </div>
+
+                <div class="col-3 field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                    <label for="ny">Shipper</label>
+                </div>
+
+                <div class="col-3 field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                    <label for="sf">Para visto bueno</label>
+                </div>
+            </div>
+
+            <div class="col-12 flex">
+                <div class="col-6 justify-content-center field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                    <label for="ny">Consignatario</label>
+                </div>
+
+                <div class="col-6 justify-content-center field-checkbox py-0">
+                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                    <label for="sf">Transporte Maritimo</label>
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="col-12 text-center py-5">
+            <button pButton class="b-primary px-5" icon="pi pi-pencil" (click)="showModalUpdateClient()"
+                label="Actualizar cliente">
+            </button>
+        </div>
+
+    </div>
 </p-card>

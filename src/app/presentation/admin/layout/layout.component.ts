@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MegaMenuItem } from 'primeng/api';
+import { MenuItem } from 'primeng/api';
 
 @Component({
     selector: 'app-layout',
@@ -9,7 +9,7 @@ import { MegaMenuItem } from 'primeng/api';
 
 export class LayoutComponent implements OnInit {
 
-    items: MegaMenuItem[] = [];
+    items: MenuItem[] = [];
 
     constructor() { }
 

@@ -28,6 +28,7 @@ import { AreaContactRepository } from './core/repositories/areaContact.repositor
 import { AreaContactMockRepository } from './data/repository/client/mock/areaContact-mock.repository';
 import { ContactRepository } from './core/repositories/contact.repository';
 import { ContactMockRepository } from './data/repository/client/mock/contact-mock.repository';
+import { DialogService } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ContactMockRepository } from './data/repository/client/mock/contact-moc
     CoreModule,
   ],
   providers: [
+    DialogService,
     { provide: ClientRepository, useClass: ClientWebRepository },
     { provide: CoinRepository, useClass: CoinMockRepository },
     { provide: BusinessGroupRepository, useClass: BusinessMockRepository },

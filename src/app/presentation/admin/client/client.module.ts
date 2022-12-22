@@ -6,12 +6,9 @@ import { ClientRoutingModule } from './client.routing';
 import { ManageClientComponent } from './manage-client/manage-client.component';
 import { PrimeNGModule } from 'src/app/common/shared/primeng/primeng.module';
 
-//Create and update client
+// Client Components
 import { UpdateClientComponent } from './manage-client/components/update-client/update-client.component';
 import { RegisterClientComponent } from './manage-client/components/register-client/register-client.component';
-
-//detail-client
-import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.components';
 import { InformationClientComponent } from './manage-client/components/detail-client/information-client/information-client.component';
 import { ContactsClientComponent } from './manage-client/components/detail-client/contacts-client/contacts-client.component';
 import { CreditLineComponent } from './manage-client/components/detail-client/credit-line/credit-line.component';
@@ -19,6 +16,7 @@ import { DirectionsClientComponent } from './manage-client/components/detail-cli
 import { SharedModule } from 'src/app/common/shared/shared.module';
 import { RegisterContactComponent } from './manage-client/components/detail-client/contacts-client/components/register-contact/register-contact.component'; 
 import { UpdateContactComponent } from './manage-client/components/detail-client/contacts-client/components/update-contact/update-contact.component'; 
+import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.component';
 
 
 const COMPONENTS = [

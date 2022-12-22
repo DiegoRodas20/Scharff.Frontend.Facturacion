@@ -2,6 +2,7 @@ export interface ClientModel {
     codigoUnico?: string,
     ruc?: string,
     razonSocial?: string,
+    
     typeDocumentIdentity?: number,
     numberDocumentIdentity?: string,
     companyName?: string,

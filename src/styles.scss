@@ -34,12 +34,7 @@ hr {
     border: none;
 }
 
-.p-megamenu-horizontal .p-megamenu-root-list {
-    display: inline-flex !important;
-    gap: 80px;
-}
-
-.p-megamenu {
+.p-menubar {
     padding: 1.5rem;
     background: #e2e2e2;
     text-align: center;
@@ -50,8 +45,39 @@ hr {
     padding-right: 2rem !important;
 }
 
+// Tab View
+.p-tabview-nav {
+    justify-content: space-between;
+    background: transparent !important;
+    border-width: 0px !important;
+}
+
+.p-tabview .p-tabview-panels {
+    background: transparent;
+    padding-top: 2rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.p-highlight .p-tabview-nav-link {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: 1px solid !important;
+    border-radius: 100px !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 4rem;
+}
+
+.p-tabview .p-tabview-nav .p-tabview-ink-bar {
+    display: none;
+}
+
 // Image Icon
-.img-icon{
+.img-icon {
     width: 40%;
     height: auto;
 }
@@ -80,7 +106,6 @@ hr {
 // Input Search
 
 .search {
-    width: 45rem;
     border-radius: 100px;
     border: none;
     background-color: #1C1B1F1F;
@@ -88,8 +113,13 @@ hr {
 
 // Card
 
-.elevation-card {
+.p-card {
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+}
+
+.p-card-body {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
 }
 
 .point-active {
@@ -104,4 +134,25 @@ hr {
 .p-checkbox .p-checkbox-box.p-highlight {
     border-color: #FF1D53 !important;
     background: #FF1D53 !important;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 8px;
+    border: 3px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #062b60;
+    transition-duration: 300ms;
 }

@@ -4,8 +4,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 @Component({
   selector: 'app-directions-client',
   templateUrl: './directions-client.component.html',
-  styleUrls: ['./directions-client.component.scss'],
-  providers: [DialogService]
+  styleUrls: ['./directions-client.component.scss']
 })
 
 export class DirectionsClientComponent implements OnInit {
