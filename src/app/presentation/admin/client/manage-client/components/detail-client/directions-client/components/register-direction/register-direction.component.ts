@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DirectionModel } from 'src/app/core/models/direction.model';
 import { ParamsModel } from 'src/app/core/models/params.models';
+import { GetAllTypeDirectionUsecase } from 'src/app/core/usecase/client/get-all-typeDirection.usecase';
 import { RegisterDirectionUsecase } from 'src/app/core/usecase/client/register-direction.usecase';
 
 @Component({
@@ -20,7 +21,8 @@ export class RegisterDirectionComponent implements OnInit {
 
     constructor(
         private _formBuilder: FormBuilder,
-        private _registerDirection: RegisterDirectionUsecase
+        private _registerDirection: RegisterDirectionUsecase,
+        private _getAllTypeDirection: GetAllTypeDirectionUsecase
     ){}
 
     createFormDirection(){
@@ -32,20 +34,8 @@ export class RegisterDirectionComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.createFormDirection()
-        this.typeDirection = [
-            {
-                id: 1,
-                code: '0001',
-                description: 'Dirección Operativa'
-            },
-            {
-                id: 2,
-                code: '0002',
-                description: 'Dirección Fiscal'
-            }
-        ]
-
+        this.createFormDirection();
+        this.getAllTypeDirections();
         this.unit = [
             {
                 id: 1,
@@ -59,6 +49,12 @@ export class RegisterDirectionComponent implements OnInit {
             } 
         ]
     }
+
+    getAllTypeDirections(){
+        this._getAllTypeDirection.execute().subscribe((value: any) => {
+          this.typeDirection.push(value)
+        })
+      }
 
     createDirection(){
         if (this.formDirection.invalid) {
