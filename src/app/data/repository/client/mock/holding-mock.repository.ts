@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { ParamsModel } from 'src/app/core/models/params.models';
 import { HoldingRepository } from 'src/app/core/repositories/holding.repository';
-import { SegmentationRepository } from 'src/app/core/repositories/segmentation.repository';
 
 @Injectable({
     providedIn: 'root'

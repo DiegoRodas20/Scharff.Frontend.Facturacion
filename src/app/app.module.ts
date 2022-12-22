@@ -31,6 +31,14 @@ import { ContactMockRepository } from './data/repository/client/mock/contact-moc
 import { DialogService } from 'primeng/dynamicdialog';
 import { DirectionRepository } from './core/repositories/direction.repository';
 import { DirectionMockRepository } from './data/repository/client/mock/direction-mock.repository';
+import { TypeDirectionRepository } from './core/repositories/typeDirection.repository';
+import { TypeDirectionMockRepository } from './data/repository/client/mock/typeDocument-mock.repository';
+import { ProvinceRepository } from './core/repositories/province.repository';
+import { ProvinceMockRepository } from './data/repository/client/mock/province-mock.repository';
+import { DistrictRepository } from './core/repositories/distric.repository';
+import { DistrictMockRepository } from './data/repository/client/mock/district-mock.repository';
+import { CountryRepository } from './core/repositories/country.repository';
+import { CountryMockRepository } from './data/repository/client/mock/country-mock.repository';
 
 @NgModule({
   declarations: [
@@ -62,7 +70,12 @@ import { DirectionMockRepository } from './data/repository/client/mock/direction
     { provide: TypeContactRepository, useClass: TypeContactMockRepository },
     { provide: AreaContactRepository, useClass: AreaContactMockRepository },
     { provide: ContactRepository, useClass: ContactMockRepository },
-    { provide: DirectionRepository, useClass: DirectionMockRepository }
+    { provide: DirectionRepository, useClass: DirectionMockRepository },
+    { provide: TypeDirectionRepository, useClass: TypeDirectionMockRepository },
+    { provide: ProvinceRepository, useClass: ProvinceMockRepository },
+    { provide: DistrictRepository, useClass: DistrictMockRepository },
+    { provide: CountryRepository, useClass: CountryMockRepository }
+    
   ],
   bootstrap: [AppComponent]
 })

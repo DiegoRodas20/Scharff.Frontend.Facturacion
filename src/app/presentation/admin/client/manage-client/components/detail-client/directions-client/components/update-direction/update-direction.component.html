@@ -1,0 +1,100 @@
+<div class="card px-5">
+    <form [formGroup]="formDirection">
+
+        <div class="pb-4">
+
+            <span class="text-base text-400">Direacción relacionada</span>
+  
+            <hr>
+        </div>
+
+        <!-- Inputs Datos Contacto -->
+        <div class="p-fluid grid">
+
+            <!-- Tipo de contacto -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="typeDirection" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="typeDirection" [showClear]="true"></p-dropdown>
+                    <label>Tipo de dirección</label>
+                </span>
+            </div>
+
+            <!-- Unidad -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="unit" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="unit" [showClear]="true"></p-dropdown>
+                    <label>Unidad</label>
+                </span>
+            </div>
+
+            <!-- Dirección -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <input id="float-input" pInputText formControlName="direction">
+                    <label for="float-input">Dirección</label>
+                </span>
+            </div>
+
+            <!-- Código Postal -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <input id="float-input" pInputText formControlName="postalCode">
+                    <label for="float-input">Codigo Postal</label>
+                </span>
+            </div>
+
+            <!-- Ubigeo -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <input id="float-input" pInputText formControlName="ubigeo">
+                    <label for="float-input">Ubigeo</label>
+                </span>
+            </div>
+
+            <!-- Provincia -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="province" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="province" [showClear]="true"></p-dropdown>
+                    <label>Provincia</label>
+                </span>
+            </div>
+
+            <!-- Distrito -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="district" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="district" [showClear]="true"></p-dropdown>
+                    <label>Distrito</label>
+                </span>
+            </div>
+
+            <!-- Pais -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="country" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="country" [showClear]="true"></p-dropdown>
+                    <label>Pais</label>
+                </span>
+            </div>
+
+            <!-- Estado -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="unit" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="status" [showClear]="true"></p-dropdown>
+                    <label>Estado</label>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="col-12 text-center py-3" (click)="updateDirection()">
+            <button pButton class="b-primary 4 w-3" label="AGREGAR">
+            </button>
+        </div>
+
+    </form>
+</div>

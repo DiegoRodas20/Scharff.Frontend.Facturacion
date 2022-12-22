@@ -1,5 +1,11 @@
 export interface DirectionModel {
-    typeDirection: number;
-    unit: number;
-    direction: string;
+    ubigeo?: string;
+    postalCode?: string;
+    province?: number;
+    country?: number;
+    district?: number;
+    status?: number;
+    typeDirection?: number;
+    unit?: number;
+    direction?: string;
 }

@@ -18,6 +18,7 @@ import { RegisterContactComponent } from './manage-client/components/detail-clie
 import { UpdateContactComponent } from './manage-client/components/detail-client/contacts-client/components/update-contact/update-contact.component'; 
 import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.component';
 import { RegisterDirectionComponent } from './manage-client/components/detail-client/directions-client/components/register-direction/register-direction.component';
+import { UpdateDirectionComponent } from './manage-client/components/detail-client/directions-client/components/update-direction/update-direction.component';
 
 
 const COMPONENTS = [
@@ -31,7 +32,8 @@ const COMPONENTS = [
     DirectionsClientComponent,
     RegisterContactComponent,
     UpdateContactComponent,
-    RegisterDirectionComponent
+    RegisterDirectionComponent,
+    UpdateDirectionComponent
 ]
 
 @NgModule({
