@@ -6,18 +6,44 @@ import { ContactRepository } from 'src/app/core/repositories/contact.repository'
 
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContactMockRepository extends ContactRepository {
+  constructor() {
+    super();
+  }
 
-    constructor() {
-        super();
+  contacts = [
+    {
+      id: 1,
+      name: 'Josué CB',
+      contactArea: 'Area test',
+      contactType: 'Contacto Interno',
+      status: 'Activo',
+      phone: '987609879',
+      email: 'jcaycho@sapia.com.pe',
+      comments: 'Contacto de confianza',
+    },
+    {
+      id: 2,
+      name: 'Manuel Moyano',
+      contactArea: 'Area Ventas',
+      contactType: 'Contacto Externo',
+      status: 'Activo',
+      phone: '987609811',
+      email: 'mmoyano@test.com.pe',
+      comments: 'Contacto del área de ventas',
     }
+  ];
 
-    registerContact(body: ContactModel): any {
-        console.log('RESPONSEEEE XD', body)
-        return from([{}])
-    }
+  registerContact(body: ContactModel): any {
+    console.log('RESPONSEEEE XD', body);
+    return from([{}]);
+  }
 
-    updateContact(params: ContactModel): any {}
+  updateContact(params: ContactModel): any {}
+
+  getAllContacts(): Observable<any> {
+    return from(this.contacts);
+  }
 }

@@ -5,4 +5,5 @@ export abstract class ContactRepository {
 
     abstract registerContact(params: ContactModel): Observable<ContactModel>;
     abstract updateContact(params: ContactModel): Observable<ContactModel>;
+    abstract getAllContacts(): Observable<ContactModel>;
 }

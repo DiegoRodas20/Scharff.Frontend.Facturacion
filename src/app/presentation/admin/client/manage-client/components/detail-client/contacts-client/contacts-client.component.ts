@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
+import { GetAllContactsUsecase } from 'src/app/core/usecase/client/get-all-contact.usecase';
 import { RegisterContactComponent } from './components/register-contact/register-contact.component'; 
 import { UpdateContactComponent } from './components/update-contact/update-contact.component'; 
 
@@ -15,35 +16,21 @@ export class ContactsClientComponent implements OnInit {
   contacts: any = [];
 
   constructor(
-    public dialogService: DialogService
+    public dialogService: DialogService,
+    private _getAllContacts: GetAllContactsUsecase
     ){
 
   }
   ngOnInit() {
-    this.contacts = [
-      {
-        id: 1,
-        name: 'Josué CB',
-        contactArea: 'Area test',
-        contactType: 'Contacto Interno',
-        status: 'Activo',
-        phone: '987609879',
-        email: 'jcaycho@sapia.com.pe',
-        comments: 'Contacto de confianza'
-      },
-      {
-        id: 2,
-        name: 'Manuel Moyano',
-        contactArea: 'Area Ventas',
-        contactType: 'Contacto Externo',
-        status: 'Activo',
-        phone: '987609811',
-        email: 'mmoyano@test.com.pe',
-        comments: 'Contacto del área de ventas'
-      }
-    ]
-    this.contacts = this.contacts.map((element: any, index: number )=> {
-      return { ...element, index: (index + 1) }
+    this.getAllContacts()
+  }
+
+  getAllContacts(){
+    this._getAllContacts.execute().subscribe((value: any)=>{
+      this.contacts.push(value)
+      this.contacts = this.contacts.map((element: any, index: number )=> {
+        return { ...element, index: (index + 1) }
+      })
     })
   }
 
