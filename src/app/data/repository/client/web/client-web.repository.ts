@@ -20,8 +20,36 @@ export class ClientWebRepository extends ClientRepository {
         super();
     }
 
+    clients = [
+        {
+            'codigoUnico': '00442',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        },
+        {
+            'codigoUnico': '00441',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        },
+        {
+            'codigoUnico': '00441',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        },
+        {
+            'codigoUnico': '00441',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        },
+        {
+            'codigoUnico': '00441',
+            'ruc': '20500624972',
+            'razonSocial': 'Las Torres del cruzero'
+        }
+    ];
+
     getAllClients(): Observable<ClientModel> {
-        return from([])
+        return from(this.clients)
     }
 
     createClient(body: any): Observable<ClientModel> {
