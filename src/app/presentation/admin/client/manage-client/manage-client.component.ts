@@ -3,6 +3,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { ClientModel } from 'src/app/core/models/client.model';
 import { GetAllClientsUsecase } from 'src/app/core/usecase/client/get-all-clients.usecase';
 import { RegisterClientComponent } from './components/register-client/register-client.component';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-manage-client',
@@ -19,7 +20,8 @@ export class ManageClientComponent implements OnInit {
 
     constructor(
         public dialogService: DialogService,
-        private _getAllClients: GetAllClientsUsecase
+        private _getAllClients: GetAllClientsUsecase,
+        private router: Router
     ) { }
 
     ngOnInit() {
@@ -47,6 +49,7 @@ export class ManageClientComponent implements OnInit {
 
     showDetailClient(): void {
         this.isVisibleDetailClient = true;
+        // this.router.navigate(["detail/12"])
     }
 
     showSearchClient() {

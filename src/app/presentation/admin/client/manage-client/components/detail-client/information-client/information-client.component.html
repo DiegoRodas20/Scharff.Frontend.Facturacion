@@ -12,7 +12,7 @@
             <span class="flex-initial w-4">
                 Grupo empresarial o categoria cliente
             </span>
-            <span class="flex-initial pl-5">
+            <span class="flex-initial pl-5 font-bold">
                 Grupo empresarial
             </span>
         </div>
@@ -22,7 +22,7 @@
                 <span class="flex-initial w-4">
                     Sector economico
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     Sector A
                 </span>
             </div>
@@ -31,7 +31,7 @@
                 <span class="flex-initial w-4">
                     Moneda
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     Soles
                 </span>
             </div>
@@ -51,7 +51,7 @@
                 <span class="flex-initial w-4">
                     Codigo Unico
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     12931123124
                 </span>
             </div>
@@ -59,7 +59,7 @@
                 <span class="flex-initial w-4">
                     RUC
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     20607202412
                 </span>
             </div>
@@ -67,7 +67,7 @@
                 <span class="flex-initial w-4">
                     Razon social
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     La tienda de Pedro
                 </span>
             </div>
@@ -75,7 +75,7 @@
                 <span class="flex-initial w-4">
                     Nombre comercial
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     La tienda de Pedrito
                 </span>
             </div>
@@ -83,7 +83,7 @@
                 <span class="flex-initial w-4">
                     Cuenta FEDEX
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     191-233445-33121
                 </span>
             </div>
@@ -91,7 +91,7 @@
                 <span class="flex-initial w-4">
                     Segmentación
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     CXC CLIENTES MEDIOS
                 </span>
             </div>
@@ -102,7 +102,7 @@
                 <span class="flex-initial w-4">
                     Tipo doc.
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     RUC
                 </span>
             </div>
@@ -111,7 +111,7 @@
                 <span class="flex-initial w-4">
                     Telefono
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     920 994 999
                 </span>
             </div>
@@ -120,7 +120,7 @@
                 <span class="flex-initial w-4">
                     Holding
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     Holding B
                 </span>
             </div>
@@ -129,7 +129,7 @@
                 <span class="flex-initial w-4">
                     Autorizar FEDEX
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     Si
                 </span>
             </div>
@@ -137,14 +137,14 @@
                 <span class="flex-initial w-4">
                     Estado
                 </span>
-                <span class="flex-initial pl-5">
+                <span class="flex-initial pl-5 font-bold">
                     Activo
                 </span>
             </div>
         </div>
     </div>
 
-    <div class="field-checkbox mt-4">
+    <div class="field-checkbox mt-6">
         <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
         <label for="ny">Sin verificacion SAP</label>
     </div>
@@ -155,71 +155,76 @@
     </div>
 
     <!-- ----------colapsable---------- -->
-
-    <span class="p-menuitem-text cursor-pointer" (click)="toggleAdditionalData()">Datos Adicionales</span>
+    <div class="cursor-pointer mt-6" (click)="toggleAdditionalData()">
+        <span class="p-menuitem-text mr-2">Datos Adicionales</span>
+        <i class="pi"
+           [class.pi-angle-down]="!isVisibleAdditionalData"
+           [class.pi-angle-up]="isVisibleAdditionalData"
+        ></i>
+    </div>
 
     <!-- -------desplegable checkbox------------- -->
 
     <div *ngIf="isVisibleAdditionalData">
-        <div class="flex gap-6">
-            <div class="field-checkbox mt-4">
-              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-              <label for="ny">Clientes</label>
+        <div class="flex gap-6 ml-3">
+            <div class="flex-1 field-checkbox mt-4">
+                <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                <label for="ny">Clientes</label>
             </div>
 
-            <div class="field-checkbox mt-4">
+            <div class="flex-1 field-checkbox mt-4">
                 <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
                 <label for="sf">Almacen</label>
             </div>
 
-            <div class="field-checkbox mt-4">
-              <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-              <label for="ny">Agencia Aduanas</label>
+            <div class="flex-1 field-checkbox mt-4">
+                <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
+                <label for="ny">Agencia Aduanas</label>
             </div>
 
-            <div class="field-checkbox mt-4">
-                  <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                  <label for="sf">Transporte Aereo</label>
+            <div class="flex-1 field-checkbox mt-4">
+                <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
+                <label for="sf">Transporte Aereo</label>
             </div>
 
-            <div class="field-checkbox mt-4">
+            <div class="flex-1 field-checkbox mt-4">
                 <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
                 <label for="ny">Consignatario</label>
             </div>
 
         </div>
 
-        <div class="flex gap-6">
+        <div class="flex gap-6 ml-3">
 
-            <div class="field-checkbox mt-4">
+            <div class="flex-1 field-checkbox mt-4">
                 <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
                 <label for="sf">Transporte Maritimo</label>
-           </div>
+            </div>
 
-            <div class="field-checkbox mt-4">
+            <div class="flex-1 field-checkbox mt-4">
               <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
               <label for="ny">Shipper</label>
             </div>
 
-            <div class="field-checkbox mt-4">
+            <div class="flex-1 field-checkbox mt-4">
               <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
               <label for="sf">Para visto bueno</label>
             </div>
 
-            <div class="field-checkbox mt-4">
+            <div class="flex-1 field-checkbox mt-4">
               <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
               <label for="ny">Notify</label>
             </div>
 
-            <div class="field-checkbox mt-4">
+            <div class="flex-1 field-checkbox mt-4">
               <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
               <label for="sf">Embarcador</label>
             </div>
         </div>
     </div>
 
-    <div class="col-12 text-center py-3">
-      <button pButton class="b-primary px-5 py-2" icon="pi pi-pencil" (click)="showModalUpdateClient()"
+    <div class="col-12 text-center py-2 mt-4">
+      <button pButton class="b-primary px-6 py-3 border-round-2xl" icon="pi pi-pencil" (click)="showModalUpdateClient()"
           label="Actualizar cliente">
       </button>
     </div>
