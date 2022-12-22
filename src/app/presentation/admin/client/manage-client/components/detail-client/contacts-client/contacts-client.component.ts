@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
-import { RegisterContactComponent } from './component/register-contact/register-contact.component';
-import { UpdateContactComponent } from './component/update-contact/update-contact.component';
+import { RegisterContactComponent } from './components/register-contact/register-contact.component'; 
+import { UpdateContactComponent } from './components/update-contact/update-contact.component'; 
 
 @Component({
   selector: 'app-contacts-client',

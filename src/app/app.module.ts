@@ -22,6 +22,12 @@ import { SegmentationMockRepository } from './data/repository/client/mock/segmen
 import { ClientWebRepository } from './data/repository/client/web/client-web.repository';
 import { HoldingRepository } from './core/repositories/holding.repository';
 import { HoldingMockRepository } from './data/repository/client/mock/holding-mock.repository';
+import { TypeContactRepository } from './core/repositories/typContact.repository';
+import { TypeContactMockRepository } from './data/repository/client/mock/typeContact-mock.repository';
+import { AreaContactRepository } from './core/repositories/areaContact.repository';
+import { AreaContactMockRepository } from './data/repository/client/mock/areaContact-mock.repository';
+import { ContactRepository } from './core/repositories/contact.repository';
+import { ContactMockRepository } from './data/repository/client/mock/contact-mock.repository';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,10 @@ import { HoldingMockRepository } from './data/repository/client/mock/holding-moc
     { provide: EconomicSectorRepository, useClass: EconomicSectorMockRepository },
     { provide: TypeDocumentIdentyRepository, useClass: TypeDocumentIdentyMockRepository },
     { provide: SegmentationRepository, useClass: SegmentationMockRepository },
-    { provide: HoldingRepository, useClass: HoldingMockRepository } 
+    { provide: HoldingRepository, useClass: HoldingMockRepository },
+    { provide: TypeContactRepository, useClass: TypeContactMockRepository },
+    { provide: AreaContactRepository, useClass: AreaContactMockRepository },
+    { provide: ContactRepository, useClass: ContactMockRepository }
   ],
   bootstrap: [AppComponent]
 })
