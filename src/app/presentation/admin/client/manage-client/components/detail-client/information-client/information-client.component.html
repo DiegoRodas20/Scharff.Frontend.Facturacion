@@ -82,81 +82,75 @@
           <span class="col-6 py-0 font-semibold">Comentarios de cliente</span>
         </div>
 
-        <div class="col-12 md:col-6 flex">
-            <button pButton pRipple label="Datos Adicionales" class="p-button-text text-700 font-bold"
-                icon="pi pi-angle-down" iconPos="right" (click)="toggleAdditionalData()"></button>
+        <!-- ---------datos adicionales---------- -->
+        <div class="col-12 md:col-12 flex mt-3 p-0">
+            <button
+                pButton
+                pRipple
+                label="Datos Adicionales"
+                class="p-button-text text-700 font-bold"
+                icon="pi pi-angle-{{ isVisibleAdditionalData ? 'up' : 'down' }}"
+                iconPos="right"
+                (click)="toggleAdditionalData()"
+            ></button>
         </div>
-
-        <i class="pi"
-           [class.pi-angle-down]="!isVisibleAdditionalData"
-           [class.pi-angle-up]="isVisibleAdditionalData"
-        ></i>
 
         <ng-container *ngIf="isVisibleAdditionalData">
             <div class="col-12 flex">
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox [(ngModel)]="isClientChecked" [binary]="true" inputId="ny"></p-checkbox>
-                    <label for="ny">Clientes</label>
+                    <p-checkbox [(ngModel)]="isClientChecked" [binary]="true" inputId="clientes"></p-checkbox>
+                    <label for="clientes">Clientes</label>
                 </div>
 
                 <div class="p-checkbox p-component p-checkbox-checked"></div>
 
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                    <label for="sf">Almacen</label>
+                    <p-checkbox name="almacen" value="" inputId="almacen"></p-checkbox>
+                    <label for="almacen">Almacen</label>
                 </div>
 
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-                    <label for="ny">Agencia Aduanas</label>
+                    <p-checkbox name="agencia" value="" inputId="agencia"></p-checkbox>
+                    <label for="agencia">Agencia Aduanas</label>
                 </div>
 
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                    <label for="sf">Transporte Aereo</label>
+                    <p-checkbox name="transporte-aereo" value="" inputId="transporte-aereo"></p-checkbox>
+                    <label for="transporte-aereo">Transporte Aereo</label>
                 </div>
             </div>
 
             <div class="col-12 flex">
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-                    <label for="ny">Consignatario</label>
+                    <p-checkbox name="consignatario" value="" inputId="consignatario"></p-checkbox>
+                    <label for="consignatario">Consignatario</label>
                 </div>
 
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                    <label for="sf">Transporte Maritimo</label>
+                    <p-checkbox name="transporte-maritimo" value="" inputId="transporte-maritimo"></p-checkbox>
+                    <label for="transporte-maritimo">Transporte Maritimo</label>
                 </div>
 
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-                    <label for="ny">Shipper</label>
+                    <p-checkbox name="shipper" value="" inputId="shipper"></p-checkbox>
+                    <label for="shipper">Shipper</label>
                 </div>
 
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                    <label for="sf">Para visto bueno</label>
+                    <p-checkbox name="visto" value="" inputId="visto"></p-checkbox>
+                    <label for="visto">Para visto bueno</label>
                 </div>
             </div>
 
             <div class="col-12 flex">
-                <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="ny"></p-checkbox>
-                    <label for="ny">Consignatario</label>
-                </div>
 
                 <div class="col-3 field-checkbox py-0">
-                    <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                    <label for="sf">Transporte Maritimo</label>
-                </div>
-
-                <div class="col-3 field-checkbox py-0">
-                  <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                  <label for="sf">Esporadico</label>
+                  <p-checkbox name="esporadico" value="" inputId="esporadico"></p-checkbox>
+                  <label for="esporadico">Esporadico</label>
                 </div>
                 <div class="col-3 field-checkbox py-0">
-                  <p-checkbox name="group1" value="" inputId="sf"></p-checkbox>
-                  <label for="sf">Relacionado</label>
+                  <p-checkbox name="relacionado" value="" inputId="relacionado"></p-checkbox>
+                  <label for="relacionado">Relacionado</label>
                 </div>
 
             </div>
