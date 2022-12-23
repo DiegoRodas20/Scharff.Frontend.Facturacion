@@ -26,7 +26,7 @@ export class UpdateContactComponent implements OnInit {
   // Area de contacto
   areaContact: Array<ParamsModel> = [];
 
-  // Comentarios de contacto
+  // Comentarios de cliente
   // areaContact: Array<ParamsModel> = [];
 
   // Estado de contacto
