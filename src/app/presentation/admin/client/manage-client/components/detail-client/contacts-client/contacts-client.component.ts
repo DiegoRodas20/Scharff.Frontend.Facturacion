@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
-import { GetAllContactsUsecase } from 'src/app/core/usecase/client/get-all-contact.usecase';
+import { GetAllContactsByClientIdUsecase } from 'src/app/core/usecase/client/contact/get-all-contacts-by-client-id.usecase';
 import { RegisterContactComponent } from './components/register-contact/register-contact.component'; 
 import { UpdateContactComponent } from './components/update-contact/update-contact.component'; 
 
@@ -17,7 +17,7 @@ export class ContactsClientComponent implements OnInit {
 
   constructor(
     public dialogService: DialogService,
-    private _getAllContacts: GetAllContactsUsecase
+    private _getAllContacts: GetAllContactsByClientIdUsecase
     ){
 
   }
@@ -26,12 +26,12 @@ export class ContactsClientComponent implements OnInit {
   }
 
   getAllContacts(){
-    this._getAllContacts.execute().subscribe((value: any)=>{
-      this.contacts.push(value)
-      this.contacts = this.contacts.map((element: any, index: number )=> {
-        return { ...element, index: (index + 1) }
-      })
-    })
+    // this._getAllContacts.execute().subscribe((value: any)=>{
+    //   this.contacts.push(value)
+    //   this.contacts = this.contacts.map((element: any, index: number )=> {
+    //     return { ...element, index: (index + 1) }
+    //   })
+    // })
   }
 
   showModalRegisterContact(){

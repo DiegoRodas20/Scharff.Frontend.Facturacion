@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DirectionModel } from 'src/app/core/models/direction.model';
+import { AddressModel } from 'src/app/core/models/address.model';
 import { ParamsModel } from 'src/app/core/models/params.models';
-import { GetAllCountryUsecase } from 'src/app/core/usecase/client/get-all-country.usecase';
-import { GetAllDistrictUsecase } from 'src/app/core/usecase/client/get-all-district.usecase';
-import { GetAllProvincesUsecase } from 'src/app/core/usecase/client/get-all-province.usecase';
-import { GetAllTypeDirectionUsecase } from 'src/app/core/usecase/client/get-all-typeDirection.usecase';
-import { RegisterDirectionUsecase } from 'src/app/core/usecase/client/register-direction.usecase';
+import { RegisterAddressByClientIdUsecase } from 'src/app/core/usecase/client/address/register-address-by-client-id.usecase';
+import { GetAllCountryUsecase } from 'src/app/core/usecase/utils/get-all-country.usecase';
+import { GetAllDistrictUsecase } from 'src/app/core/usecase/utils/get-all-district.usecase';
+import { GetAllProvincesUsecase } from 'src/app/core/usecase/utils/get-all-province.usecase';
+import { GetAllTypeDirectionUsecase } from 'src/app/core/usecase/utils/get-all-typeDirection.usecase';
+
 
 @Component({
   selector: 'app-update-direction-component',
@@ -36,11 +37,11 @@ export class UpdateDirectionComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _registerDirection: RegisterDirectionUsecase,
     private _getAllProvinces: GetAllProvincesUsecase,
     private _getAllDistricts: GetAllDistrictUsecase,
     private _getAllTypeDirections: GetAllTypeDirectionUsecase,
-    private _getAllCountries: GetAllCountryUsecase
+    private _getAllCountries: GetAllCountryUsecase,
+    private _registerDirection: RegisterAddressByClientIdUsecase,
   ) {}
 
   createFormDirection() {
@@ -97,26 +98,20 @@ export class UpdateDirectionComponent implements OnInit {
 
     const form = this.formDirection.value;
 
-    const Direction: DirectionModel = {
-      postalCode: form.postalCode,
-      ubigeo: form.ubigeo,
-      province: form.province.id,
-      district: form.district.id,
-      country: form.country.id,
-      typeDirection: form.typeDirection.id,
-      unit: form.unit,
-      direction: form.direction,
-      status: form.status
-    };
+    // const Direction: AddressModel = {
+    //   postalCode: form.postalCode,
+    //   ubigeo: form.ubigeo,
+    //   province: form.province.id,
+    //   district: form.district.id,
+    //   country: form.country.id,
+    //   typeDirection: form.typeDirection.id,
+    //   unit: form.unit,
+    //   direction: form.direction,
+    //   status: form.status
+    // };
 
-    console.log('DATOS DE DIRECCIÓN')
-    console.log(Direction)
-
-    /**
-     *     this._registerDirection.execute(Direction).subscribe((value: any) => {
-      this.formDirection.reset();
-    });
-     */
+    // console.log('DATOS DE DIRECCIÓN')
+    // console.log(Direction)
 
   }
 }

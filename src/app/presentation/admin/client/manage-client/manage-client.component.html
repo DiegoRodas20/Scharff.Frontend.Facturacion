@@ -1,15 +1,15 @@
-<div class="grid">
+<div class="grid px-4 md:px-8">
 
     <h3 class="col-12 text-center text-xl">
         Hola,
         <span class="text-center text-xl text-700">Pedro Saramias Huarcaya</span>
     </h3>
 
-    <div class="col-12 flex flex-column align-items-center">
+    <div class="col-12 md:col-4 md:col-offset-4 justify-content-center flex flex-column align-items-center">
         <span class="p-float-label p-input-icon-right w-full">
             <i class="pi pi-search"></i>
-            <input class="search w-full" id="inputtext-right" pInputText>
-            <label for="inputtext-right">¿Buscas un cliente?</label>
+            <input [formControl]="filtro" class="search w-full" pInputText>
+            <label>¿Buscas un cliente?</label>
         </span>
     </div>
 
@@ -18,9 +18,13 @@
         </button>
     </div>
 
+    <div class="col-12">
+        <span>{{mensaje}}</span>
+    </div>
+
     <div class="col-12 flex flex-column align-items-center">
 
-        <p-card *ngFor="let client of lClients" class="m-2 w-full">
+        <p-card *ngFor="let client of lClients | filterPipe: filtro.value" class="m-2 w-full">
             <div class="grid">
 
                 <!-- Point Active -->
@@ -31,13 +35,13 @@
                 <!-- Codigo Unico -->
                 <div class="col-12 md:col-3">
                     <span class="text-500">Código único</span>
-                    <div class="font-semibold">{{client.codigoUnico}}</div>
+                    <div class="font-semibold">{{client.id}}</div>
                 </div>
 
                 <!-- RUC -->
                 <div class="col-12 md:col-3">
                     <span class="text-500">RUC</span>
-                    <div class="font-semibold">{{client.ruc}}</div>
+                    <div class="font-semibold">{{client.numeroDocumentoIdentidad}}</div>
                 </div>
 
                 <!-- Razon Social -->

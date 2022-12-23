@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactModel } from 'src/app/core/models/contact.model';
 import { ParamsModel } from 'src/app/core/models/params.models';
-import { GetAllAreaContactUsecase } from 'src/app/core/usecase/client/get-all-area-contact.usecase';
-import { GetAllTypeContactUsecase } from 'src/app/core/usecase/client/get-all-type-contacts.usecase';
-import { RegisterContactsUsecase } from 'src/app/core/usecase/client/register-contact.usecase';
+import { RegisterContactByClientIdUsecase } from 'src/app/core/usecase/client/contact/register-contact-by-client-id.usecase';
+import { GetAllAreaContactUsecase } from 'src/app/core/usecase/utils/get-all-area-contact.usecase';
+import { GetAllTypeContactUsecase } from 'src/app/core/usecase/utils/get-all-type-contacts.usecase';
+
 
 @Component({
   selector: 'app-register-contact-component',
@@ -30,7 +31,7 @@ export class RegisterContactComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private _getAllTypeContact: GetAllTypeContactUsecase,
     private _getAllAreaContact: GetAllAreaContactUsecase,
-    private _registerContact: RegisterContactsUsecase
+    private _registerContact: RegisterContactByClientIdUsecase
   ) {}
 
   createFormClient() {
@@ -82,21 +83,21 @@ export class RegisterContactComponent implements OnInit {
 
     const form = this.formContact.value
 
-    const Contact: ContactModel = {
-      fullName: form.fullName,
-      typeContact: form.typeContact.id,
-      areaContact: form.areaContact.id,
-      phone1: form.phone1,
-      phone2: form.phone2,
-      email1: form.email1,
-      email2: form.email2,
-      comments: form.comments
-    }
+    // const Contact: ContactModel = {
+    //   fullName: form.fullName,
+    //   typeContact: form.typeContact.id,
+    //   areaContact: form.areaContact.id,
+    //   phone1: form.phone1,
+    //   phone2: form.phone2,
+    //   email1: form.email1,
+    //   email2: form.email2,
+    //   comments: form.comments
+    // }
 
-    this._registerContact.execute(Contact).subscribe((value: any) => {
-      this.formContact.reset()
-    })
+    // this._registerContact.execute(Contact).subscribe((value: any) => {
+    //   this.formContact.reset()
+    // })
 
-    this.formContact.reset()
+    // this.formContact.reset()
   }
 }

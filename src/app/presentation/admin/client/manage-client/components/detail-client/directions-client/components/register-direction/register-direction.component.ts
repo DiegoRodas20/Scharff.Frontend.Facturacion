@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DirectionModel } from 'src/app/core/models/direction.model';
 import { ParamsModel } from 'src/app/core/models/params.models';
-import { GetAllTypeDirectionUsecase } from 'src/app/core/usecase/client/get-all-typeDirection.usecase';
-import { RegisterDirectionUsecase } from 'src/app/core/usecase/client/register-direction.usecase';
+
 
 @Component({
   selector: 'app-register-direction-component',
@@ -21,8 +19,8 @@ export class RegisterDirectionComponent implements OnInit {
 
     constructor(
         private _formBuilder: FormBuilder,
-        private _registerDirection: RegisterDirectionUsecase,
-        private _getAllTypeDirection: GetAllTypeDirectionUsecase
+        // private _registerDirection: RegisterDirectionUsecase,
+        // private _getAllTypeDirection: GetAllTypeDirectionUsecase
     ){}
 
     createFormDirection(){
@@ -51,9 +49,9 @@ export class RegisterDirectionComponent implements OnInit {
     }
 
     getAllTypeDirections(){
-        this._getAllTypeDirection.execute().subscribe((value: any) => {
-          this.typeDirection.push(value)
-        })
+        // this._getAllTypeDirection.execute().subscribe((value: any) => {
+        //   this.typeDirection.push(value)
+        // })
       }
 
     createDirection(){
@@ -64,14 +62,14 @@ export class RegisterDirectionComponent implements OnInit {
       
           const form = this.formDirection.value
       
-          const Contact: DirectionModel = {
-            typeDirection: form.typeDirection.id,
-            unit: form.unit.id,
-            direction: form.direction
-          }
+          // const Contact: DirectionModel = {
+          //   typeDirection: form.typeDirection.id,
+          //   unit: form.unit.id,
+          //   direction: form.direction
+          // }
 
-          this._registerDirection.execute(Contact).subscribe((value: any) => {
-            this.formDirection.reset()
-          })
+          // this._registerDirection.execute(Contact).subscribe((value: any) => {
+          //   this.formDirection.reset()
+          // })
     }
 }

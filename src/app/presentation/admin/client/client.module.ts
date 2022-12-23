@@ -19,6 +19,7 @@ import { UpdateContactComponent } from './manage-client/components/detail-client
 import { DetailClientComponent } from './manage-client/components/detail-client/detail-client.component';
 import { RegisterDirectionComponent } from './manage-client/components/detail-client/directions-client/components/register-direction/register-direction.component';
 import { UpdateDirectionComponent } from './manage-client/components/detail-client/directions-client/components/update-direction/update-direction.component';
+import { PipeModule } from 'src/app/common/helpers/pipes/pipe.module';
 
 
 const COMPONENTS = [
@@ -44,6 +45,7 @@ const COMPONENTS = [
         CommonModule,
         RouterModule,
         FormsModule,
+        PipeModule,
         ReactiveFormsModule,
         PrimeNGModule,
         SharedModule,

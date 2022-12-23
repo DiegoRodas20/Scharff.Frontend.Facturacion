@@ -1,10 +1,17 @@
 export interface ContactModel {
-    fullName: string;
-    typeContact?: number;
-    areaContact?: number;
-    phone1?: string;
-    phone2?: string;
-    email1?: string;
-    email2?: string;
-    comments?: string;
+
+    id?: number;
+    estado?: boolean | null;
+    idCliente?: number;
+    tipoContacto_parametro?: number;
+    areaContacto_parametro?: number;
+    nombreCompleto?: string | null;
+    comentario?: string | null;
+    fechaCreacion?: string | null;
+    autorCreacion?: number;
+    fechaActualizacion?: string | null;
+    autorActualizacion?: number;
+    fechaInicio?: string | null;
+    fechaFin?: string | null;
+
 }

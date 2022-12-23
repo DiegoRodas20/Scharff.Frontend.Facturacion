@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
 import { RegisterDirectionComponent } from './components/register-direction/register-direction.component'; 
 import { UpdateDirectionComponent } from './components/update-direction/update-direction.component';
-import { GetAllDirectionsUsecase } from 'src/app/core/usecase/client/get-all-direction.usecase';
+import { GetAllAddressByClientIdUsecase } from 'src/app/core/usecase/client/address/get-all-address-by-client-id.usecase';
 
 @Component({
   selector: 'app-directions-client',
@@ -17,7 +17,7 @@ export class DirectionsClientComponent implements OnInit {
 
   constructor(
     public dialogService: DialogService,
-    private _getAllDirection: GetAllDirectionsUsecase
+    private _getAllDirection: GetAllAddressByClientIdUsecase
     ){
 
   }
@@ -26,9 +26,9 @@ export class DirectionsClientComponent implements OnInit {
   }
 
   getAllDirections(){
-    this._getAllDirection.execute().subscribe((value: any)=>{
-      this.directions.push(value)
-    })
+    // this._getAllDirection.execute().subscribe((value: any)=>{
+    //   this.directions.push(value)
+    // })
   }
 
   showModalRegisterDirection(){

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ClientModel } from 'src/app/core/models/client.model';
-import { GetAllClientsUsecase } from 'src/app/core/usecase/client/get-all-clients.usecase';
+import { GetAllClientsUsecase } from 'src/app/core/usecase/client/client/get-all-clients.usecase';
+
 import { RegisterClientComponent } from './components/register-client/register-client.component';
 
 @Component({
@@ -14,6 +16,8 @@ import { RegisterClientComponent } from './components/register-client/register-c
 export class ManageClientComponent implements OnInit {
 
     lClients: ClientModel[] = []
+    mensaje: string
+    filtro = new FormControl()
 
     constructor(
         public dialogService: DialogService,
@@ -30,13 +34,17 @@ export class ManageClientComponent implements OnInit {
             header: 'Registrar Cliente',
             width: '75rem',
         });
+
+        ref.onClose.subscribe(() => { this.getAllClients() })
     }
 
     async getAllClients() {
         try {
 
             const data: any = await this._getAllClients.execute()
-            this.lClients = data
+            console.log(data)
+            this.lClients = data.data
+            this.mensaje = data.message
         }
         catch (error) {
             console.log("Error: ", error)

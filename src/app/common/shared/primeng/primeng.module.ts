@@ -19,6 +19,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 const COMPONENTS = [
@@ -41,7 +43,9 @@ const COMPONENTS = [
     TabViewModule,
     MenubarModule,
     TabMenuModule,
-    InputTextareaModule
+    InputTextareaModule,
+    ToastModule,
+    ConfirmDialogModule
 ]
 
 @NgModule({

@@ -1,20 +1,29 @@
 export interface ClientModel {
-    codigoUnico?: string,
-    ruc?: string,
-    razonSocial?: string,
-    
-    typeDocumentIdentity?: number,
-    numberDocumentIdentity?: string,
-    companyName?: string,
-    phone?: string,
-    tradeName?: string,
-    typeCurrency?: number,
-    businessGroup?: number,
-    codeEconomicSector?: number,
-    holding?: number,
-    codeSegmentation?: number,
-    accountAuthorizeFedex?: boolean,
-    migrateSap?: boolean,
-    statusClient?: boolean,
-    accountFedex?: string
+
+    id?: number;
+    tipoCliente_parametro?: number;
+    numeroDocumentoIdentidad?: string;
+    codigoSegmentacion_parametro?: number;
+    tipoDocumentoIdentidad?: number;
+    idUbicacionGeografica?: number;
+    razonSocial?: string;
+    codigoSector_parametro?: number;
+    telefono?: string;
+    cuentaFedex?: string;
+    cuentaAutorizadaFedex?: boolean;
+    fechaAutorizacionFedex?: string;
+    nombreComercial?: string;
+    comentario?: string;
+    tipoMoneda_parametro?: number;
+    grupoEmpresarial_parametro?: number;
+    holding_parametro?: number;
+    codigoSap?: string;
+    estadoCliente?: boolean;
+    estadoSap_parametro?: number;
+    estadoSR_parametro?: number;
+    fechaCreacion?: string;
+    autorCreacion?: number;
+    fechaModificacion?: string;
+    autorModificacion?: number;
+
 }
