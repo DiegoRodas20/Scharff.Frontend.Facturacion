@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 import { ContactModel } from 'src/app/core/models/contact.model';
 import { ParamsModel } from 'src/app/core/models/params.models';
 import { RegisterContactByClientIdUsecase } from 'src/app/core/usecase/client/contact/register-contact-by-client-id.usecase';
@@ -37,7 +38,8 @@ export class UpdateContactComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private _getAllTypeContact: GetAllTypeContactUsecase,
     private _getAllAreaContact: GetAllAreaContactUsecase,
-    private _registerContact: RegisterContactByClientIdUsecase
+    private _registerContact: RegisterContactByClientIdUsecase,
+    private _messageService: MessageService,
   ) {}
 
   createFormClient() {
@@ -83,8 +85,13 @@ export class UpdateContactComponent implements OnInit {
 
   createContact() {
     if (this.formContact.invalid) {
-      this.formContact.markAllAsTouched()
-      return
+      this._messageService.add({
+        severity: 'warn',
+        summary: 'Atención',
+        detail: 'Completar los campos necesarios',
+      });
+      this.formContact.markAllAsTouched();
+      return;
     }
 
     const form = this.formContact.value

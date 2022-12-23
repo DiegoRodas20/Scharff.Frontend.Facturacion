@@ -35,7 +35,9 @@ export class UpdateClientComponent implements OnInit {
 
   ngOnInit() {}
 
-  updateClient() {}
+  updateClient() {
+
+}
 
   showInputSap() {
     return this.form.value.migrateSap;

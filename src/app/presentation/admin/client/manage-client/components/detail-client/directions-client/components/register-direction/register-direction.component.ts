@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 import { ParamsModel } from 'src/app/core/models/params.models';
 
 
@@ -19,6 +20,7 @@ export class RegisterDirectionComponent implements OnInit {
 
     constructor(
         private _formBuilder: FormBuilder,
+        private _messageService: MessageService,
         // private _registerDirection: RegisterDirectionUsecase,
         // private _getAllTypeDirection: GetAllTypeDirectionUsecase
     ){}
@@ -44,7 +46,7 @@ export class RegisterDirectionComponent implements OnInit {
                 id: 2,
                 code: '0002',
                 description: 'Carga'
-            } 
+            }
         ]
     }
 
@@ -56,12 +58,17 @@ export class RegisterDirectionComponent implements OnInit {
 
     createDirection(){
         if (this.formDirection.invalid) {
-            this.formDirection.markAllAsTouched()
-            return
+          this._messageService.add({
+            severity: 'warn',
+            summary: 'Atención',
+            detail: 'Completar los campos necesarios',
+          });
+          this.formDirection.markAllAsTouched();
+          return;
           }
-      
+
           const form = this.formDirection.value
-      
+
           // const Contact: DirectionModel = {
           //   typeDirection: form.typeDirection.id,
           //   unit: form.unit.id,
