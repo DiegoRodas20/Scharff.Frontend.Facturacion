@@ -8,7 +8,7 @@ import { DetailClientComponent } from "./manage-client/components/detail-client/
 const routes: Routes = [
 
     { path: '', component: ManageClientComponent },
-    { path: 'id', component: DetailClientComponent },
+    { path: ':id', component: DetailClientComponent },
 ]
 
 @NgModule({

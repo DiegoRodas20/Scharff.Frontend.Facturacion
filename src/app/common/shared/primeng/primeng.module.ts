@@ -21,6 +21,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { PaginatorModule } from 'primeng/paginator';
 
 
 const COMPONENTS = [
@@ -45,7 +46,8 @@ const COMPONENTS = [
     TabMenuModule,
     InputTextareaModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    PaginatorModule
 ]
 
 @NgModule({

@@ -136,6 +136,37 @@ hr {
     background: #FF1D53 !important;
 }
 
+.p-paginator {
+    background: transparent;
+}
+
+// Dialog
+.p-confirm-dialog .p-dialog-content {
+    display: grid !important;
+    justify-items: center !important;
+}
+
+.p-dialog.p-confirm-dialog .p-confirm-dialog-icon {
+    font-size: 3rem;
+}
+
+.p-dialog.p-confirm-dialog .p-confirm-dialog-message {
+    margin-left: 0rem;
+    font-weight: bolder;
+    padding-top: 2rem;
+}
+
+.p-dialog .p-dialog-footer {
+    text-align: center !important;
+}
+
+.p-dialog .p-dialog-footer button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #000000 !important;
+    border-radius: 100px;
+}
+
 // Scrollbar
 ::-webkit-scrollbar {
     width: 15px;

@@ -24,7 +24,7 @@
 
     <div class="col-12 flex flex-column align-items-center">
 
-        <p-card *ngFor="let client of lClients | filterPipe: filtro.value" class="m-2 w-full">
+        <p-card *ngFor="let client of lClientsChunk | filterPipe: filtro.value" class="m-2 w-full">
             <div class="grid">
 
                 <!-- Point Active -->
@@ -53,12 +53,15 @@
                 <!-- Options -->
                 <div class="col-12 md:col-2 text-center">
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"
-                        (click)="getClientById()"></button>
+                        (click)="getClientById(client.id)"></button>
                     <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
                 </div>
 
             </div>
         </p-card>
+        <div class="col-12 pt-4 flex justify-content-end">
+            <p-paginator [rows]="4" [totalRecords]="lClients.length" (onPageChange)="paginate($event)"></p-paginator>
+        </div>
     </div>
 
 </div>

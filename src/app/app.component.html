@@ -1,3 +1,6 @@
 <router-outlet></router-outlet>
 <p-toast></p-toast>
-<p-confirmDialog></p-confirmDialog>
+<p-confirmDialog [style]="{width: '20vw'}" [closable]="false" acceptLabel="Listo"
+    [rejectVisible]="false"></p-confirmDialog>
+<loader *ngIf="loaderService.opened" (close)="loaderService.close()">
+</loader>

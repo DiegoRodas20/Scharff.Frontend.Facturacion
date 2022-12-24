@@ -141,8 +141,9 @@ export class RegisterClientComponent implements OnInit {
 
         try {
             let data: any = await this._registerClient.execute(client)
-            console.log(data)
+
             this._confirmationService.confirm({
+                icon: 'pi pi-check-circle',
                 message: data.message,
                 accept: () => {
                     this.close()

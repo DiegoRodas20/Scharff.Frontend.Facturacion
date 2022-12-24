@@ -16,6 +16,7 @@ import { RegisterClientComponent } from './components/register-client/register-c
 export class ManageClientComponent implements OnInit {
 
     lClients: ClientModel[] = []
+    lClientsChunk: ClientModel[] = []
     mensaje: string
     filtro = new FormControl()
 
@@ -44,6 +45,7 @@ export class ManageClientComponent implements OnInit {
             const data: any = await this._getAllClients.execute()
             console.log(data)
             this.lClients = data.data
+            this.lClientsChunk = this.lClients.slice(0, 4);
             this.mensaje = data.message
         }
         catch (error) {
@@ -51,13 +53,11 @@ export class ManageClientComponent implements OnInit {
         }
     }
 
-    getClientById() {
-        this._router.navigate(['/admin/client/id'])
+    getClientById(idClient: number) {
+        this._router.navigate(['/admin/client/' + idClient])
     }
 
-    //   getClientById() {
-    //     this._getClientById.execute().subscribe((value: ClientModel) => {
-    //         this.getClientById.push(value)
-    //     })
-    // }
+    paginate(event: any) {
+        this.lClientsChunk = this.lClients.slice(event.first, event.first + event.rows);
+    }
 }

@@ -10,6 +10,9 @@ import { DataModule } from './data/data.module';
 import { CoreModule } from './core/core.module';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptorService } from './common/helpers/interceptors/loader.interceptor';
+import { ErrorInterceptorService } from './common/helpers/interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { ConfirmationService, MessageService } from 'primeng/api';
   providers: [
     DialogService,
     MessageService,
-    ConfirmationService
+    ConfirmationService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
   ],
   bootstrap: [AppComponent]
 })
