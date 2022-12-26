@@ -8,13 +8,13 @@ import { ContactRepository } from 'src/app/core/repositories/contact.repository'
     providedIn: 'root'
 })
 
-export class GetAllContactsByClientIdUsecase implements UseCasePromise<number, ContactModel> {
+export class GetAllContactsByClientIdUsecase implements UseCasePromise<number, ContactModel[]> {
 
     constructor(
         private _contactRepository: ContactRepository
     ) { }
 
-    execute(idClient: number): Promise<ResponseData<ContactModel>> {
+    execute(idClient: number): Promise<ResponseData<ContactModel[]>> {
 
         return this._contactRepository.getAllContactsByClientId(idClient)
     }

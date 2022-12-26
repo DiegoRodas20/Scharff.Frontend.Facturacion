@@ -20,10 +20,10 @@ export class AddressWebRepository extends AddressRepository {
     }
 
     // Listado general de direcciones por Cliente
-    getAllAddressesByClientId(idClient: number): Promise<ResponseData<AddressModel>> {
+    getAllAddressesByClientId(idClient: number): Promise<ResponseData<AddressModel[]>> {
 
-        const url = `${ADDRESS_URL}/all/${idClient}`
-        return lastValueFrom(this.http.get<ResponseData<AddressModel>>(url))
+        const url = `${ADDRESS_URL}/${idClient}`
+        return lastValueFrom(this.http.get<ResponseData<AddressModel[]>>(url))
     }
 
     // Listado de direccion por su id

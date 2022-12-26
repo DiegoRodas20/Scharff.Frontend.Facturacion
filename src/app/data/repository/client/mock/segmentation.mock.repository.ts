@@ -10,12 +10,12 @@ import { SegmentationRepository } from 'src/app/core/repositories/segmentation.r
 export class SegmentationMockRepository extends SegmentationRepository {
     segmentations = [
         {
-            id: 1,
+            id: 14,
             code: 'CS01',
             description: 'CXC CLIENTES CORPORATIVOS'
         },
         {
-            id: 2,
+            id: 15,
             code: 'CXC CLIENTES CORPORATIVOS',
             description: 'CXC CLIENTES MEDIOS'
         }

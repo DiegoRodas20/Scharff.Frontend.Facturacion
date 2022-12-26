@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ClientModel } from 'src/app/core/models/client.model';
+import { ResponseData } from 'src/app/core/models/response.model';
 import { GetClientByIdUsecase } from 'src/app/core/usecase/client/client/get-client-by-id.usecase';
 
 @Component({
@@ -12,7 +13,7 @@ import { GetClientByIdUsecase } from 'src/app/core/usecase/client/client/get-cli
 
 export class DetailClientComponent implements OnInit {
 
-    lClient: ClientModel[] = []
+    client: string
 
     constructor(
         private _route: ActivatedRoute,
@@ -29,16 +30,16 @@ export class DetailClientComponent implements OnInit {
 
     async getClientById(idClient: number) {
         try {
-            let data: any = await this._getClientById.execute(idClient)
-            console.log(data)
-            
+            let data: ResponseData<ClientModel> = await this._getClientById.execute(idClient)
+
+            this.client = `${data.data.numeroDocumentoIdentidad} - ${data.data.razonSocial} `
             this._messageService.add(
                 {
                     severity: 'success',
                     summary: 'Exito',
                     detail: data.message
-                })
-
+                }
+            )
         }
         catch (error) {
             console.log(error)

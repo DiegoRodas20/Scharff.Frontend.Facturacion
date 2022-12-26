@@ -1,15 +1,15 @@
 export interface AddressModel {
 
-    id: number;
-    estado: boolean;
-    tipoDireccion_parametro: number;
-    idCliente: number;
-    idUbigeo: number;
-    direccion: string | null;
-    codigoPostal: string | null;
-    fechaCreacion: string;
-    autorCreacion: number;
-    fechaModificacion: string;
-    autorModificacion: number;
+    id?: number;
+    estado?: boolean;
+    tipoDireccion_parametro?: number;
+    idCliente?: number;
+    idUbigeo?: number;
+    direccion?: string;
+    codigoPostal?: string;
+    fechaCreacion?: string;
+    autorCreacion?: number;
+    fechaModificacion?: string;
+    autorModificacion?: number;
     
 }

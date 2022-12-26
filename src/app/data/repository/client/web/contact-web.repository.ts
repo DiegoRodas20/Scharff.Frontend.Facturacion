@@ -20,10 +20,10 @@ export class ContactWebRepository extends ContactRepository {
     }
 
     // Listado general de contactos por Cliente
-    getAllContactsByClientId(idClient: number): Promise<ResponseData<ContactModel>> {
+    getAllContactsByClientId(idClient: number): Promise<ResponseData<ContactModel[]>> {
 
-        const url = `${CONTACT_URL}/all/${idClient}`
-        return lastValueFrom(this.http.get<ResponseData<ContactModel>>(url))
+        const url = `${CONTACT_URL}/${idClient}`
+        return lastValueFrom(this.http.get<ResponseData<ContactModel[]>>(url))
     }
 
     // Listado de contacto por su id

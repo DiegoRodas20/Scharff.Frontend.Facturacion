@@ -10,12 +10,12 @@ import { HoldingRepository } from 'src/app/core/repositories/holding.repository'
 export class HoldingMockRepository extends HoldingRepository {
     holding = [
         {
-            id: 1,
+            id: 12,
             code: 'HOO1',
             description: 'Holding A'
         },
         {
-            id: 2,
+            id: 13,
             code: 'H002',
             description: 'Holding B'
         }

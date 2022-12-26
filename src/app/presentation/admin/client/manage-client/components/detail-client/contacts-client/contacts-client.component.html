@@ -8,10 +8,10 @@
             <hr>
         </div>
 
-        <ng-container *ngFor="let contact of contacts">
+        <ng-container *ngFor="let contact of lContacts">
 
             <div class="col-12 flex">
-                <span class="col-6 font-semibold">Contacto N° {{contact.index}}</span>
+                <span class="col-6 font-semibold">Contacto N° {{contact.id}}</span>
                 <div class="col-6 text-base text-right">
                     <button (click)="showModalUpdateContact()" pButton pRipple icon="pi pi-pencil"
                         class="p-button-rounded p-button-text text-500"></button>
@@ -21,20 +21,20 @@
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Área Contacto</span>
-                <span class="col-6 py-0 font-semibold">{{contact.contactArea}}</span>
+                <span class="col-6 py-0 font-semibold">{{contact.areaContacto_parametro}}</span>
             </div>
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Tipo Contacto</span>
-                <span class="col-6 py-0 font-semibold">{{contact.contactType}}</span>
+                <span class="col-6 py-0 font-semibold">{{contact.tipoContacto_parametro}}</span>
             </div>
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Nombre</span>
-                <span class="col-6 py-0 font-semibold">{{contact.name}}</span>
+                <span class="col-6 py-0 font-semibold">{{contact.nombreCompleto}}</span>
             </div>
 
-            <div class="col-12 md:col-6 flex">
+            <!-- <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Teléfono</span>
                 <span class="col-6 py-0 font-semibold">{{contact.phone}}</span>
             </div>
@@ -42,21 +42,21 @@
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Correo</span>
                 <span class="col-6 py-0 font-semibold">{{contact.email}}</span>
-            </div>
+            </div> -->
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Comentarios</span>
-                <span class="col-6 py-0 font-semibold">{{contact.comments}}</span>
+                <span class="col-6 py-0 font-semibold">{{contact.comentario}}</span>
             </div>
 
-            <div class="col-12 md:col-6 flex">
+            <!-- <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Estado</span>
                 <span class="col-6 py-0 font-semibold">{{contact.status}}</span>
-            </div>
+            </div> -->
 
         </ng-container>
 
-        <div class="col-12 text-center py-5">
+        <div class="col-12 text-center pt-5">
             <button pButton class="b-secondary px-5" icon="pi pi-user" (click)="showModalRegisterContact()"
                 label="Agregar Contacto">
             </button>

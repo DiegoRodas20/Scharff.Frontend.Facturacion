@@ -1,5 +1,5 @@
 <p-card>
-    <div class="grid">
+    <div *ngIf="client" class="grid">
 
         <div class="col-12">
             <h3 class="text-base text-700 my-0 font-normal">
@@ -9,13 +9,18 @@
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Grupo empresarial o categoria cliente</span>
-            <span class="col-6 py-0 font-semibold">Grupo empresarial</span>
+            <span class="col-6 text-500">Grupo empresarial o categoria cliente</span>
+            <span class="col-6 font-semibold">{{client.descripcionGrupoEmpresarial}}</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Grupo empresarial o categoria cliente</span>
-            <span class="col-6 py-0 font-semibold">Grupo empresarial</span>
+            <span class="col-6 text-500">Sector Económico</span>
+            <span class="col-6 font-semibold">{{client.descripcionCodigoSector}}</span>
+        </div>
+
+        <div class="col-12 md:col-6 flex">
+            <span class="col-6 text-500">Moneda</span>
+            <span class="col-6 font-semibold">{{client.descripcionTipoMoneda}}</span>
         </div>
 
         <div class="col-12 py-3">
@@ -26,72 +31,65 @@
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Código Unico</span>
-            <span class="col-6 py-0 font-semibold">1293123124</span>
+            <span class="col-6 text-500">Código Unico</span>
+            <span class="col-6 font-semibold">-</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Tipo Doc</span>
-            <span class="col-6 py-0 font-semibold">RUC</span>
+            <span class="col-6 text-500">Tipo Doc</span>
+            <span class="col-6 font-semibold">{{client.descripcionTipoDocumentoIdentidad}}</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">RUC</span>
-            <span class="col-6 py-0 font-semibold">20607202412</span>
+            <span class="col-6 text-500">{{client.descripcionTipoDocumentoIdentidad}}</span>
+            <span class="col-6 font-semibold">{{client.numeroDocumentoIdentidad}}</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Teléfono</span>
-            <span class="col-6 py-0 font-semibold">320 994 999</span>
+            <span class="col-6 text-500">Teléfono</span>
+            <span class="col-6 font-semibold">{{client.telefono}}</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Razón social</span>
-            <span class="col-6 py-0 font-semibold">La tienda de pedro</span>
+            <span class="col-6 text-500">Razón social</span>
+            <span class="col-6 font-semibold">{{client.razonSocial}}</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Holding</span>
-            <span class="col-6 py-0 font-semibold">Holding B</span>
+            <span class="col-6 text-500">Holding</span>
+            <span class="col-6 font-semibold">{{client.descripcionHolding}}</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Nombre Comercial</span>
-            <span class="col-6 py-0 font-semibold">La tienda de Pedrito</span>
+            <span class="col-6 text-500">Nombre Comercial</span>
+            <span class="col-6 font-semibold">{{client.nombreComercial}}</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Autoriza FEDEX</span>
-            <span class="col-6 py-0 font-semibold">SI</span>
+            <span class="col-6 text-500">Autoriza FEDEX</span>
+            <span class="col-6 font-semibold">-</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Cuenta FEDEX</span>
-            <span class="col-6 py-0 font-semibold">191-233445-33121</span>
+            <span class="col-6 text-500">Cuenta FEDEX</span>
+            <span class="col-6 font-semibold">-</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-            <span class="col-6 py-0 text-500">Segmentación</span>
-            <span class="col-6 py-0 font-semibold">CXC CLIENTES
-                MEDIOS</span>
+            <span class="col-6 text-500">Segmentación</span>
+            <span class="col-6 font-semibold">{{client.descripcionCodigoSegmentacion}}</span>
         </div>
 
         <div class="col-12 md:col-6 flex">
-          <span class="col-6 py-0 text-500">Comentarios</span>
-          <span class="col-6 py-0 font-semibold">Comentarios de cliente</span>
+            <span class="col-6 text-500">Comentarios</span>
+            <span class="col-6 font-semibold">{{client.comentario}}</span>
         </div>
 
         <!-- Datos adicionales -->
         <div class="col-12 md:col-12 flex mt-3 p-0">
-            <button
-                pButton
-                pRipple
-                label="Datos Adicionales"
-                class="p-button-text text-700 font-bold"
-                icon="pi pi-angle-{{ isVisibleAdditionalData ? 'up' : 'down' }}"
-                iconPos="right"
-                (click)="toggleAdditionalData()"
-            ></button>
+            <button pButton pRipple label="Datos Adicionales" class="p-button-text text-700 font-bold"
+                icon="pi pi-angle-{{ isVisibleAdditionalData ? 'up' : 'down' }}" iconPos="right"
+                (click)="toggleAdditionalData()"></button>
         </div>
 
         <ng-container *ngIf="isVisibleAdditionalData">
@@ -144,18 +142,18 @@
             <div class="col-12 flex">
 
                 <div class="col-3 field-checkbox py-0">
-                  <p-checkbox name="esporadico" value="" inputId="esporadico"></p-checkbox>
-                  <label for="esporadico">Esporadico</label>
+                    <p-checkbox name="esporadico" value="" inputId="esporadico"></p-checkbox>
+                    <label for="esporadico">Esporadico</label>
                 </div>
                 <div class="col-3 field-checkbox py-0">
-                  <p-checkbox name="relacionado" value="" inputId="relacionado"></p-checkbox>
-                  <label for="relacionado">Relacionado</label>
+                    <p-checkbox name="relacionado" value="" inputId="relacionado"></p-checkbox>
+                    <label for="relacionado">Relacionado</label>
                 </div>
 
             </div>
         </ng-container>
 
-        <div class="col-12 text-center py-5">
+        <div class="col-12 text-center pt-4">
             <button pButton class="b-primary px-5" icon="pi pi-pencil" (click)="showModalUpdateClient()"
                 label="Actualizar cliente">
             </button>

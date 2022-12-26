@@ -120,20 +120,20 @@
             </div>
 
             <!-- Comentarios de cliente -->
-            <div class="field col-12 md:col-4">
+            <div class="field col-12 md:col-8">
                 <span class="p-float-label">
-                  <textarea id="float-input" rows="2" cols="30" pInputTextarea formControlName="phone"></textarea>
+                  <textarea id="float-input" rows="2" cols="30" pInputTextarea formControlName="comment"></textarea>
                     <label for="float-input">Comentarios de cliente</label>
                 </span>
             </div>
 
             <!-- Migración SAP -->
-            <div class="field col-12 md:col-4 text-center">
+            <!-- <div class="field col-12 md:col-4 text-center">
                 <div class="flex-row">
                     <p-checkbox formControlName="migrateSap" class="checkbox" [binary]="true"></p-checkbox>
                     <label class="pl-2">Migrar Información Sap</label>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Cuenta Fedex -->
             <div class="field col-12 md:col-4" *ngIf="showInputSap()">

@@ -3,7 +3,7 @@ import { ResponseData } from '../models/response.model';
 
 export abstract class AddressRepository {
 
-    abstract getAllAddressesByClientId(idClient: number): Promise<ResponseData<AddressModel>>
+    abstract getAllAddressesByClientId(idClient: number): Promise<ResponseData<AddressModel[]>>
 
     abstract getAddressById(idClient: number): Promise<ResponseData<AddressModel>>
 

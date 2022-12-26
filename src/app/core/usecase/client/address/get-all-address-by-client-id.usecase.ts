@@ -8,13 +8,13 @@ import { AddressRepository } from 'src/app/core/repositories/address.repository'
     providedIn: 'root'
 })
 
-export class GetAllAddressByClientIdUsecase implements UseCasePromise<number, AddressModel> {
+export class GetAllAddressByClientIdUsecase implements UseCasePromise<number, AddressModel[]> {
 
     constructor(
         private _addressRepository: AddressRepository
     ) { }
 
-    execute(idClient: number): Promise<ResponseData<AddressModel>> {
+    execute(idClient: number): Promise<ResponseData<AddressModel[]>> {
 
         return this._addressRepository.getAllAddressesByClientId(idClient)
     }

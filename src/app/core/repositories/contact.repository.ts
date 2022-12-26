@@ -3,7 +3,7 @@ import { ResponseData } from '../models/response.model';
 
 export abstract class ContactRepository {
 
-    abstract getAllContactsByClientId(idClient: number): Promise<ResponseData<ContactModel>>
+    abstract getAllContactsByClientId(idClient: number): Promise<ResponseData<ContactModel[]>>
 
     abstract getContactById(idContact: number): Promise<ResponseData<ContactModel>>
 

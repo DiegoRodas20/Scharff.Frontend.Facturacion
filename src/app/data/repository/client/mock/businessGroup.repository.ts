@@ -10,12 +10,12 @@ import { BusinessGroupRepository } from 'src/app/core/repositories/businessGroup
 export class BusinessMockRepository extends BusinessGroupRepository {
     businessGroups = [
         {
-            id: 1,
+            id: 3,
             code: 'GE1',
             description: 'Grupo Empresarial A'
         },
         {
-            id: 2,
+            id: 4,
             code: 'GE2',
             description: 'Grupo Empresarial B'
         }

@@ -26,4 +26,12 @@ export interface ClientModel {
     fechaModificacion?: string;
     autorModificacion?: number;
 
+    //Descripciones tabla Parametro
+    descripcionGrupoEmpresarial?: string;
+    descripcionCodigoSector?: string;
+    descripcionTipoMoneda?: string;
+    descripcionTipoDocumentoIdentidad?: string;
+    descripcionHolding?: string;
+    descripcionCodigoSegmentacion?: string;
+
 }

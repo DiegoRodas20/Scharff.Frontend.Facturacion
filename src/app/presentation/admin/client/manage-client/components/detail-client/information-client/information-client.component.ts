@@ -1,32 +1,64 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DialogService } from 'primeng/dynamicdialog';
+import { ClientModel } from 'src/app/core/models/client.model';
+import { ResponseData } from 'src/app/core/models/response.model';
+import { GetClientByIdUsecase } from 'src/app/core/usecase/client/client/get-client-by-id.usecase';
 import { UpdateClientComponent } from '../../update-client/update-client.component';
 
 @Component({
-  selector: 'app-information-client',
-  templateUrl: './information-client.component.html',
-  styleUrls: ['./information-client.component.scss'],
+    selector: 'app-information-client',
+    templateUrl: './information-client.component.html',
+    styleUrls: ['./information-client.component.scss'],
 })
 
 export class InformationClientComponent implements OnInit {
 
-  isVisibleAdditionalData = false;
-  isClientChecked = true;
+    isVisibleAdditionalData = false;
+    isClientChecked = true;
 
-  constructor(public dialogService: DialogService) {
+    client: ClientModel
+    idClient: number
 
-  }
-  ngOnInit() {
-  }
+    constructor(
+        public dialogService: DialogService,
+        private _route: ActivatedRoute,
+        private _getClientById: GetClientByIdUsecase,
+    ) { }
 
-  showModalUpdateClient() {
-    const ref = this.dialogService.open(UpdateClientComponent, {
-      header: 'Actualizar Cliente',
-      width: '75rem',
-    });
-  }
+    ngOnInit() {
+        this._route.params.subscribe(params => {
+            this.idClient = params['id']
+            this.getClientById(this.idClient)
+        })
+    }
 
-  toggleAdditionalData() {
-     this.isVisibleAdditionalData = !this.isVisibleAdditionalData;
-  }
+    async getClientById(idClient: number) {
+
+        try {
+            let data: ResponseData<ClientModel> = await this._getClientById.execute(idClient)
+            this.client = data.data
+        }
+        catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    showModalUpdateClient() {
+
+        const data = this.client
+
+        const ref = this.dialogService.open(UpdateClientComponent, {
+            data: data,
+            header: 'Actualizar Cliente',
+            width: '75rem',
+        });
+
+        ref.onClose.subscribe(() => { this.getClientById(this.idClient) })
+    }
+
+    toggleAdditionalData() {
+        this.isVisibleAdditionalData = !this.isVisibleAdditionalData;
+    }
 }

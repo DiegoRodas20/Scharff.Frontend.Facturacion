@@ -65,6 +65,7 @@ export class RegisterClientComponent implements OnInit {
             codeEconomicSector: [null],
             holding: [null],
             codeSegmentation: [null],
+            comment: [null],
             accountAuthorizeFedex: [null],
             migrateSap: [false],
             statusClient: [null],
@@ -134,11 +135,15 @@ export class RegisterClientComponent implements OnInit {
             codigoSector_parametro: form.codeEconomicSector.id,
             holding_parametro: form.holding.id,
             codigoSegmentacion_parametro: form.codeSegmentation.id,
-            cuentaAutorizadaFedex: form.accountAuthorizeFedex,
-            estadoCliente: form.statusClient,
-            cuentaFedex: form.accountFedex
+            comentario: form.comment,
+
+            // cuentaAutorizadaFedex: form.accountAuthorizeFedex,
+            // estadoCliente: form.statusClient,
+            // cuentaFedex: form.accountFedex
         }
 
+        console.log(client)
+        
         try {
             let data: any = await this._registerClient.execute(client)
 
