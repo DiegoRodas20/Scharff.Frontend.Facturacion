@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/ScharffFrontendFacturacion",
+    "public": "dist/scharff.frontend.facturacion",
     "ignore": [
       "firebase.json",
       "**/.*",
