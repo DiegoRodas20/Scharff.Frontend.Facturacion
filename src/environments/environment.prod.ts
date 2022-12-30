@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: 'https://localhost:7170/api/'
+  API_URL: 'https://scharffbackendfacturacion-production.up.railway.app/api/'
 };
