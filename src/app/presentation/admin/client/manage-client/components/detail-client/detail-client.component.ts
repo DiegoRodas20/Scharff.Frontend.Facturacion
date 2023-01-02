@@ -13,7 +13,7 @@ import { GetClientByIdUsecase } from 'src/app/core/usecase/client/client/get-cli
 
 export class DetailClientComponent implements OnInit {
 
-    client: string
+    client: ClientModel
 
     constructor(
         private _route: ActivatedRoute,
@@ -31,8 +31,7 @@ export class DetailClientComponent implements OnInit {
     async getClientById(idClient: number) {
         try {
             let data: ResponseData<ClientModel> = await this._getClientById.execute(idClient)
-
-            this.client = `${data.data.numeroDocumentoIdentidad} - ${data.data.razonSocial} `
+            this.client = data.data
             this._messageService.add(
                 {
                     severity: 'success',

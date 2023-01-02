@@ -8,13 +8,13 @@ import { ClientRepository } from 'src/app/core/repositories/client.repository';
     providedIn: 'root'
 })
 
-export class EnableClientUsecase implements UseCasePromise<number, ClientModel> {
+export class EnableClientUsecase implements UseCasePromise<number, number> {
 
     constructor(
         private _clientRepository: ClientRepository
     ) { }
 
-    execute(idClient: number): Promise<ResponseData<ClientModel>> {
+    execute(idClient: number): Promise<ResponseData<number>> {
 
         return this._clientRepository.enableClient(idClient)
     }

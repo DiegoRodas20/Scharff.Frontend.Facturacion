@@ -30,6 +30,8 @@ import { TypeDirectionMockRepository } from '../data/repository/client/mock/type
 import { ProvinceMockRepository } from '../data/repository/client/mock/province-mock.repository';
 import { DistrictMockRepository } from '../data/repository/client/mock/district-mock.repository';
 import { CountryMockRepository } from '../data/repository/client/mock/country-mock.repository';
+import { UtilsRepository } from './repositories/utils.repository';
+import { UtilsWebRepository } from '../data/repository/utils/web/utils-web.repository';
 
 @NgModule({
     imports: [
@@ -39,6 +41,7 @@ import { CountryMockRepository } from '../data/repository/client/mock/country-mo
     exports: [],
     providers: [
         { provide: ClientRepository, useClass: ClientWebRepository },
+        { provide: UtilsRepository, useClass: UtilsWebRepository },
         { provide: ContactRepository, useClass: ContactWebRepository },
         { provide: AddressRepository, useClass: AddressWebRepository },
         

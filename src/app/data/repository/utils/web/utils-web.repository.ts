@@ -20,10 +20,10 @@ export class UtilsWebRepository extends UtilsRepository {
     }
 
     // Verificar identificacion por numero de documento
-    verifyIdentify(client: ClientModel): Promise<ResponseData<ClientModel>> {
+    verifyIdentity(numberDocumentIdentity: string): Promise<ResponseData<ClientModel>> {
 
-        const url = `${UTILS_URL}/verifyidentify`
-        return lastValueFrom(this.http.post<ResponseData<ClientModel>>(url, client))
+        const url = `${UTILS_URL}/verifyidentify/${numberDocumentIdentity}`
+        return lastValueFrom(this.http.get<ResponseData<ClientModel>>(url))
     }
 
     // Crear cliente en SAP

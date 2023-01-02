@@ -8,53 +8,50 @@
             <hr>
         </div>
 
-        <ng-container *ngFor="let contact of lContacts">
+        <div class="col-12 flex flex-column">
 
-            <div class="col-12 flex">
-                <span class="col-6 font-semibold">Contacto N° {{contact.id}}</span>
-                <div class="col-6 text-base text-right">
-                    <button (click)="showModalUpdateContact()" pButton pRipple icon="pi pi-pencil"
-                        class="p-button-rounded p-button-text text-500"></button>
-                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
-                </div>
+        <ng-container *ngFor="let contact of lContacts" class="w-full">
+          <div class="grid pb-3">
+
+            <div class="col-12 flex py-3">
+                <span class="font-semibold">Contacto N° {{contact.id}}</span>
             </div>
 
-            <div class="col-12 md:col-6 flex">
-                <span class="col-6 py-0 text-500">Área Contacto</span>
-                <span class="col-6 py-0 font-semibold">{{contact.areaContacto_parametro}}</span>
+            <div class="col-12 md:col-3">
+                <span class="text-500">Nombre</span>
+                <div class=" font-semibold pt-3">David Rosales Maldonado</div>
             </div>
 
-            <div class="col-12 md:col-6 flex">
-                <span class="col-6 py-0 text-500">Tipo Contacto</span>
-                <span class="col-6 py-0 font-semibold">{{contact.tipoContacto_parametro}}</span>
+            <div class="col-12 md:col-2">
+                <span class="text-500">Área Contacto</span>
+                <div class=" font-semibold pt-3">Area Contacto</div>
             </div>
 
-            <div class="col-12 md:col-6 flex">
-                <span class="col-6 py-0 text-500">Nombre</span>
-                <span class="col-6 py-0 font-semibold">{{contact.nombreCompleto}}</span>
+            <div class="col-12 md:col-2">
+                <span class="text-500">Tipo Contacto</span>
+                <div class=" font-semibold pt-3">Contacto Interno</div>
             </div>
 
-            <!-- <div class="col-12 md:col-6 flex">
-                <span class="col-6 py-0 text-500">Teléfono</span>
-                <span class="col-6 py-0 font-semibold">{{contact.phone}}</span>
+            <div class="col-12 md:col-2">
+              <span class="text-500">Telefono Principal</span>
+              <div class=" font-semibold pt-3">986364645</div>
             </div>
 
-            <div class="col-12 md:col-6 flex">
-                <span class="col-6 py-0 text-500">Correo</span>
-                <span class="col-6 py-0 font-semibold">{{contact.email}}</span>
-            </div> -->
-
-            <div class="col-12 md:col-6 flex">
-                <span class="col-6 py-0 text-500">Comentarios</span>
-                <span class="col-6 py-0 font-semibold">{{contact.comentario}}</span>
+            <div class="col-12 md:col-2">
+              <span class="text-500">Correo Principal</span>
+              <div class=" font-semibold pt-3">ddmaldonado@gmail.com</div>
             </div>
 
-            <!-- <div class="col-12 md:col-6 flex">
-                <span class="col-6 py-0 text-500">Estado</span>
-                <span class="col-6 py-0 font-semibold">{{contact.status}}</span>
-            </div> -->
+            <div class="col-12 md:col-1 text-base text-center">
+              <button (click)="showModalUpdateContact(contact)" pButton pRipple icon="pi pi-pencil"
+                  class="p-button-rounded p-button-text text-500"></button>
+              <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
+          </div>
 
+          </div>
         </ng-container>
+
+      </div>
 
         <div class="col-12 text-center pt-5">
             <button pButton class="b-secondary px-5" icon="pi pi-user" (click)="showModalRegisterContact()"

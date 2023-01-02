@@ -1,30 +1,30 @@
 export interface ClientModel {
 
     id?: number;
-    tipoCliente_parametro?: number;
-    numeroDocumentoIdentidad?: string;
-    codigoSegmentacion_parametro?: number;
-    tipoDocumentoIdentidad?: number;
-    idUbicacionGeografica?: number;
-    razonSocial?: string;
-    codigoSector_parametro?: number;
-    telefono?: string;
-    cuentaFedex?: string;
-    cuentaAutorizadaFedex?: boolean;
-    fechaAutorizacionFedex?: string;
-    nombreComercial?: string;
-    comentario?: string;
-    tipoMoneda_parametro?: number;
-    grupoEmpresarial_parametro?: number;
-    holding_parametro?: number;
-    codigoSap?: string;
-    estadoCliente?: boolean;
-    estadoSap_parametro?: number;
-    estadoSR_parametro?: number;
-    fechaCreacion?: string;
-    autorCreacion?: number;
-    fechaModificacion?: string;
-    autorModificacion?: number;
+    type_param?: number;
+    identity_document_number?: string;
+    segmentation_code_param?: number;
+    document_type_id?: number;
+    geographic_location_id?: number;
+    business_name?: string;
+    industry_code_param?: number;
+    telephone?: string;
+    fedex_account?: string;
+    fedex_authorized_account?: boolean;
+    fedex_authorization_date?: string;
+    commercial_name?: string;
+    comment?: string;
+    currency_type?: number;
+    corporate_group_param?: number;
+    holding_param?: number;
+    sap_id?: string;
+    status?: boolean;
+    sap_state_param?: number;
+    validate_status_param?: number;
+    creation_date?: string;
+    creation_author?: number;
+    modification_date?: string;
+    modification_author?: number;
 
     //Descripciones tabla Parametro
     descripcionGrupoEmpresarial?: string;

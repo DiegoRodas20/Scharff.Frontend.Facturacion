@@ -15,8 +15,6 @@ import { UpdateContactComponent } from './components/update-contact/update-conta
 
 export class ContactsClientComponent implements OnInit {
 
-
-    contacts: any = [];
     lContacts: ContactModel[] = []
     idClient: number
 
@@ -46,10 +44,14 @@ export class ContactsClientComponent implements OnInit {
 
     showModalRegisterContact() {
 
-        const data = this.idClient
+        const idClient = this.idClient
+        const lastIdContact = this.lContacts.slice(-1)[0].id
 
         const ref = this.dialogService.open(RegisterContactComponent, {
-            data: data,
+            data: {
+              idClient,
+              lastIdContact
+            },
             header: 'Registrar Contacto',
             width: '60rem'
         })
@@ -57,12 +59,18 @@ export class ContactsClientComponent implements OnInit {
         ref.onClose.subscribe(() => { this.getAllContactsByIdClient(this.idClient) })
     }
 
-    showModalUpdateContact() {
-        const ref = this.dialogService.open(UpdateContactComponent, {
-            header: 'Actualizar Contacto',
-            width: '60rem',
-        })
+    showModalUpdateContact(contact: ContactModel) {
+      const idClient = contact.client_id
+      const lastIdContact = contact.id
 
+      const ref = this.dialogService.open(UpdateContactComponent, {
+          data: {
+            idClient,
+            lastIdContact
+          },
+          header: 'Actualizar Contacto',
+          width: '60rem'
+      })
         ref.onClose.subscribe(() => { this.getAllContactsByIdClient(this.idClient) })
     }
 

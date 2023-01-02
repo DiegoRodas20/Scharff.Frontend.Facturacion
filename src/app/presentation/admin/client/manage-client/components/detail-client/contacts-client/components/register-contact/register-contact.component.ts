@@ -20,6 +20,7 @@ export class RegisterContactComponent implements OnInit {
     displayEmail: boolean = false;
 
     formContact: FormGroup;
+    idContact: string;
 
     typeContact: Array<ParamsModel> = [];
     areaContact: Array<ParamsModel> = [];
@@ -39,6 +40,7 @@ export class RegisterContactComponent implements OnInit {
         this.createFormClient()
         this.getAllTypeContacts()
         this.getAllAreaContacts()
+        this.idContact=this._config.data.lastIdContact+1
     }
 
     createFormClient() {
@@ -91,11 +93,11 @@ export class RegisterContactComponent implements OnInit {
         const form = this.formContact.value
 
         const contact: ContactModel = {
-            idCliente: this._config.data,
-            nombreCompleto: form.fullName,
-            tipoContacto_parametro: form.typeContact.id,
-            areaContacto_parametro: form.areaContact.id,
-            comentario: form.comments
+            client_id: this._config.data.client_id,
+            full_name: form.fullName,
+            type_param: form.typeContact.id,
+            area_param: form.areaContact.id,
+            comment: form.comments
         }
 
         try{
@@ -109,7 +111,7 @@ export class RegisterContactComponent implements OnInit {
                 }
             })
         }
-        
+
         catch(error){
             console.log(error)
         }

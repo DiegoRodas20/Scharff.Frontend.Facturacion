@@ -11,6 +11,8 @@ import { GetAllSegmentationUsecase } from 'src/app/core/usecase/utils/get-all-se
 import { GetAllHoldingUsecase } from 'src/app/core/usecase/utils/get-all-holding.usecase';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { VerifyIdentityClientUsecase } from 'src/app/core/usecase/utils/verify-identity-client.usecase';
+import { ResponseData } from 'src/app/core/models/response.model';
 
 @Component({
     selector: 'app-register-client',
@@ -40,7 +42,8 @@ export class RegisterClientComponent implements OnInit {
         private _getAllEconomicSector: GetAllEconomicSectorUsecase,
         private _getAllTypeDocumentIdenty: GetAllTypeDocumentIdentyUsecase,
         private _getAllSegmentation: GetAllSegmentationUsecase,
-        private _getAllHolding: GetAllHoldingUsecase
+        private _getAllHolding: GetAllHoldingUsecase,
+        private _verifyIdentityClient: VerifyIdentityClientUsecase
     ) { }
 
     ngOnInit() {
@@ -125,25 +128,23 @@ export class RegisterClientComponent implements OnInit {
         const form = this.formClient.value
 
         const client: ClientModel = {
-            razonSocial: form.companyName,
-            tipoDocumentoIdentidad: form.typeDocumentIdentity.id,
-            numeroDocumentoIdentidad: form.numberDocumentIdentity,
-            telefono: form.phone,
-            nombreComercial: form.tradeName,
-            tipoMoneda_parametro: form.typeCurrency.id,
-            grupoEmpresarial_parametro: form.businessGroup.id,
-            codigoSector_parametro: form.codeEconomicSector.id,
-            holding_parametro: form.holding.id,
-            codigoSegmentacion_parametro: form.codeSegmentation.id,
-            comentario: form.comment,
+            business_name: form.companyName,
+            document_type_id: form.typeDocumentIdentity.id,
+            identity_document_number: form.numberDocumentIdentity,
+            telephone: form.phone,
+            commercial_name: form.tradeName,
+            currency_type: form.typeCurrency.id,
+            corporate_group_param: form.businessGroup.id,
+            industry_code_param: form.codeEconomicSector.id,
+            holding_param: form.holding.id,
+            segmentation_code_param: form.codeSegmentation.id,
+            comment: form.comment,
 
             // cuentaAutorizadaFedex: form.accountAuthorizeFedex,
             // estadoCliente: form.statusClient,
             // cuentaFedex: form.accountFedex
         }
 
-        console.log(client)
-        
         try {
             let data: any = await this._registerClient.execute(client)
 
@@ -155,6 +156,32 @@ export class RegisterClientComponent implements OnInit {
                 }
             })
         }
+
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    async verifyIdentityClient() {
+
+        if (this.formClient.controls['numberDocumentIdentity'].invalid) {
+            this._messageService.add(
+                {
+                    severity: 'warn',
+                    summary: 'Atención',
+                    detail: 'Verificar el número de documento'
+                })
+            this.formClient.controls['numberDocumentIdentity'].markAsTouched()
+            return
+        }
+
+        const numberDocumentIdentity = this.formClient.controls['numberDocumentIdentity'].value
+
+        try {
+            // let data: ResponseData<ClientModel> = await this._verifyIdentifyClient.execute(numberDocumentIdentity)
+            // console.log(data)
+        }
+
         catch (error) {
             console.log(error)
         }

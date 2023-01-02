@@ -29,7 +29,9 @@
 
                 <!-- Point Active -->
                 <div class="col-12 md:col-1 flex justify-content-center align-self-center">
-                    <div class="point-active"></div>
+                    <div [class]="client.estadoCliente ? 'point-active' : 'point-inactive'"
+                        [pTooltip]="client.estadoCliente ? 'Cliente Habilitado' : 'Cliente Inhabilitado'">
+                    </div>
                 </div>
 
                 <!-- Codigo Unico -->
@@ -54,7 +56,14 @@
                 <div class="col-12 md:col-2 text-center">
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"
                         (click)="getClientById(client.id)"></button>
-                    <!-- <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button> -->
+                    <button *ngIf="client.estadoCliente" pButton pRipple icon="pi pi-times-circle"
+                        class="p-button-rounded p-button-text text-500" pTooltip="Inhabilitar cliente"
+                        (click)="disableClient(client.id)">
+                    </button>
+                    <button *ngIf="!client.estadoCliente" pButton pRipple icon="pi pi-check-circle"
+                        class="p-button-rounded p-button-text text-500" pTooltip="Habilitar cliente"
+                        (click)="enableClient(client.id)">
+                    </button>
                 </div>
 
             </div>

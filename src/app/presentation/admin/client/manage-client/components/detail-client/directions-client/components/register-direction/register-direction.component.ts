@@ -81,9 +81,9 @@ export class RegisterDirectionComponent implements OnInit {
         const form = this.formDirection.value
 
         const address: AddressModel = {
-            idCliente: this._config.data,
-            tipoDireccion_parametro: form.typeDirection.id,
-            direccion: form.direction
+            client_id: this._config.data,
+            type_param: form.typeDirection.id,
+            address: form.direction
         }
 
         try {

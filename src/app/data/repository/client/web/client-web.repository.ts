@@ -48,17 +48,17 @@ export class ClientWebRepository extends ClientRepository {
     }
 
     // Inhabilitar Cliente
-    disableClient(idClient: number): Promise<ResponseData<ClientModel>> {
+    disableClient(idClient: number): Promise<ResponseData<number>> {
 
         const url = `${CLIENT_URL}/disable/${idClient}`
-        return lastValueFrom(this.http.put<ResponseData<ClientModel>>(url, null))
+        return lastValueFrom(this.http.put<ResponseData<number>>(url, null))
     }
 
     // Habilitar Cliente
-    enableClient(idClient: number): Promise<ResponseData<ClientModel>> {
+    enableClient(idClient: number): Promise<ResponseData<number>> {
 
         const url = `${CLIENT_URL}/enable/${idClient}`
-        return lastValueFrom(this.http.put<ResponseData<ClientModel>>(url, null))
+        return lastValueFrom(this.http.put<ResponseData<number>>(url, null))
     }
 
     // Validar Cliente

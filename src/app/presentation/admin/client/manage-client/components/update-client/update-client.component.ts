@@ -132,17 +132,17 @@ export class UpdateClientComponent implements OnInit {
         
         const client: ClientModel = {
             id: form.id,
-            razonSocial: form.razonSocial,
-            tipoDocumentoIdentidad: form.tipoDocumentoIdentidad,
-            numeroDocumentoIdentidad: form.numeroDocumentoIdentidad,
-            telefono: form.telefono,
-            nombreComercial: form.nombreComercial,
-            tipoMoneda_parametro: form.tipoMoneda_parametro,
-            grupoEmpresarial_parametro: form.grupoEmpresarial_parametro,
-            codigoSector_parametro: form.codigoSector_parametro,
-            holding_parametro: form.holding_parametro,
-            codigoSegmentacion_parametro: form.codigoSegmentacion_parametro,
-            comentario: form.comentario,
+            business_name: form.business_name,
+            document_type_id: form.document_type_id,
+            identity_document_number: form.identity_document_number,
+            telephone: form.telephone,
+            commercial_name: form.commercial_name,
+            currency_type: form.currency_type,
+            corporate_group_param: form.corporate_group_param,
+            industry_code_param: form.industry_code_param,
+            holding_param: form.holding_param,
+            segmentation_code_param: form.segmentation_code_param,
+            comment: form.comment,
         }
 
         try {

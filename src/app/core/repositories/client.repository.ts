@@ -11,9 +11,9 @@ export abstract class ClientRepository {
 
     abstract updateClient(idClient: number, client: ClientModel): Promise<ResponseData<ClientModel>>
 
-    abstract disableClient(idClient: number): Promise<ResponseData<ClientModel>>
+    abstract disableClient(idClient: number): Promise<ResponseData<number>>
 
-    abstract enableClient(idClient: number): Promise<ResponseData<ClientModel>>
+    abstract enableClient(idClient: number): Promise<ResponseData<number>>
 
     abstract validateClient(client: ClientModel): Promise<ResponseData<ClientModel>>
 

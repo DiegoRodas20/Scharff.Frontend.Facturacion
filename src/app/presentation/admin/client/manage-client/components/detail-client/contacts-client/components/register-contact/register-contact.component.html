@@ -1,109 +1,119 @@
 <div class="card px-5">
-    <form [formGroup]="formContact">
+  <form [formGroup]="formContact">
 
-        <div class="pb-4">
-            <span class="text-base text-400">Contacto relacionado</span>
-            <hr>
+    <div class="pb-4">
+      <span class="text-base text-400">Contacto N° {{ idContact }}</span>
+      <hr>
+    </div>
+
+    <!-- Inputs Datos Contacto -->
+    <div class="p-fluid grid">
+
+      <!-- Tipo de contacto -->
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <p-dropdown [class]="validate('typeContact')" [options]="typeContact" [autoDisplayFirst]="false"
+            optionLabel="description" formControlName="typeContact" [showClear]="true"></p-dropdown>
+          <label>Tipo de contacto</label>
+        </span>
+        <error-message [formControlError]="formContact.controls['typeContact']"></error-message>
+      </div>
+
+      <!-- Area de contacto -->
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <p-dropdown [class]="validate('areaContact')" [options]="areaContact" inputId="dropdown"
+            [autoDisplayFirst]="false" optionLabel="description" formControlName="areaContact"
+            [showClear]="true"></p-dropdown>
+          <label for="dropdown">Área de contacto</label>
+        </span>
+        <error-message [formControlError]="formContact.controls['areaContact']"></error-message>
+      </div>
+
+      <!-- Nombre completo -->
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <input id="float-input" [class]="validate('fullName')" pInputText formControlName="fullName">
+          <label for="float-input">Nombre Completo</label>
+        </span>
+        <error-message [formControlError]="formContact.controls['fullName']"></error-message>
+      </div>
+
+      <!-- Telefono 1 -->
+      <ng-container>
+        <div class="field col-5">
+          <span class="p-float-label">
+            <input id="float-input" pInputText formControlName="phone1">
+            <label for="float-input">Telefono 1</label>
+          </span>
         </div>
 
-        <!-- Inputs Datos Contacto -->
-        <div class="p-fluid grid">
+        <div class="field col-1">
+          <button pButton pRipple icon="pi pi-plus" class="p-button-outlined p-button-danger h-full"
+            (click)="addPhone()"></button>
+        </div>
+      </ng-container>
 
-            <!-- Tipo de contacto -->
-            <div class="field col-12 md:col-4">
-                <span class="p-float-label">
-                    <p-dropdown [class]="validate('typeContact')" [options]="typeContact" [autoDisplayFirst]="false" optionLabel="description"
-                        formControlName="typeContact" [showClear]="true"></p-dropdown>
-                    <label>Tipo de contacto</label>
-                </span>
-                <error-message [formControlError]="formContact.controls['typeContact']"></error-message>
-            </div>
-
-            <!-- Area de contacto -->
-            <div class="field col-12 md:col-4">
-                <span class="p-float-label">
-                    <p-dropdown [class]="validate('areaContact')" [options]="areaContact" inputId="dropdown" [autoDisplayFirst]="false"
-                        optionLabel="description" formControlName="areaContact" [showClear]="true"></p-dropdown>
-                    <label for="dropdown">Área de contacto</label>
-                </span>
-                <error-message [formControlError]="formContact.controls['areaContact']"></error-message>
-            </div>
-
-            <!-- Nombre completo -->
-            <div class="field col-12 md:col-4">
-                <span class="p-float-label">
-                    <input id="float-input" [class]="validate('fullName')" pInputText formControlName="fullName">
-                    <label for="float-input">Nombre Completo</label>
-                </span>
-                <error-message [formControlError]="formContact.controls['fullName']"></error-message>
-            </div>
-
-            <!-- Telefono 1
-            <div class="field col-12 md:col-4 flex flex-column">
-                <div class="field col-12 flex gap-4 p-0">
-                    <span class="p-float-label">
-                        <input id="float-input" pInputText formControlName="phone1">
-                        <label for="float-input">Telefono 1</label>
-                    </span>
-                    <div class="text-center" (click)="addPhone()">
-                        <button pButton pRipple type="button" icon="pi pi-plus"
-                            class="p-button-outlined p-button-danger h-full"></button>
-                    </div>
-                </div>
-
-                Telefono 2
-                <div *ngIf="displayPhone" class="field col-12 flex gap-4 p-0">
-                    <span class="p-float-label">
-                        <input id="float-input" pInputText formControlName="phone2">
-                        <label for="float-input">Telefono 2</label>
-                    </span>
-                    <div class="text-center" (click)="addPhone()">
-                        <button pButton pRipple type="button" icon="pi pi-minus"
-                            class="p-button-outlined p-button-danger h-full"></button>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Correo 1
-            <div class="field col-12 md:col-4 flex flex-column">
-                <div class="field col-12 flex gap-4 p-0">
-                    <span class="p-float-label">
-                        <input id="float-input" pInputText formControlName="email1">
-                        <label for="float-input">Correo 1</label>
-                    </span>
-                    <div class="text-center" (click)="addEmail()">
-                        <button pButton pRipple type="button" icon="pi pi-plus"
-                            class="p-button-outlined p-button-danger h-full"></button>
-                    </div>
-                </div>
-
-                Correo 2
-                <div *ngIf="displayEmail" class="field col-12 flex gap-4 p-0">
-                    <span class="p-float-label">
-                        <input id="float-input" pInputText formControlName="email2">
-                        <label for="float-input">Correo 2</label>
-                    </span>
-                    <div class="text-center" (click)="addEmail()">
-                        <button pButton pRipple type="button" icon="pi pi-minus"
-                            class="p-button-outlined p-button-danger h-full"></button>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Comentarios -->
-            <div class="field col-12 md:col-12">
-                <span class="p-float-label">
-                    <textarea id="float-input" rows="5" cols="30" pInputTextarea formControlName="comments"></textarea>
-                    <label for="float-input">Comentarios</label>
-                </span>
-            </div>
-
+      <!-- Correo 1 -->
+      <ng-container>
+        <div class="field col-5">
+          <span class="p-float-label">
+            <input id="float-input" pInputText formControlName="email1">
+            <label for="float-input">Correo 1</label>
+          </span>
         </div>
 
-        <div class="col-12 text-center py-3">
-            <button pButton class="b-primary 4 w-3" label="Agregar" (click)="registerContact()">
-            </button>
+        <div class="field col-1">
+          <button pButton pRipple icon="pi pi-plus" class="p-button-outlined p-button-danger h-full"
+            (click)="addEmail()"></button>
+        </div>
+      </ng-container>
+
+      <!-- Telefono 2 -->
+      <ng-container *ngIf="displayPhone">
+        <div class="field col-5">
+          <span class="p-float-label">
+            <input id="float-input" pInputText formControlName="phone2">
+            <label for="float-input">Telefono 2</label>
+          </span>
         </div>
 
-    </form>
+        <div class="field col-1">
+          <button pButton pRipple icon="pi pi-minus" class="p-button-outlined p-button-danger h-full"
+            (click)="addPhone()"></button>
+        </div>
+      </ng-container>
+
+      <!-- Correo 2 -->
+      <ng-container *ngIf="displayEmail">
+
+        <div class="field col-5">
+          <span class="p-float-label">
+            <input id="float-input" pInputText formControlName="email2">
+            <label for="float-input">Correo 2</label>
+          </span>
+        </div>
+
+        <div class="field col-1">
+          <button pButton pRipple icon="pi pi-minus" class="p-button-outlined p-button-danger h-full"
+            (click)="addEmail()"></button>
+        </div>
+      </ng-container>
+
+      <!-- Comentarios -->
+      <div class="field col-12 md:col-12">
+        <span class="p-float-label">
+          <textarea id="float-input" rows="4" cols="30" pInputTextarea formControlName="comments"></textarea>
+          <label for="float-input">Comentarios</label>
+        </span>
+      </div>
+
+    </div>
+
+    <div class="col-12 text-center py-3">
+      <button pButton class="b-primary 4 w-3" label="Registrar" (click)="registerContact()">
+      </button>
+    </div>
+
+  </form>
 </div>

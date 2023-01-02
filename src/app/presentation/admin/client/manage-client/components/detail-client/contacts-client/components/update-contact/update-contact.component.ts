@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ContactModel } from 'src/app/core/models/contact.model';
 import { ParamsModel } from 'src/app/core/models/params.models';
 import { RegisterContactByClientIdUsecase } from 'src/app/core/usecase/client/contact/register-contact-by-client-id.usecase';
@@ -9,7 +10,7 @@ import { GetAllTypeContactUsecase } from 'src/app/core/usecase/utils/get-all-typ
 
 
 @Component({
-  selector: 'app-upedate-contact-component',
+  selector: 'app-update-contact-component',
   templateUrl: './update-contact.component.html',
 })
 export class UpdateContactComponent implements OnInit {
@@ -21,6 +22,7 @@ export class UpdateContactComponent implements OnInit {
   displayEmail: boolean = false;
 
   formContact: FormGroup;
+  idContact: string;
 
   // Tipo de contacto
   typeContact: Array<ParamsModel> = [];
@@ -37,6 +39,7 @@ export class UpdateContactComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private _getAllTypeContact: GetAllTypeContactUsecase,
+    private _config: DynamicDialogConfig,
     private _getAllAreaContact: GetAllAreaContactUsecase,
     private _registerContact: RegisterContactByClientIdUsecase,
     private _messageService: MessageService,
@@ -59,6 +62,7 @@ export class UpdateContactComponent implements OnInit {
     this.createFormClient()
     this.getAllTypeContacts()
     this.getAllAreaContacts()
+    this.idContact=this._config.data.lastIdContact
   }
 
   getAllTypeContacts() {
@@ -97,10 +101,11 @@ export class UpdateContactComponent implements OnInit {
     const form = this.formContact.value
 
     const Contact: ContactModel = {
-      nombreCompleto: form.fullName,
-      tipoContacto_parametro: form.typeContact.id,
-      areaContacto_parametro: form.areaContact.id,
-      comentario: form.comments
+      client_id: this._config.data.client_id,
+      full_name: form.fullName,
+      type_param: form.typeContact.id,
+      area_param: form.areaContact.id,
+      comment: form.comments
     }
 
     // this._registerContact.execute(Contact).subscribe((value: any) => {

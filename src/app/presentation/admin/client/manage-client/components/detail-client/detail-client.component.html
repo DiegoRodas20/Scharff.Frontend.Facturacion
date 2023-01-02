@@ -1,4 +1,4 @@
-<div class="grid">
+<div *ngIf="client" class="grid">
     <div class="col-12 md:col-6 flex align-items-center">
         <div>
             <button pButton pRipple icon="pi pi-arrow-left" class="p-button-rounded p-button-text text-color"
@@ -7,20 +7,22 @@
 
         <div class="px-3">
             <h3 class="text-xl text-700">
-                Cliente > {{client}}
+                Cliente > {{client.identity_document_number}} - {{client.business_name}}
             </h3>
         </div>
 
-        <div class="point-active"></div>
+        <div [class]="client.status ? 'point-active' : 'point-inactive'"
+            [pTooltip]="client.status ? 'Cliente Habilitado' : 'Cliente Inhabilitado'">
+        </div>
     </div>
     <div class="col-12 md:col-6 flex align-items-center justify-content-end">
         <div class="surface-overlay text-center py-2 border-round-xl mx-2">
-            <i class="pi pi-ban pr-2 text-red-500"></i>
-            <img src="../../../../../../../assets/img/SAP.png" class="img-icon">
+            <i class="pi pi-ban text-red-500 rotate-90"></i>
+            <img src="../../../../../../../assets/img/SAP.png" class="img-icon pl-2">
         </div>
         <div class="surface-overlay text-center px-3 py-2 border-round-xl">
-            <i class="pi pi-ban pr-2 text-red-500"></i>
-            <img src="../../../../../../../assets/img/SUNAT.png" class="img-icon">
+            <i class="pi pi-check-circle text-green-500 pl-2"></i>
+            <img src="../../../../../../../assets/img/SUNAT.png" class="img-icon pl-2">
         </div>
     </div>
 </div>
