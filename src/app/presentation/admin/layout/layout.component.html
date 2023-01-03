@@ -1,5 +1,7 @@
-<p-menubar [model]="items">
-</p-menubar>
+<p-tabView class="tab-primary">
+    <p-tabPanel *ngFor="let item of items; let i = index" [selected]="i == 0" [header]="item.label" rightIcon="pi pi-angle-down">
+    </p-tabPanel>
+</p-tabView>
 
 <div class="md:px-6 py-3">
     <router-outlet></router-outlet>

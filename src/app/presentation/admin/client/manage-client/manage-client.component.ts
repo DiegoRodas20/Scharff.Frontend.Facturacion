@@ -53,7 +53,6 @@ export class ManageClientComponent implements OnInit {
             this.lClientsChunk = this.lClients.slice(0, 4);
             this.mensaje = data.message
         }
-
         catch (error) {
             console.log("Error: ", error)
         }
@@ -66,15 +65,14 @@ export class ManageClientComponent implements OnInit {
             this._messageService.add(
                 {
                     severity: 'success',
-                    summary: 'Èxito',
-                    detail: data.message
+                    summary: 'Éxito',
+                    detail: data.message,
+                    
                 }
             )
 
             this.getAllClients()
-            console.log(data)
         }
-
         catch (error) {
             console.log("Error: ", error)
         }
@@ -87,15 +85,14 @@ export class ManageClientComponent implements OnInit {
             this._messageService.add(
                 {
                     severity: 'success',
-                    summary: 'Èxito',
-                    detail: data.message
+                    summary: 'Éxito',
+                    detail: data.message,
+                    
                 }
             )
 
             this.getAllClients()
-            console.log(data)
         }
-
         catch (error) {
             console.log("Error: ", error)
         }

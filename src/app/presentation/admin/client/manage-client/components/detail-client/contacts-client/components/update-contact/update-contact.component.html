@@ -1,128 +1,142 @@
 <div class="card px-5">
-  <form [formGroup]="formContact">
+    <form [formGroup]="formContact">
 
-      <div class="pb-4">
-          <span class="text-base text-400">Contacto N° {{ idContact }}</span>
-          <hr>
-      </div>
+        <div class="pb-4">
+            <span class="text-base">Contacto N° {{ idContact }}</span>
+            <hr>
+        </div>
 
-      <!-- Inputs Datos Contacto -->
-      <div class="p-fluid grid">
+        <!-- Inputs Datos Contacto -->
+        <div class="p-fluid grid">
 
-          <!-- Tipo de contacto -->
-          <div class="field col-12 md:col-3">
-              <span class="p-float-label">
-                  <p-dropdown [options]="typeContact" [autoDisplayFirst]="false" optionLabel="description"
-                      formControlName="typeContact" [showClear]="true"></p-dropdown>
-                  <label>Tipo de contacto</label>
-              </span>
-          </div>
-
-          <!--Area de contacto -->
-          <div class="field col-12 md:col-3">
-              <span class="p-float-label">
-                  <p-dropdown [options]="areaContact" inputId="dropdown" [autoDisplayFirst]="false" optionLabel="description"
-                      formControlName="areaContact" [showClear]="true"></p-dropdown>
-                  <label for="dropdown">Área de contacto</label>
-              </span>
-          </div>
-
-          <!-- Nombre completo -->
-          <div class="field col-12 md:col-3">
-              <span class="p-float-label">
-                  <input id="float-input" pInputText formControlName="fullName">
-                  <label for="float-input">Nombre Completo</label>
-                  <error-message [formControlError]="formContact.controls['fullName']"></error-message>
-              </span>
-          </div>
-
-          <!-- Estado de cliente -->
-          <div class="field col-12 md:col-3">
-            <span class="p-float-label">
-              <p-dropdown [options]="typeContact" [autoDisplayFirst]="false" optionLabel="description"
-                  formControlName="typeContact" [showClear]="true"></p-dropdown>
-              <label>Estado</label>
-            </span>
-          </div>
-
-          <!-- Telefono 1 -->
-          <ng-container>
-            <div class="field col-5">
-              <span class="p-float-label">
-                <input id="float-input" pInputText formControlName="phone1">
-                <label for="float-input">Telefono 1</label>
-              </span>
+            <!-- Tipo de contacto -->
+            <div class="field col-12 md:col-3">
+                <span class="p-float-label">
+                    <p-dropdown 
+                        [options]="typeContact" 
+                        [autoDisplayFirst]="false" 
+                        optionLabel="description"
+                        formControlName="type_param" 
+                        [showClear]="true">
+                    </p-dropdown>
+                    <label>Tipo de contacto</label>
+                </span>
             </div>
 
-            <div class="field col-1">
-              <button pButton pRipple icon="pi pi-plus" class="p-button-outlined p-button-danger h-full"
-                (click)="addPhone()"></button>
-            </div>
-          </ng-container>
-
-          <!-- Correo 1 -->
-          <ng-container>
-            <div class="field col-5">
-              <span class="p-float-label">
-                <input id="float-input" pInputText formControlName="email1">
-                <label for="float-input">Correo 1</label>
-              </span>
-            </div>
-
-            <div class="field col-1">
-              <button pButton pRipple icon="pi pi-plus" class="p-button-outlined p-button-danger h-full"
-                (click)="addEmail()"></button>
-            </div>
-          </ng-container>
-
-          <!-- Telefono 2 -->
-          <ng-container *ngIf="displayPhone">
-            <div class="field col-5">
-              <span class="p-float-label">
-                <input id="float-input" pInputText formControlName="phone2">
-                <label for="float-input">Telefono 2</label>
-              </span>
+            <!--Area de contacto -->
+            <div class="field col-12 md:col-3">
+                <span class="p-float-label">
+                    <p-dropdown 
+                        [options]="areaContact" 
+                        [autoDisplayFirst]="false"
+                        optionLabel="description" 
+                        formControlName="area_param"
+                        [showClear]="true">
+                    </p-dropdown>
+                    <label>Área de contacto</label>
+                </span>
             </div>
 
-            <div class="field col-1">
-              <button pButton pRipple icon="pi pi-minus" class="p-button-outlined p-button-danger h-full"
-                (click)="addPhone()"></button>
-            </div>
-          </ng-container>
-
-          <div *ngIf="!displayEmail && displayPhone" class="field col-5"></div>
-
-          <!-- Correo 2 -->
-          <ng-container *ngIf="displayEmail">
-
-            <div class="field col-5">
-              <span class="p-float-label">
-                <input id="float-input" pInputText formControlName="email2">
-                <label for="float-input">Correo 2</label>
-              </span>
+            <!-- Nombre completo -->
+            <div class="field col-12 md:col-3">
+                <span class="p-float-label">
+                    <input pInputText formControlName="full_name">
+                    <label>Nombre Completo</label>
+                </span>
+                <error-message [formControlError]="formContact.controls['full_name']"></error-message>
             </div>
 
-            <div class="field col-1">
-              <button pButton pRipple icon="pi pi-minus" class="p-button-outlined p-button-danger h-full"
-                (click)="addEmail()"></button>
+            <!-- Estado de cliente -->
+            <div class="field col-12 md:col-3">
+                <span class="p-float-label">
+                    <p-dropdown 
+                        [options]="typeContact"
+                        [autoDisplayFirst]="false"
+                        optionLabel="description"
+                        formControlName="status"
+                        [showClear]="true">
+                    </p-dropdown>
+                    <label>Estado</label>
+                </span>
             </div>
-          </ng-container>
+
+            <!-- Telefono 1 -->
+            <ng-container>
+                <div class="field col-5">
+                    <span class="p-float-label">
+                        <input pInputText formControlName="phone1">
+                        <label>Telefono 1</label>
+                    </span>
+                </div>
+
+                <div class="field col-1">
+                    <button pButton pRipple icon="pi pi-plus" class="p-button-outlined p-button-danger h-full"
+                        (click)="addPhone()"></button>
+                </div>
+            </ng-container>
+
+            <!-- Correo 1 -->
+            <ng-container>
+                <div class="field col-5">
+                    <span class="p-float-label">
+                        <input pInputText formControlName="email1">
+                        <label>Correo 1</label>
+                    </span>
+                </div>
+
+                <div class="field col-1">
+                    <button pButton pRipple icon="pi pi-plus" class="p-button-outlined p-button-danger h-full"
+                        (click)="addEmail()"></button>
+                </div>
+            </ng-container>
+
+            <!-- Telefono 2 -->
+            <ng-container *ngIf="displayPhone">
+                <div class="field col-5">
+                    <span class="p-float-label">
+                        <input pInputText formControlName="phone2">
+                        <label>Telefono 2</label>
+                    </span>
+                </div>
+
+                <div class="field col-1">
+                    <button pButton pRipple icon="pi pi-minus" class="p-button-outlined p-button-danger h-full"
+                        (click)="addPhone()"></button>
+                </div>
+            </ng-container>
+
+            <div *ngIf="!displayEmail && displayPhone" class="field col-5"></div>
+
+            <!-- Correo 2 -->
+            <ng-container *ngIf="displayEmail">
+
+                <div class="field col-5">
+                    <span class="p-float-label">
+                        <input pInputText formControlName="email2">
+                        <label>Correo 2</label>
+                    </span>
+                </div>
+
+                <div class="field col-1">
+                    <button pButton pRipple icon="pi pi-minus" class="p-button-outlined p-button-danger h-full"
+                        (click)="addEmail()"></button>
+                </div>
+            </ng-container>
 
             <!-- Comentarios -->
-      <div class="field col-12 md:col-12">
-        <span class="p-float-label">
-          <textarea id="float-input" rows="4" cols="30" pInputTextarea formControlName="comments"></textarea>
-          <label for="float-input">Comentarios</label>
-        </span>
-      </div>
+            <div class="field col-12 md:col-12">
+                <span class="p-float-label">
+                    <textarea rows="4" cols="30" pInputTextarea formControlName="comment"></textarea>
+                    <label>Comentarios</label>
+                </span>
+            </div>
 
+        </div>
 
-      </div>
+        <div class="col-12 text-center py-3">
+            <button pButton class="b-primary 4 w-3" label="Actualizar" (click)="updateContact()">
+            </button>
+        </div>
 
-      <div class="col-12 text-center py-3">
-          <button pButton class="b-primary 4 w-3" label="Actualizar" (click)="createContact()">
-          </button>
-      </div>
-
-  </form>
+    </form>
 </div>

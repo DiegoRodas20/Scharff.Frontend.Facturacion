@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { CONTACT_URL } from 'src/app/common/helpers/constants/url.constants';
 import { ResponseData } from 'src/app/core/models/response.model';
-import { ContactModel } from 'src/app/core/models/contact.model';
+import { ContactModel, RegisterContact } from 'src/app/core/models/contact.model';
 import { ContactRepository } from 'src/app/core/repositories/contact.repository';
 
 
@@ -22,7 +22,7 @@ export class ContactWebRepository extends ContactRepository {
     // Listado general de contactos por Cliente
     getAllContactsByClientId(idClient: number): Promise<ResponseData<ContactModel[]>> {
 
-        const url = `${CONTACT_URL}/${idClient}`
+        const url = `${CONTACT_URL}/all/${idClient}`
         return lastValueFrom(this.http.get<ResponseData<ContactModel[]>>(url))
     }
 
@@ -34,7 +34,7 @@ export class ContactWebRepository extends ContactRepository {
     }
 
     // Registrar contacto por cliente
-    registerContactByClientId(contact: ContactModel): Promise<ResponseData<ContactModel>> {
+    registerContactByClientId(contact: RegisterContact): Promise<ResponseData<ContactModel>> {
         
         const url = `${CONTACT_URL}`
         return lastValueFrom(this.http.post<ResponseData<ContactModel>>(url, contact))
@@ -48,9 +48,9 @@ export class ContactWebRepository extends ContactRepository {
     }
 
     // Eliminar contacto por cliente
-    deleteContactById(idContact: number): Promise<ResponseData<ContactModel>> {
+    deleteContactById(idContact: number): Promise<ResponseData<number>> {
         
         const url = `${CONTACT_URL}/${idContact}`
-        return lastValueFrom(this.http.delete<ResponseData<ContactModel>>(url))
+        return lastValueFrom(this.http.delete<ResponseData<number>>(url))
     }
 }

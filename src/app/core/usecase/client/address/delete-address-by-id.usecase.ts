@@ -8,13 +8,13 @@ import { AddressRepository } from 'src/app/core/repositories/address.repository'
     providedIn: 'root'
 })
 
-export class DeleteAddressByIdUsecase implements UseCasePromise<number, AddressModel> {
+export class DeleteAddressByIdUsecase implements UseCasePromise<number, number> {
 
     constructor(
         private _addressRepository: AddressRepository
     ) { }
 
-    execute(idAddress: number): Promise<ResponseData<AddressModel>> {
+    execute(idAddress: number): Promise<ResponseData<number>> {
 
         return this._addressRepository.deleteAddressById(idAddress)
     }

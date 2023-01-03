@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
-
 :root {
-    --primary-color: red;
+    --primary-color: #FF565E;
     --secondary-color: black;
     --third-color: #e2e2e2;
     --text-name-color: #959595;
@@ -9,9 +7,8 @@
 
 @font-face {
     font-family: 'CarnasW03';
-    src: url('assets/fonts/CarnasW03-Light.woff') format('woff');
+    src: url('assets/fonts/CarnasW03-Regular.woff') format('woff');
 }
-
 
 * {
     font-family: 'CarnasW03';
@@ -46,34 +43,66 @@ hr {
 }
 
 // Tab View
-.p-tabview-nav {
-    justify-content: space-between;
-    background: transparent !important;
-    border-width: 0px !important;
+
+.tab-primary {
+    .p-tabview-nav {
+        justify-content: center;
+        background: #ffffff !important;
+        border-width: 0px !important;
+    }
+
+    .p-tabview-nav-container {
+        box-shadow: 0px 4px 15px rgb(0 0 0 / 25%);
+    }
+
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+        padding: 1.75rem 3.25rem;
+    }
+
+    .p-tabview .p-tabview-nav .p-tabview-ink-bar {
+        height: 3px;
+        background-color: #000000;
+    }
+
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+        color: #000000;
+    }
+
+    .p-tabview .p-tabview-panels {
+        background: transparent;
+    }
 }
 
-.p-tabview .p-tabview-panels {
-    background: transparent;
-    padding-top: 2rem;
-    padding-left: 0rem;
-    padding-right: 0rem;
-}
+.tab-secondary {
+    .p-tabview-nav {
+        justify-content: space-between;
+        background: transparent !important;
+        border-width: 0px !important;
+    }
 
-.p-highlight .p-tabview-nav-link {
-    background-color: transparent !important;
-    color: #000000 !important;
-    border: 1px solid !important;
-    border-radius: 100px !important;
-}
+    .p-tabview .p-tabview-panels {
+        background: transparent;
+        padding-top: 2rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
 
-.p-tabview .p-tabview-nav li .p-tabview-nav-link {
-    background: transparent;
-    border: none;
-    padding: 0.75rem 4rem;
-}
+    .p-highlight .p-tabview-nav-link {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border: 1px solid !important;
+        border-radius: 100px !important;
+    }
 
-.p-tabview .p-tabview-nav .p-tabview-ink-bar {
-    display: none;
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+        background: transparent;
+        border: none;
+        padding: 0.75rem 4rem;
+    }
+
+    .p-tabview .p-tabview-nav .p-tabview-ink-bar {
+        display: none;
+    }
 }
 
 // Image Icon
@@ -85,7 +114,7 @@ hr {
 // Buttons
 
 .b-primary {
-    background-color: #000000 !important;
+    background-color: var(--primary-color) !important;
     border-radius: 100px;
 }
 
@@ -115,6 +144,7 @@ hr {
 
 .p-card {
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+    border-radius: 20px;
 }
 
 .p-card-body {
@@ -125,6 +155,13 @@ hr {
 .point-active {
     border-radius: 50%;
     background-color: #35A700;
+    width: 1rem;
+    height: 1rem;
+}
+
+.point-inactive {
+    border-radius: 50%;
+    background-color: #FF1D53;
     width: 1rem;
     height: 1rem;
 }
@@ -165,6 +202,46 @@ hr {
     padding-right: 2rem;
     background-color: #000000 !important;
     border-radius: 100px;
+}
+
+// Badge
+.p-badge {
+    padding: 0px 0.8rem;
+    border-radius: 100px;
+    font-weight: normal;
+    background: #000000;
+    font-style: normal;
+    right: 1.7rem !important;
+    cursor: pointer;
+}
+
+// Toast
+
+.p-toast .p-toast-message.p-toast-message-success {
+    background: #007604;
+    color: #ffffff;
+}
+
+.p-toast .p-toast-message.p-toast-message-error {
+    background: #b80000;
+    color: #ffffff;
+}
+
+.p-toast .p-toast-message {
+    border-radius: 1rem;
+}
+
+.p-toast .p-toast-message .p-toast-message-content {
+    align-items: center;
+}
+
+.p-toast-icon-close {
+    color: #ffffff !important;
+}
+
+.p-toast-message-icon {
+    font-size: 1rem !important;
+    color: #ffffff !important;
 }
 
 // Scrollbar

@@ -20,19 +20,19 @@ export class LayoutComponent implements OnInit {
     setItemsMenu() {
         this.items = [
             {
-                label: 'Cliente', items: []
+                label: 'Clientes'
             },
 
             {
-                label: 'Facturacion', items: []
+                label: 'Facturación'
             },
 
             {
-                label: 'Tarifas', items: []
+                label: 'Liquidación'
             },
 
             {
-                label: 'Liquidacion', items: []
+                label: 'Tarifas'
             },
         ]
     }

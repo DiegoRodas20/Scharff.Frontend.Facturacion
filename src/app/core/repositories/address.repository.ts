@@ -11,6 +11,6 @@ export abstract class AddressRepository {
 
     abstract updateAddressById(idAddress: number, address: AddressModel): Promise<ResponseData<AddressModel>>
 
-    abstract deleteAddressById(idAddress: number): Promise<ResponseData<AddressModel>>
+    abstract deleteAddressById(idAddress: number): Promise<ResponseData<number>>
 
 }

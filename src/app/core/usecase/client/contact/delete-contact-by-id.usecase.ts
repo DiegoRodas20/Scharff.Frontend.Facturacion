@@ -8,13 +8,13 @@ import { ContactRepository } from 'src/app/core/repositories/contact.repository'
     providedIn: 'root'
 })
 
-export class DeleteContactByIdUsecase implements UseCasePromise<number, ContactModel> {
+export class DeleteContactByIdUsecase implements UseCasePromise<number, number> {
 
     constructor(
         private _contactRepository: ContactRepository
     ) { }
 
-    execute(idClient: number): Promise<ResponseData<ContactModel>> {
+    execute(idClient: number): Promise<ResponseData<number>> {
 
         return this._contactRepository.deleteContactById(idClient)
     }

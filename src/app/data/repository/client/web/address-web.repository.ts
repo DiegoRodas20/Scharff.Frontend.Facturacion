@@ -22,7 +22,7 @@ export class AddressWebRepository extends AddressRepository {
     // Listado general de direcciones por Cliente
     getAllAddressesByClientId(idClient: number): Promise<ResponseData<AddressModel[]>> {
 
-        const url = `${ADDRESS_URL}/${idClient}`
+        const url = `${ADDRESS_URL}/all/${idClient}`
         return lastValueFrom(this.http.get<ResponseData<AddressModel[]>>(url))
     }
 
@@ -48,9 +48,9 @@ export class AddressWebRepository extends AddressRepository {
     }
 
     // Eliminar direccion por cliente
-    deleteAddressById(idAddress: number): Promise<ResponseData<AddressModel>> {
+    deleteAddressById(idAddress: number): Promise<ResponseData<number>> {
 
         const url = `${ADDRESS_URL}/${idAddress}`
-        return lastValueFrom(this.http.delete<ResponseData<AddressModel>>(url))
+        return lastValueFrom(this.http.delete<ResponseData<number>>(url))
     }
 }

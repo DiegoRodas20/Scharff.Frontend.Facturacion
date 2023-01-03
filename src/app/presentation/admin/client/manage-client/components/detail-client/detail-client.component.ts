@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { ClientModel } from 'src/app/core/models/client.model';
 import { ResponseData } from 'src/app/core/models/response.model';
 import { GetClientByIdUsecase } from 'src/app/core/usecase/client/client/get-client-by-id.usecase';
@@ -31,11 +31,12 @@ export class DetailClientComponent implements OnInit {
     async getClientById(idClient: number) {
         try {
             let data: ResponseData<ClientModel> = await this._getClientById.execute(idClient)
+            console.log(data)
             this.client = data.data
             this._messageService.add(
                 {
                     severity: 'success',
-                    summary: 'Exito',
+                    summary: 'Éxito',
                     detail: data.message
                 }
             )

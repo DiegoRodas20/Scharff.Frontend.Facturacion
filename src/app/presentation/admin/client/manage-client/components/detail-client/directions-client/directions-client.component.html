@@ -1,62 +1,66 @@
 <p-card>
-    <div class="grid">
+    <div class="grid md:px-5 md:py-2">
 
-        <ng-container *ngFor="let direction of lAddress; let i = index">
-            <div class="col-12">
-                <h3 class="text-base text-700 my-0 font-normal">
-                    Dirección fiscal Nº {{i + 1}}
-                </h3>
-                <hr>
-            </div>
+        <div class="col-12">
+            <h3 class="text-base text-700 my-0 font-normal">
+                Dirección fiscal
+            </h3>
+            <hr>
+        </div>
 
-            <!-- <div class="col-12 flex">
-                <span class="col-6 font-semibold">Dirección 1</span>
+        <ng-container *ngFor="let address of lAddress; let i = index">
+
+            <div class="col-12 flex">
+                <span class="col-6 font-semibold">Dirección fiscal Nº {{address.id}}</span>
                 <div class="col-6 text-base text-right">
-                    <button (click)="showModalUpdateDirection()" pButton pRipple icon="pi pi-pencil"
-                        class="p-button-rounded p-button-text text-500"></button>
-                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"></button>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"
+                        pTooltip="Editar Dirección" tooltipPosition="top" placeholder="Top"
+                        (click)="showModalUpdateDirection()"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"
+                        pTooltip="Eliminar Dirección" tooltipPosition="top" placeholder="Top"
+                        (click)="deleteAddressById(address.id)"></button>
                 </div>
-            </div> -->
+            </div>
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Dirección</span>
-                <span class="col-6 py-0 font-semibold">{{direction.address}}</span>
+                <span class="col-6 py-0 font-semibold">-</span>
             </div>
 
-            <!-- <div class="col-12 md:col-6 flex">
+            <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Código Postal</span>
-                <span class="col-6 py-0 font-semibold">{{direction.postalCode}}</span>
+                <span class="col-6 py-0 font-semibold">-</span>
             </div>
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Ubigeo</span>
-                <span class="col-6 py-0 font-semibold">{{direction.ubigeo}}</span>
+                <span class="col-6 py-0 font-semibold">-</span>
             </div>
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Provincia</span>
-                <span class="col-6 py-0 font-semibold">{{direction.province}}</span>
-            </div> -->
+                <span class="col-6 py-0 font-semibold">-</span>
+            </div>
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Tipo Direccion</span>
-                <span class="col-6 py-0 font-semibold">{{direction.type_param}}</span>
+                <span class="col-6 py-0 font-semibold">{{address.type_param}}</span>
             </div>
 
-            <!-- <div class="col-12 md:col-6 flex">
+            <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">País</span>
-                <span class="col-6 py-0 font-semibold">{{direction.country}}</span>
+                <span class="col-6 py-0 font-semibold">-</span>
             </div>
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Estado</span>
-                <span class="col-6 py-0 font-semibold">{{direction.status}}</span>
+                <span class="col-6 py-0 font-semibold">{{address.status}}</span>
             </div>
 
             <div class="col-12 md:col-6 flex">
                 <span class="col-6 py-0 text-500">Distrito</span>
-                <span class="col-6 py-0 font-semibold">{{direction.district}}</span>
-            </div> -->
+                <span class="col-6 py-0 font-semibold">-</span>
+            </div>
 
         </ng-container>
 

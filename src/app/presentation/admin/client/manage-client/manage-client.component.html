@@ -29,8 +29,8 @@
 
                 <!-- Point Active -->
                 <div class="col-12 md:col-1 flex justify-content-center align-self-center">
-                    <div [class]="client.estadoCliente ? 'point-active' : 'point-inactive'"
-                        [pTooltip]="client.estadoCliente ? 'Cliente Habilitado' : 'Cliente Inhabilitado'">
+                    <div [class]="client.status ? 'point-active' : 'point-inactive'"
+                        [pTooltip]="client.status ? 'Cliente Habilitado' : 'Cliente Inhabilitado'">
                     </div>
                 </div>
 
@@ -42,25 +42,25 @@
 
                 <!-- RUC -->
                 <div class="col-12 md:col-3">
-                    <span class="text-500">Numero de Documento</span>
-                    <div class="font-semibold">{{client.numeroDocumentoIdentidad}}</div>
+                    <span class="text-500">Número de Documento</span>
+                    <div class="font-semibold">{{client.identity_document_number}}</div>
                 </div>
 
                 <!-- Razon Social -->
                 <div class="col-12 md:col-3">
                     <span class="text-500">Razon Social</span>
-                    <div class="font-semibold">{{client.razonSocial}}</div>
+                    <div class="font-semibold">{{client.business_name}}</div>
                 </div>
 
                 <!-- Options -->
                 <div class="col-12 md:col-2 text-center">
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"
                         (click)="getClientById(client.id)"></button>
-                    <button *ngIf="client.estadoCliente" pButton pRipple icon="pi pi-times-circle"
+                    <button *ngIf="client.status" pButton pRipple icon="pi pi-times-circle"
                         class="p-button-rounded p-button-text text-500" pTooltip="Inhabilitar cliente"
                         (click)="disableClient(client.id)">
                     </button>
-                    <button *ngIf="!client.estadoCliente" pButton pRipple icon="pi pi-check-circle"
+                    <button *ngIf="!client.status" pButton pRipple icon="pi pi-check-circle"
                         class="p-button-rounded p-button-text text-500" pTooltip="Habilitar cliente"
                         (click)="enableClient(client.id)">
                     </button>

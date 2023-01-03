@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { ContactModel } from 'src/app/core/models/contact.model';
+import { ContactModel, RegisterContact } from 'src/app/core/models/contact.model';
 import { ParamsModel } from 'src/app/core/models/params.models';
 import { RegisterContactByClientIdUsecase } from 'src/app/core/usecase/client/contact/register-contact-by-client-id.usecase';
 import { GetAllAreaContactUsecase } from 'src/app/core/usecase/utils/get-all-area-contact.usecase';
@@ -40,7 +40,7 @@ export class RegisterContactComponent implements OnInit {
         this.createFormClient()
         this.getAllTypeContacts()
         this.getAllAreaContacts()
-        this.idContact=this._config.data.lastIdContact+1
+        this.idContact = this._config.data.lastIdContact + 1
     }
 
     createFormClient() {
@@ -68,12 +68,12 @@ export class RegisterContactComponent implements OnInit {
         })
     }
 
-    addPhone(): void {
+    addPhone() {
         const isDisplayPhone = this.displayPhone
         this.displayPhone = !isDisplayPhone
     }
 
-    addEmail(): void {
+    addEmail() {
         const isDisplayEmail = this.displayEmail
         this.displayEmail = !isDisplayEmail
     }
@@ -92,15 +92,17 @@ export class RegisterContactComponent implements OnInit {
 
         const form = this.formContact.value
 
-        const contact: ContactModel = {
-            client_id: this._config.data.client_id,
+        const contact: RegisterContact = {
+            client_id: Number(this._config.data.idClient),
             full_name: form.fullName,
             type_param: form.typeContact.id,
             area_param: form.areaContact.id,
+            phones_contact: form.phone2 ? [{ phone: form.phone1 }, { phone: form.phone2 }] : [{ phone: form.phone1 }],
+            emails_contact: form.email2 ? [{ email: form.email1 }, { email: form.email2 }] : [{ email: form.email1 }],
             comment: form.comments
         }
 
-        try{
+        try {
             let data: any = await this._registerContact.execute(contact)
 
             this._confirmationService.confirm({
@@ -112,7 +114,7 @@ export class RegisterContactComponent implements OnInit {
             })
         }
 
-        catch(error){
+        catch (error) {
             console.log(error)
         }
     }

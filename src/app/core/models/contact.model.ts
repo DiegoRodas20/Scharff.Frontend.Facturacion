@@ -15,3 +15,16 @@ export interface ContactModel {
     end_date?: string;
 
 }
+
+export interface RegisterContact extends ContactModel {
+    phones_contact: RegisterPhoneContactModel[];
+    emails_contact: RegisterEmailContactModel[];
+}
+
+export interface RegisterPhoneContactModel {
+    phone?: string;
+}
+
+export interface RegisterEmailContactModel {
+    email?: string;
+}

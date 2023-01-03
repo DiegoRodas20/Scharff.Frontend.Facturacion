@@ -6,6 +6,7 @@ import { GetAllAddressByClientIdUsecase } from 'src/app/core/usecase/client/addr
 import { ActivatedRoute } from '@angular/router';
 import { AddressModel } from 'src/app/core/models/address.model';
 import { ResponseData } from 'src/app/core/models/response.model';
+import { DeleteAddressByIdUsecase } from 'src/app/core/usecase/client/address/delete-address-by-id.usecase';
 
 @Component({
     selector: 'app-directions-client',
@@ -22,22 +23,33 @@ export class DirectionsClientComponent implements OnInit {
     constructor(
         private _route: ActivatedRoute,
         public dialogService: DialogService,
-        private _getAllDirection: GetAllAddressByClientIdUsecase
+        private _getAllAddresses: GetAllAddressByClientIdUsecase,
+        private _deleteAddressById: DeleteAddressByIdUsecase
     ) {
 
     }
     ngOnInit() {
         this._route.params.subscribe(params => {
             this.idClient = params['id']
-            this.getAllDirections(this.idClient)
+            this.getAllAddresses(this.idClient)
         })
     }
 
-    async getAllDirections(idClient: number) {
+    async getAllAddresses(idClient: number) {
         try {
-            let data: ResponseData<AddressModel[]> = await this._getAllDirection.execute(idClient)
+            let data: ResponseData<AddressModel[]> = await this._getAllAddresses.execute(idClient)
             console.log(data)
             this.lAddress = data.data
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    async deleteAddressById(idAddress: number){
+        try {
+            let data: ResponseData<number> = await this._deleteAddressById.execute(idAddress)
+            this.getAllAddresses(this.idClient)
         }
         catch (error) {
             console.log(error)
@@ -51,8 +63,11 @@ export class DirectionsClientComponent implements OnInit {
             data: data,
             header: 'Registrar Dirección',
             width: '40rem',
-        });
-        ref.onClose.subscribe(() => { this.getAllDirections(this.idClient) })
+        })
+
+        ref.onClose.subscribe(() => {
+            this.getAllAddresses(this.idClient)
+        })
     }
 
     showModalUpdateDirection() {
