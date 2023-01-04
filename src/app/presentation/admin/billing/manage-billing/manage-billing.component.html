@@ -1,1 +1,404 @@
-<div>Prueba billing</div>
+<div class="md:px-8">
+
+    <!-- Seccion uno -->
+    <div class="card">
+
+        <div class="card-container flex flex align-items-center">
+
+            <!-- Cliente -->
+            <div class="flex-1 flex align-items-center justify-content-center m-2 px-5 py-3">
+                <span class="p-float-label w-full">
+                    <input class="surface-100 w-full" id="float-input" pInputText>
+                    <label for="float-input">Cliente</label>
+                </span>
+            </div>
+
+            <!-- Sucursal -->
+            <div class="flex-1 flex align-items-center justify-content-center m-2 px-5 py-3">
+                <span class="p-float-label w-full">
+                    <p-dropdown></p-dropdown>
+                    <label>Sucursal</label>
+                </span>
+            </div>
+
+            <!-- Unidad -->
+            <div class="flex-1 flex align-items-center justify-content-center m-2 px-5 py-3">
+                <span class="p-float-label w-full">
+                    <p-dropdown></p-dropdown>
+                    <label for="dropdown">Unidad</label>
+                </span>
+            </div>
+            
+        </div>
+        
+        <div>
+            <hr>
+        </div>
+
+        <h3 class="text-center">
+            Ingresar factura
+        </h3>
+
+        <div class="flex flex align-items-center">
+
+            <!-- Tipo doc -->
+            <div class="flex-1 flex align-items-center justify-content-center m-2 px-5 py-3">
+                <span class="p-float-label  w-full">
+                    <input class="surface-100  w-full" id="float-input" pInputText>
+                    <label for="float-input">Tipo de doc</label>
+                </span>
+            </div>
+
+            <!-- Serie -->
+            <div class="flex-1 flex align-items-center justify-content-center m-2 px-5 py-3">
+                <span class="p-float-label  w-full">
+                    <input class="surface-100  w-full" id="float-input" pInputText>
+                    <label for="float-input">Serie</label>
+                </span>
+            </div>
+
+            <!-- Cliente -->
+            <div class="flex-1 flex align-items-center justify-content-center m-2 px-5 py-3">
+                <span class="p-float-label  w-full">
+                    <input class="surface-100  w-full" id="float-input" pInputText>
+                    <label for="float-input">Cliente</label>
+                </span>
+            </div>
+        
+        </div>
+
+    </div>
+
+    <!-- Seccion dos -->
+    <ng-container>
+        <div class="col-12 flex">
+
+            <p-card  class="m-2 w-full">
+                <div class="grid">
+                    <!-- Tipo Doc -->
+                    <div class="col-12 md:col-3">
+                        <span class="text-500">Tipo Doc</span>
+                        <span class="font-semibold mt-2 block">RUC - 10446892300</span>
+                    </div>
+
+                    <!-- Razon social -->
+                    <div class="col-12 md:col-3">
+                        <span class="text-500">Razon social </span>
+                        <span class="font-semibold mt-2 block">Saga Falabella SA</span>
+                    </div>
+
+                    <!-- Tc -->
+                    <div class="col-12 md:col-2">
+                        <span class="text-500">T.C</span>
+                        <span class="font-semibold mt-2 block">3.89</span>
+                    </div>
+
+                    <!-- Dias de credito -->
+                    <div class="col-12 md:col-2">
+                        <span class="text-500">Dias de credito</span>
+                        <span class="font-semibold mt-2 block">45</span>
+                    </div>
+
+                    <!-- Condicion de venta -->
+                    <div class="col-12 md:col-2">
+                        <span class="text-500">Condicion de venta</span>
+                        <span class="font-semibold mt-2 block">0002 credito</span>
+                    </div>
+                </div>
+
+                <div class="grid mt-3">
+                    <!-- Tipo moneda -->
+                    <div class="col-12 md:col-6 flex-1 field-radiobutton flex-column align-items-start gap-2">
+                        <span class="text-500">Tipo de Moneda</span>
+                        <div class="mt-2">
+                            <p-radioButton name="moneda" value="dolares" [(ngModel)]="moneda"></p-radioButton>
+                            <span class="text-500 pl-2 font-semibold">Dolares</span>
+                            <p-radioButton class="ml-6" name="moneda" value="soles" [(ngModel)]="moneda"></p-radioButton>
+                            <span class="text-500 pl-2 font-semibold">Soles</span>
+                        </div>
+                    </div>
+
+                    <!-- Direccion -->
+                    <div class="col-12 md:col-6 flex-1">
+                        <span class="text-500">Dirección</span>
+                        <div class="font-semibold mt-2 block">AV. Caminos del Inca N°3550 Santiago de Surco</div>
+                    </div>
+                </div>
+            </p-card>
+
+        </div>
+    </ng-container>
+
+
+    <!-- Seccion tres -->
+    <ng-container>
+        <div class="col-12 flex">
+
+            <p-card  class="m-2 w-full">
+                <div class="grid">
+                    <div class="card">
+
+                        <div class="flex align-items-center">
+                            <!-- Numero orden compra -->
+                            <div class="field px-5 py-3 col-12 md:col-4">
+                                <span class="p-float-label w-full">
+                                    <input class="w-full" id="float-input" pInputText>
+                                    <label for="float-input">Nro orden Compra</label>
+                                </span>
+                            </div>
+
+                            <!-- Fecha de emision -->
+                            <div class="field px-5 py-3 col-12 md:col-4">
+                                <span class="p-float-label w-full">
+                                    <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+                                    <label for="icon">Fecha de emision</label>
+                                </span>
+                            </div>
+
+                            <!-- Fecha de vencimiento -->
+                            <div class="field px-5 py-3 col-12 md:col-4">
+                                <span class="p-float-label w-full">
+                                    <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+                                    <label for="icon">Fecha de Vencimiento</label>
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="flex align-items-center">
+
+                            <!-- Ref y tipo de Doc -->
+                            <div class="field px-5 py-3 col-12 md:col-4">
+                                <span class="p-float-label w-full">
+                                    <input class="w-full" id="float-input" pInputText>
+                                    <label for="float-input">Referencia y tipo de documento</label>
+                                </span>
+                            </div>
+                
+                            <!-- Serie -->
+                            <div class="field px-5 py-3 col-12 md:col-3">
+                                <span class="p-float-label w-full">
+                                    <input id="float-input" pInputText>
+                                    <label for="float-input">Serie</label>
+                                </span>
+                            </div>
+                
+                            <!-- Correlativo -->
+                            <div class="field px-5 py-3 col-12 md:col-3">
+                                <span class="p-float-label w-full">
+                                    <input id="float-input" pInputText>
+                                    <label for="float-input">Correlativo</label>
+                                </span>
+                            </div>
+
+                            <!-- Observaciones -->
+                            <div class="field px-5 py-3 col-12 md:col-3">
+                                <span class="p-float-label w-full">
+                                    <input id="float-input" pInputText>
+                                    <label for="float-input">Observaciones</label>
+                                </span>
+                            </div>
+                        
+                        </div>
+                
+                    </div>
+                </div>
+            </p-card>
+            
+        </div>
+    </ng-container>
+
+    <!-- Button buscar liquidacion -->
+    <div class="field col-12 text-center">
+        <button pButton  class="b-third px-5 py-2" label="Buscar liquidaciones">
+        </button>
+    </div>
+
+    <!-- Seccion  cuatro -->
+    <ng-container>
+        <div class="col-12 flex">
+
+            <p-card  class="m-2 w-full">
+
+                <div class="col-12">
+                    <h3 class="text-base text-700 my-0 font-normal">
+                        Servicios en liquidación
+                    </h3>
+                </div> 
+                
+                <!-- seccion 1 -->
+                <div class="grid">
+
+                    <div class="col-12 md:col-1 flex-1 field-checkbox">
+                        <p-checkbox name="consignatario" value="" inputId="consignatario"></p-checkbox>
+                    </div>
+
+                    <!-- Origen -->
+                    <div class="col-12 md:col-3 flex-1 ">
+                        <span class="text-500">Origen</span>
+                        <div class="font-semibold mt-1">Liquidacion</div>
+                    </div>
+
+                    <!-- Descripcion -->
+                    <div class="col-12 md:col-3 flex-1 ">
+                        <span class="text-500">Descripcion</span>
+                        <div class="font-semibold mt-1">Almacenaje</div>
+                    </div>
+
+                    <!-- Importe -->
+                    <div class="col-12 md:col-3 flex-1">
+                        <span class="text-500">Importe</span>
+                        <div class="font-semibold mt-1">S/.900.0</div>
+                    </div>
+
+                    <!-- A.F -->
+                    <div class="col-12 md:col-3 flex-1">
+                        <span class="text-500">A.F</span>
+                        <div class="font-semibold mt-1">S</div>
+                    </div>
+
+                </div>
+
+                <div>
+                    <hr>
+                </div>
+
+                <!-- seccion 2 -->
+                <div class="grid">
+
+                    <div class="col-12 md:col-1 flex-1 field-checkbox py-0">
+                        <p-checkbox name="consignatario" value="" inputId="consignatario"></p-checkbox>
+                    </div>
+                    <!-- Origen -->
+                    <div class="col-12 md:col-3 flex-1 ">
+                        <span class="text-500">Origen</span>
+                        <div class="font-semibold mt-1">Liquidacion</div>
+                    </div>
+
+                    <!-- Descripcion -->
+                    <div class="col-12 md:col-3 flex-1 ">
+                        <span class="text-500">Descripcion</span>
+                        <div class="font-semibold mt-1">Reconocimiento Previo</div>
+                    </div>
+
+                    <!-- Importe -->
+                    <div class="col-12 md:col-3 flex-1">
+                        <span class="text-500">Importe</span>
+                        <div class="font-semibold mt-1">S/.750.0</div>
+                    </div>
+
+                    <!-- A.F -->
+                    <div class="col-12 md:col-3 flex-1">
+                        <span class="text-500">A.F</span>
+                        <div class="font-semibold mt-1">S</div>
+                    </div>
+
+                </div>
+
+                
+                <div>
+                    <hr>
+                </div>
+
+                <!-- seccion 3 -->
+                <div class="grid">
+
+                    <div class="col-12 md:col-1 flex-1 field-checkbox py-0">
+                        <p-checkbox name="consignatario" value="" inputId="consignatario"></p-checkbox>
+                    </div>
+                    <!-- Origen -->
+                    <div class="col-12 md:col-3 flex-1 ">
+                        <span class="text-500">Origen</span>
+                        <div class="font-semibold mt-1">Liquidacion</div>
+                    </div>
+
+                    <!-- Descripcion -->
+                    <div class="col-12 md:col-3 flex-1 ">
+                        <span class="text-500">Descripcion</span>
+                        <div class="font-semibold mt-1">Control y manejo de carga</div>
+                    </div>
+
+                    <!-- Importe -->
+                    <div class="col-12 md:col-3 flex-1">
+                        <span class="text-500">Importe</span>
+                        <div class="font-semibold mt-1">S/.900.0</div>
+                    </div>
+
+                    <!-- A.F -->
+                    <div class="col-12 md:col-3 flex-1">
+                        <span class="text-500">A.F</span>
+                        <div class="font-semibold mt-1">S</div>
+                    </div>
+
+                </div>
+
+                <div>
+                    <hr>
+                </div>
+
+                <!-- seccion 4 -->
+                <div class="grid">
+
+                    <!-- Origen -->
+                    <div class="col-12 md:col-3 flex-1 ">
+                        <span class="text-500">Origen</span>
+                        <div class="font-semibold mt-1">Manual</div>
+                    </div>
+
+                    <!-- Descripcion -->
+                    <div class="col-12 md:col-3 flex-1 ">
+                        <span class="text-500">Descripcion</span>
+                        <div class="font-semibold mt-1">Servicio extraordinario</div>
+                    </div>
+
+                    <!-- Importe -->
+                    <div class="col-12 md:col-3 flex-1">
+                        <span class="text-500">Importe</span>
+                        <div class="font-semibold mt-1">S/.700.0</div>
+                    </div>
+
+                    <!-- A.F -->
+                    <div class="col-12 md:col-1 flex-1">
+                        <span class="text-500">A.F</span>
+                        <div class="font-semibold mt-1">S</div>
+                    </div>
+
+                    <div class="col-12 md:col-32 flex-1 text-base text-right">
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-text text-500"
+                            pTooltip="Editar" tooltipPosition="top" placeholder="Top"></button>
+                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-text text-500"
+                            pTooltip="Eliminar" tooltipPosition="top" placeholder="Top"></button>
+                    </div>
+
+                </div>
+
+                <div>
+                    <hr>
+                </div>
+
+                <!-- seccion 5 -->
+                <div class="grid">
+                    <!-- Origen -->
+
+                    <div class="col-12 md:col-6 flex-1 field-checkbox py-0 mt-1">
+                        <p-checkbox name="consignatario" value="" inputId="consignatario"></p-checkbox>
+                    </div>
+                    <div class="col-12 md:col-6 flex-1 ">
+                        <span class="text-500 font-semibold">Seleccionar</span>
+                    </div>
+
+                </div>
+                
+
+            </p-card>
+
+        </div>
+    </ng-container>
+
+    <!-- Button generar factura -->
+    <div class="field col-12 text-center">
+        <button pButton  class="b-third px-5 py-2" label="Generar Factura">
+        </button>
+    </div>
+
+</div>

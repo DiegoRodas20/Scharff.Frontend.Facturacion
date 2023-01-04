@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-manage-billing',
-    templateUrl: './manage-billing.component.html'
+    templateUrl: './manage-billing.component.html',
+    styleUrls: ['./manage-billing.component.scss']
 })
 
 export class ManageBillingComponent implements OnInit {
 
-    moneda
+    moneda: string;
 
     constructor() { }
 

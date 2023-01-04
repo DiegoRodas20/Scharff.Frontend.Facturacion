@@ -22,6 +22,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PaginatorModule } from 'primeng/paginator';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 
 const COMPONENTS = [
@@ -47,7 +48,8 @@ const COMPONENTS = [
     InputTextareaModule,
     ToastModule,
     ConfirmDialogModule,
-    PaginatorModule
+    PaginatorModule,
+    RadioButtonModule
 ]
 
 @NgModule({

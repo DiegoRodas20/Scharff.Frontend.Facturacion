@@ -2,18 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AddressModel } from 'src/app/core/models/address.model';
 import { ParamsModel } from 'src/app/core/models/params.models';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { RegisterAddressByClientIdUsecase } from 'src/app/core/usecase/client/address/register-address-by-client-id.usecase';
 import { GetAllCountryUsecase } from 'src/app/core/usecase/utils/get-all-country.usecase';
 import { GetAllDistrictUsecase } from 'src/app/core/usecase/utils/get-all-district.usecase';
 import { GetAllProvincesUsecase } from 'src/app/core/usecase/utils/get-all-province.usecase';
 import { GetAllTypeDirectionUsecase } from 'src/app/core/usecase/utils/get-all-typeDirection.usecase';
+import { DialogService } from 'primeng/dynamicdialog';
+import { UpdateAddressByIdUsecase } from 'src/app/core/usecase/client/address/update-address-by-id.usecase';
 
 
 @Component({
   selector: 'app-update-direction-component',
   templateUrl: './update-direction.component.html',
+  providers: [DialogService]
 })
 export class UpdateDirectionComponent implements OnInit {
+
+  address: AddressModel
 
   formDirection: FormGroup;
 
@@ -42,6 +48,9 @@ export class UpdateDirectionComponent implements OnInit {
     private _getAllTypeDirections: GetAllTypeDirectionUsecase,
     private _getAllCountries: GetAllCountryUsecase,
     private _registerDirection: RegisterAddressByClientIdUsecase,
+    private _updateAddressById: UpdateAddressByIdUsecase,
+    private _config: DynamicDialogConfig,
+    private _dialogRef: DynamicDialogRef,
   ) {}
 
   createFormDirection() {
@@ -66,31 +75,31 @@ export class UpdateDirectionComponent implements OnInit {
     this.getAllCountries();
   }
 
-  getAllProvinces(){
+  async getAllProvinces(){
     this._getAllProvinces.execute().subscribe((value: any) => {
       this.province.push(value)
     })
   }
 
-  getAllDistricts(){
+  async getAllDistricts(){
     this._getAllDistricts.execute().subscribe((value: any) => {
       this.district.push(value)
     })
   }
 
-  getAllTypeDirections(){
+  async getAllTypeDirections(){
     this._getAllTypeDirections.execute().subscribe((value: any) => {
       this.typeDirection.push(value)
     })
   }
 
-  getAllCountries(){
+  async getAllCountries(){
     this._getAllCountries.execute().subscribe((value: any) => {
       this.country.push(value)
     })
   }
 
-  updateDirection() {
+  async updateDirection() {
     if (this.formDirection.invalid) {
       this.formDirection.markAllAsTouched();
       return;
@@ -98,20 +107,32 @@ export class UpdateDirectionComponent implements OnInit {
 
     const form = this.formDirection.value;
 
-    // const Direction: AddressModel = {
-    //   postalCode: form.postalCode,
-    //   ubigeo: form.ubigeo,
-    //   province: form.province.id,
-    //   district: form.district.id,
-    //   country: form.country.id,
-    //   typeDirection: form.typeDirection.id,
-    //   unit: form.unit,
-    //   direction: form.direction,
-    //   status: form.status
-    // };
+    const address: AddressModel = {
+        id: this._config.data,
+        postal_code: form.postalCode,
+        ubigeo_id: form.ubigeo,
+        province_id: form.province?.id,
+        district_id: form.district?.id,
+        country_id: form.country?.id,
+        type_param: form.typeDirection?.id,
+        unit_id: form.unit?.id,
+        address: form.direction,
+        status: form.status?.id
+    };
 
-    // console.log('DATOS DE DIRECCIÓN')
-    // console.log(Direction)
 
+     try {
+      let data: any = await this._updateAddressById.execute(address)
+
+      this.close();
+    }
+    catch (error) {
+        console.log(error)
+    }
+
+  }
+
+  close() {
+      this._dialogRef.close()
   }
 }

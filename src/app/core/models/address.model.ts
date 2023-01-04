@@ -12,5 +12,7 @@ export interface AddressModel {
     creation_author?: number;
     modification_date?: string;
     modification_author?: number;
-    
+    province_id?: number;
+    district_id?: number;
+    country_id?: number;
 }

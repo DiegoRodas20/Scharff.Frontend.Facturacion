@@ -70,11 +70,17 @@ export class DirectionsClientComponent implements OnInit {
         })
     }
 
-    showModalUpdateDirection() {
+    showModalUpdateDirection(addressId: number) {
+        const data = addressId;
         const ref = this.dialogService.open(UpdateDirectionComponent, {
+            data: data,
             header: 'Actualizar Dirección',
             width: '60rem',
         });
+        
+        ref.onClose.subscribe(() => {
+            this.getAllAddresses(this.idClient)
+        })
     }
 
 }
