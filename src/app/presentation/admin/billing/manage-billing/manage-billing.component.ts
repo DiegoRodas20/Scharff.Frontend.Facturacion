@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class ManageBillingComponent implements OnInit {
 
+    moneda
+
     constructor() { }
 
     ngOnInit(): void {
