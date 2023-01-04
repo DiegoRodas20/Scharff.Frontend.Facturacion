@@ -3,6 +3,7 @@ export interface AddressModel {
     id?: number;
     status?: boolean;
     type_param?: number;
+    unit_id?: number;
     client_id?: number;
     ubigeo_id?: number;
     address?: string;

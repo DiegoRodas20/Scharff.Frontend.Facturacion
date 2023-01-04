@@ -62,7 +62,7 @@ export class DirectionsClientComponent implements OnInit {
         const ref = this.dialogService.open(RegisterDirectionComponent, {
             data: data,
             header: 'Registrar Dirección',
-            width: '40rem',
+            width: '60rem',
         })
 
         ref.onClose.subscribe(() => {

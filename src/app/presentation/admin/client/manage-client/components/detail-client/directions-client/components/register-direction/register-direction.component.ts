@@ -42,25 +42,25 @@ export class RegisterDirectionComponent implements OnInit {
         this.createFormDirection();
         this.typeDirection = [
             {
-                id: 1,
+                id: 21,
                 code: '0001',
-                description: 'Tipo Direccion 1'
+                description: 'Direccion Fiscal'
             },
             {
-                id: 2,
+                id: 22,
                 code: '0002',
-                description: 'Tipo Direccion 2'
+                description: 'Direccion Operativa'
             }
         ]
 
         this.unit = [
             {
-                id: 1,
+                id: 19,
                 code: '0001',
                 description: 'Almacen'
             },
             {
-                id: 2,
+                id: 20,
                 code: '0002',
                 description: 'Carga'
             }
@@ -83,6 +83,7 @@ export class RegisterDirectionComponent implements OnInit {
         const address: AddressModel = {
             client_id: this._config.data,
             type_param: form.typeDirection.id,
+            unit_id: form.unit.id,
             address: form.direction
         }
 
