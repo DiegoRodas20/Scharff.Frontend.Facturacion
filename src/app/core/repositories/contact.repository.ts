@@ -1,4 +1,4 @@
-import { ContactModel, RegisterContact } from '../models/contact.model';
+import { ContactModel, RegisterContact, UpdateContact } from '../models/contact.model';
 import { ResponseData } from '../models/response.model';
 
 export abstract class ContactRepository {
@@ -9,7 +9,7 @@ export abstract class ContactRepository {
 
     abstract registerContactByClientId(contact: RegisterContact): Promise<ResponseData<ContactModel>>
 
-    abstract updateContactById(idContact: number, contact: ContactModel): Promise<ResponseData<ContactModel>>
+    abstract updateContactById(idContact: number, contact: UpdateContact): Promise<ResponseData<number>>
 
     abstract deleteContactById(idContact: number): Promise<ResponseData<number>>
 

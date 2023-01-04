@@ -36,6 +36,7 @@ export class ContactsClientComponent implements OnInit {
     async getAllContactsByIdClient(idClient: number) {
         try {
             let data: ResponseData<ContactModel[]> = await this._getAllContactsByIdClient.execute(idClient)
+            console.log(data)
             this.lContacts = data.data
         }
         catch (error) {
@@ -72,15 +73,15 @@ export class ContactsClientComponent implements OnInit {
 
     showModalUpdateContact(contact: ContactModel) {
         const idClient = contact.client_id
-        const lastIdContact = contact.id
+        const idContact = contact.id
 
         const ref = this.dialogService.open(UpdateContactComponent, {
             data: {
                 idClient,
-                lastIdContact
+                idContact
             },
             header: 'Actualizar Contacto',
-            width: '60rem'
+            width: '80rem'
         })
         ref.onClose.subscribe(() => { this.getAllContactsByIdClient(this.idClient) })
     }

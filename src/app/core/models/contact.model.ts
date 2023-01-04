@@ -28,3 +28,18 @@ export interface RegisterPhoneContactModel {
 export interface RegisterEmailContactModel {
     email?: string;
 }
+
+export interface UpdateContact extends ContactModel {
+    phones_contact: UpdatePhoneContactModel[];
+    emails_contact: UpdateEmailContactModel[];
+}
+
+export interface UpdatePhoneContactModel {
+    id?: number;
+    telephone?: string;
+}
+
+export interface UpdateEmailContactModel {
+    id?: number;
+    email?: string;
+}

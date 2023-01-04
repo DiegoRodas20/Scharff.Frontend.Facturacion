@@ -14,7 +14,8 @@
                 <span class="p-float-label">
                     <p-dropdown 
                         [options]="typeContact" 
-                        [autoDisplayFirst]="false" 
+                        [autoDisplayFirst]="false"
+                        optionValue="id"
                         optionLabel="description"
                         formControlName="type_param" 
                         [showClear]="true">
@@ -29,6 +30,7 @@
                     <p-dropdown 
                         [options]="areaContact" 
                         [autoDisplayFirst]="false"
+                        optionValue="id"
                         optionLabel="description" 
                         formControlName="area_param"
                         [showClear]="true">
@@ -50,8 +52,9 @@
             <div class="field col-12 md:col-3">
                 <span class="p-float-label">
                     <p-dropdown 
-                        [options]="typeContact"
+                        [options]="status"
                         [autoDisplayFirst]="false"
+                        optionValue="id"
                         optionLabel="description"
                         formControlName="status"
                         [showClear]="true">

@@ -10,12 +10,12 @@ import { TypeContactRepository } from 'src/app/core/repositories/typContact.repo
 export class TypeContactMockRepository extends TypeContactRepository {
     typeContacts = [
         {
-            id: 16,
+            id: 15,
             code: '003',
             description: 'Contacto Interno'
           },
           {
-            id: 17,
+            id: 16,
             code: '002',
             description: 'Contacto Externo'
           } 

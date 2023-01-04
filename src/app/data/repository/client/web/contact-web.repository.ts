@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { CONTACT_URL } from 'src/app/common/helpers/constants/url.constants';
 import { ResponseData } from 'src/app/core/models/response.model';
-import { ContactModel, RegisterContact } from 'src/app/core/models/contact.model';
+import { ContactModel, RegisterContact, UpdateContact } from 'src/app/core/models/contact.model';
 import { ContactRepository } from 'src/app/core/repositories/contact.repository';
 
 
@@ -41,10 +41,10 @@ export class ContactWebRepository extends ContactRepository {
     }
 
     // Actualizar contacto por cliente
-    updateContactById(idContact: number, contact: ContactModel): Promise<ResponseData<ContactModel>> {
+    updateContactById(idContact: number, contact: UpdateContact): Promise<ResponseData<number>> {
         
         const url = `${CONTACT_URL}/${idContact}`
-        return lastValueFrom(this.http.put<ResponseData<ContactModel>>(url, contact))
+        return lastValueFrom(this.http.put<ResponseData<number>>(url, contact))
     }
 
     // Eliminar contacto por cliente

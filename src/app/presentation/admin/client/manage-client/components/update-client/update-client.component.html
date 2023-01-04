@@ -16,7 +16,7 @@
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
                     <p-dropdown [options]="coins" [autoDisplayFirst]="false" optionValue="id" optionLabel="description"
-                        formControlName="tipoMoneda_parametro" [showClear]="true"></p-dropdown>
+                        formControlName="currency_type" [showClear]="true"></p-dropdown>
                     <label>Moneda</label>
                 </span>
             </div>
@@ -24,8 +24,9 @@
             <!-- Grupo Empresarial/Categoria Cliente -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown inputId="dropdown" [options]="businessGroups" [autoDisplayFirst]="false" optionValue="id" optionLabel="description"
-                        formControlName="grupoEmpresarial_parametro" [showClear]="true"></p-dropdown>
+                    <p-dropdown inputId="dropdown" [options]="businessGroups" [autoDisplayFirst]="false"
+                        optionValue="id" optionLabel="description" formControlName="corporate_group_param"
+                        [showClear]="true"></p-dropdown>
                     <label for="dropdown">Grupo Empresarial o Categoria Cliente</label>
                 </span>
             </div>
@@ -33,8 +34,9 @@
             <!-- Sector Economico -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown inputId="dropdown" [options]="economicSector" [autoDisplayFirst]="false" optionValue="id" optionLabel="description"
-                        formControlName="codigoSector_parametro" [showClear]="true"></p-dropdown>
+                    <p-dropdown inputId="dropdown" [options]="economicSector" [autoDisplayFirst]="false"
+                        optionValue="id" optionLabel="description" formControlName="industry_code_param"
+                        [showClear]="true"></p-dropdown>
                     <label for="dropdown">Sector Económico</label>
                 </span>
             </div>
@@ -64,8 +66,9 @@
             <!-- Tipo documento identidad -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown inputId="dropdown" [options]="typeDocumentIdenty" [autoDisplayFirst]="false" optionValue="id" optionLabel="description"
-                        formControlName="tipoDocumentoIdentidad" [showClear]="true"></p-dropdown>
+                    <p-dropdown inputId="dropdown" [options]="typeDocumentIdenty" [autoDisplayFirst]="false"
+                        optionValue="id" optionLabel="description" formControlName="document_type_id"
+                        [showClear]="true"></p-dropdown>
                     <label for="dropdown">Tipo Documento Identidad</label>
                 </span>
             </div>
@@ -73,7 +76,7 @@
             <!-- Nro. Documento Identidad -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <input id="float-input" pInputText formControlName="numeroDocumentoIdentidad">
+                    <input id="float-input" pInputText formControlName="identity_document_number">
                     <label for="float-input">Nro. Documento Identidad</label>
                 </span>
             </div>
@@ -81,7 +84,7 @@
             <!-- Razon Social / Nombre Completo -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <input id="float-input" pInputText formControlName="razonSocial">
+                    <input id="float-input" pInputText formControlName="business_name">
                     <label for="float-input">Razon Social | Nombre Completo</label>
                 </span>
             </div>
@@ -89,7 +92,7 @@
             <!-- Nombre comercial -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <input id="float-input" pInputText formControlName="nombreComercial">
+                    <input id="float-input" pInputText formControlName="commercial_name">
                     <label for="float-input">Nombre comercial</label>
                 </span>
             </div>
@@ -97,7 +100,7 @@
             <!-- Telefono -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <input id="float-input" pInputText formControlName="telefono">
+                    <input id="float-input" pInputText formControlName="telephone">
                     <label for="float-input">Teléfono</label>
                 </span>
             </div>
@@ -105,8 +108,8 @@
             <!-- Holding -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label p-input-icon-right">
-                    <p-dropdown [options]="holding" inputId="dropdown" [autoDisplayFirst]="false"
-                    optionValue="id"  optionLabel="description" formControlName="holding_parametro" [showClear]="true"
+                    <p-dropdown [options]="holding" inputId="dropdown" [autoDisplayFirst]="false" optionValue="id"
+                        optionLabel="description" formControlName="holding_param" [showClear]="true"
                         [filter]="true"></p-dropdown>
                     <label for="dropdown">Holding</label>
                 </span>
@@ -115,8 +118,9 @@
             <!-- Segmentación -->
             <div class="field col-12 md:col-4">
                 <span class="p-float-label">
-                    <p-dropdown inputId="dropdown" [options]="segmentation" [autoDisplayFirst]="false" optionValue="id" optionLabel="description"
-                        formControlName="codigoSegmentacion_parametro" [showClear]="true"></p-dropdown>
+                    <p-dropdown inputId="dropdown" [options]="segmentation" [autoDisplayFirst]="false" optionValue="id"
+                        optionLabel="description" formControlName="segmentation_code_param"
+                        [showClear]="true"></p-dropdown>
                     <label for="dropdown">Segmentación</label>
                 </span>
             </div>
@@ -139,7 +143,8 @@
             <!-- Comentarios de cliente -->
             <div class="field col-12 md:col-8">
                 <span class="p-float-label">
-                    <textarea id="float-input" rows="2" cols="30" pInputTextarea formControlName="comentario"></textarea>
+                    <textarea id="float-input" rows="2" cols="30" pInputTextarea
+                        formControlName="comment"></textarea>
                     <label for="float-input">Comentarios</label>
                 </span>
             </div>

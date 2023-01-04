@@ -37,6 +37,7 @@ export class InformationClientComponent implements OnInit {
 
         try {
             let data: ResponseData<ClientModel> = await this._getClientById.execute(idClient)
+            console.log(data)
             this.client = data.data
         }
         catch (error) {

@@ -55,24 +55,23 @@ export class UpdateClientComponent implements OnInit {
         this.getAllTypeDocumentIdenty()
         this.getAllSegmentation()
         this.getAllHolding()
-
         this.formClient.patchValue(this._config.data)
     }
 
     createFormClient() {
         this.formClient = this._formBuilder.group({
             id: [null],
-            tipoDocumentoIdentidad: [null, Validators.required],
-            numeroDocumentoIdentidad: [null, Validators.required],
-            razonSocial: [null, Validators.required],
-            telefono: [null, Validators.required],
-            nombreComercial: [null, Validators.required],
-            tipoMoneda_parametro: [null, Validators.required],
-            grupoEmpresarial_parametro: [null],
-            codigoSector_parametro: [null],
-            holding_parametro: [null],
-            codigoSegmentacion_parametro: [null],
-            comentario: [null]
+            document_type_id: [null, Validators.required],
+            identity_document_number: [null, Validators.required],
+            business_name: [null, Validators.required],
+            telephone: [null, Validators.required],
+            commercial_name: [null, Validators.required],
+            currency_type: [null, Validators.required],
+            corporate_group_param: [null],
+            industry_code_param: [null],
+            holding_param: [null],
+            segmentation_code_param: [null],
+            comment: [null]
             // accountAuthorizeFedex: [null],
             // migrateSap: [false],
             // statusClient: [null],
@@ -129,7 +128,7 @@ export class UpdateClientComponent implements OnInit {
         }
 
         const form = this.formClient.value
-        
+
         const client: ClientModel = {
             id: form.id,
             business_name: form.business_name,

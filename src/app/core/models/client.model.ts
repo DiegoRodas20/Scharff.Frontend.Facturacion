@@ -27,11 +27,10 @@ export interface ClientModel {
     modification_author?: number;
 
     //Descripciones tabla Parametro
-    descripcionGrupoEmpresarial?: string;
-    descripcionCodigoSector?: string;
-    descripcionTipoMoneda?: string;
-    descripcionTipoDocumentoIdentidad?: string;
-    descripcionHolding?: string;
-    descripcionCodigoSegmentacion?: string;
-
+    business_group_description?: string;
+    sector_code_description?: string;
+    coin_type_description?: string;
+    identity_document_type_description?: string;
+    holding_description?: string;
+    segmentation_code_description?: string;
 }

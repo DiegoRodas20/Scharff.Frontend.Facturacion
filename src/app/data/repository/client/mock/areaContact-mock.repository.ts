@@ -10,12 +10,12 @@ import { AreaContactRepository } from 'src/app/core/repositories/areaContact.rep
 export class AreaContactMockRepository extends AreaContactRepository {
     areaContacts = [
         {
-            id: 18,
+            id: 17,
             code: '003',
             description: 'Area contacto A'
           },
           {
-            id: 19,
+            id: 18,
             code: '003',
             description: 'Area contacto B'
           },
